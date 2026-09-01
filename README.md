@@ -15,13 +15,13 @@ Uso previsto: copiar este árbol al document root de un servidor web y servir `i
 
 ## 1. Requisitos de hardware
 
-El sitio es liviano (~8 MB de código e imágenes). El servidor no hace trabajo pesado.
+El sitio pesa poco (~8 MB). Los mínimos de abajo dejan holgura para el SO, logs, actualizaciones y demos en paralelo.
 
-| Recurso | Mínimo | Recomendado |
+| Recurso | Mínimo | Ideal |
 |---|---|---|
 | CPU | 1 vCPU | 2 vCPU |
-| RAM | 1 GB | 2 GB |
-| Disco | 10 GB libres (SO + logs) | 20 GB |
+| RAM | 2 GB | 4 GB |
+| Disco | 40 GB | 120 GB |
 | Red | 100 Mbps | 1 Gbps |
 | Resolución de demo | 1366×768 | 1920×1080 (laptop del SE) |
 
