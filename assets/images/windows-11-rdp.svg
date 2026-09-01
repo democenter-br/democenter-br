@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bloom" cx="42%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="28%" stop-color="#38bdf8"/>
+      <stop offset="55%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#0b1b4a"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="68%" cy="62%" r="48%">
+      <stop offset="0%" stop-color="#67e8f9" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#67e8f9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8eef8" stop-opacity=".78"/>
+      <stop offset="100%" stop-color="#d5deee" stop-opacity=".88"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bloom)"/>
+  <circle cx="980" cy="560" r="420" fill="url(#glow)"/>
+  <ellipse cx="430" cy="220" rx="260" ry="140" fill="#ffffff" opacity=".12"/>
+  <!-- Desktop icons -->
+  <g fill="#fff" opacity=".9">
+    <rect x="72" y="90" width="54" height="42" rx="6" fill="#f8fafc"/>
+    <rect x="72" y="90" width="54" height="10" rx="3" fill="#2563eb"/>
+    <text x="99" y="156" text-anchor="middle" font-family="Segoe UI, Inter, Arial" font-size="16" fill="#f8fafc">This PC</text>
+    <rect x="72" y="198" width="54" height="42" rx="8" fill="#fbbf24"/>
+    <text x="99" y="264" text-anchor="middle" font-family="Segoe UI, Inter, Arial" font-size="16" fill="#f8fafc">Files</text>
+  </g>
+  <!-- Widget glance -->
+  <g transform="translate(1180,90)">
+    <rect width="340" height="120" rx="22" fill="#0f172a" opacity=".28"/>
+    <text x="28" y="48" font-family="Segoe UI, Inter, Arial" font-size="42" font-weight="700" fill="#fff">22°</text>
+    <text x="28" y="82" font-family="Segoe UI, Inter, Arial" font-size="18" fill="#e2e8f0">Windows 11 · Demo</text>
+  </g>
+  <!-- Taskbar -->
+  <rect x="0" y="828" width="1600" height="72" fill="url(#bar)"/>
+  <rect x="0" y="828" width="1600" height="1" fill="#ffffff" opacity=".45"/>
+  <g transform="translate(668,842)">
+    <!-- Start / Windows 11 logo -->
+    <g>
+      <rect x="0" y="0" width="20" height="20" rx="1" fill="#00adef"/>
+      <rect x="22" y="0" width="20" height="20" rx="1" fill="#00adef"/>
+      <rect x="0" y="22" width="20" height="20" rx="1" fill="#00adef"/>
+      <rect x="22" y="22" width="20" height="20" rx="1" fill="#00adef"/>
+    </g>
+    <rect x="70" y="6" width="210" height="32" rx="16" fill="#ffffff" opacity=".7"/>
+    <circle cx="92" cy="22" r="8" fill="none" stroke="#334155" stroke-width="2"/>
+    <rect x="300" y="8" width="28" height="28" rx="6" fill="#1d4ed8" opacity=".85"/>
+    <rect x="340" y="8" width="28" height="28" rx="6" fill="#0ea5e9" opacity=".85"/>
+    <rect x="380" y="8" width="28" height="28" rx="6" fill="#22c55e" opacity=".85"/>
+  </g>
+</svg>

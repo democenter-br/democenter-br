@@ -1,0 +1,26 @@
+/* TEAM: oculto, no eliminado */
+
+/* NOTA (demolatam-team-optimized): este archivo quedo SUPERADO / SIN USO.
+ * En la copia original demolatam-team/ nunca se enlazaba con un <link> desde
+ * ninguna pagina (bug confirmado), asi que estas reglas jamas se aplicaban en
+ * el navegador -- incluida la que intentaba ocultar el link a agenticai.php
+ * en el home, que por eso seguia visible para el socio.
+ *
+ * En esta variante optimizada se estandarizo en un unico mecanismo de
+ * ocultamiento: comentarios HTML "TEAM-HIDE:..." directamente en cada .php
+ * (ya usados de forma consistente para PT-BR, el chatbot Borderbot, la demo
+ * Agentic/MCP y los modales de DLP). Ese es el mecanismo que SI funciona y
+ * que ya se probaba en el resto del sitio, asi que se prefirio unificar ahi
+ * en vez de terminar de cablear este CSS con un <link> nuevo en las 14
+ * paginas. El link a agenticai.php en index.php ahora esta envuelto en un
+ * bloque TEAM-HIDE (ver demolatam-team-optimized/index.php).
+ *
+ * Se deja este archivo sin borrar (no se permite eliminar archivos) solo
+ * como referencia historica de la intencion original. No se enlaza desde
+ * ninguna pagina a proposito.
+ */
+.language-switcher, #btn-pt, #mcpDemoSection,
+#demo-chat-root, #demo-chat-mask, #demo-chat-toggle,
+[data-i18n="btn.agenticbroker"], a[href*="agenticai.php"] {
+  display: none !important;
+}

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1F44"/>
+      <stop offset="55%" stop-color="#123A6D"/>
+      <stop offset="100%" stop-color="#1A4F8A"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00A9CE"/>
+      <stop offset="100%" stop-color="#7AD7EA"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="220" fill="#00A9CE" fill-opacity="0.12"/>
+  <circle cx="180" cy="620" r="260" fill="#AFF198" fill-opacity="0.08"/>
+
+  <!-- Server chassis -->
+  <rect x="620" y="140" width="420" height="420" rx="18" fill="#0A1730" stroke="#5BC8E2" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="640" y="160" width="380" height="48" rx="10" fill="url(#glass)"/>
+  <text x="660" y="191" fill="#E8F6FF" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Windows Server</text>
+  <circle cx="990" cy="184" r="7" fill="#AFF198"/>
+
+  <!-- Drive bays -->
+  <g>
+    <rect x="660" y="240" width="340" height="42" rx="8" fill="#13284A" stroke="#3E6FA5" stroke-opacity="0.5"/>
+    <rect x="676" y="254" width="70" height="14" rx="4" fill="url(#accent)" fill-opacity="0.85"/>
+    <rect x="660" y="298" width="340" height="42" rx="8" fill="#13284A" stroke="#3E6FA5" stroke-opacity="0.5"/>
+    <rect x="676" y="312" width="70" height="14" rx="4" fill="url(#accent)" fill-opacity="0.55"/>
+    <rect x="660" y="356" width="340" height="42" rx="8" fill="#13284A" stroke="#3E6FA5" stroke-opacity="0.5"/>
+    <rect x="676" y="370" width="70" height="14" rx="4" fill="url(#accent)" fill-opacity="0.7"/>
+    <rect x="660" y="414" width="340" height="42" rx="8" fill="#13284A" stroke="#3E6FA5" stroke-opacity="0.5"/>
+    <rect x="676" y="428" width="70" height="14" rx="4" fill="#AFF198" fill-opacity="0.75"/>
+  </g>
+
+  <!-- Status LEDs -->
+  <circle cx="980" cy="261" r="5" fill="#36D399"/>
+  <circle cx="980" cy="319" r="5" fill="#36D399"/>
+  <circle cx="980" cy="377" r="5" fill="#FBBF24"/>
+  <circle cx="980" cy="435" r="5" fill="#36D399"/>
+
+  <!-- Soft grid -->
+  <g stroke="#7AD7EA" stroke-opacity="0.08" stroke-width="1">
+    <path d="M80 120 H520"/>
+    <path d="M80 180 H460"/>
+    <path d="M80 240 H500"/>
+    <path d="M80 300 H420"/>
+    <path d="M80 360 H480"/>
+  </g>
+</svg>

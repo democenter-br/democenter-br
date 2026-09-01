@@ -1,0 +1,9 @@
+*.bak
+*.bak-*
+*.bak.*
+backups/
+.DS_Store
+TEAM.txt
+.env
+*.env
+/etc/

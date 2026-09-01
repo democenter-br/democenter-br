@@ -1,0 +1,15 @@
+{
+  "defaultLanguage": "es",
+  "languages": {
+    "es": {
+      "header": {
+        "tagline": "Security and Networking Reimagined"
+      },
+      "hero": {
+        "pretitle": "La Transformación de",
+        "title": "la Seguridad, la Red y la IA",
+        "subtitle": "Una plataforma SASE pensada para que estés seguro estés donde estés."
+      }
+    }
+  }
+}

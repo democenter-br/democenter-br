@@ -1,0 +1,36 @@
+# Demo Center — Partner Edition
+# Copiar a /etc/nginx/sites-available/democenter y ajustar server_name + root.
+# Socket PHP-FPM: en Ubuntu 24.04 suele ser /run/php/php8.3-fpm.sock
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name TU_DOMINIO;
+
+    root /var/www/democenter;
+    index index.php;
+
+    # No servir backups ni secretos si alguien los deja en el docroot
+    location ~* \.(bak|tgz|old|orig|env)$ {
+        deny all;
+        return 404;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\. {
+        deny all;
+    }
+
+    add_header X-Content-Type-Options nosniff;
+    add_header Referrer-Policy strict-origin-when-cross-origin;
+}
