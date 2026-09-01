@@ -2,6 +2,8 @@
 
 Portal web de demos de Netskope (LATAM), en **español**. Es HTML/PHP estático: no hay base de datos, Composer ni Node en runtime.
 
+La interfaz es **responsiva**: se adapta a laptop, tablet y móvil. Para demos con cliente se recomienda laptop en 1920×1080; el portal sigue siendo usable en pantallas más chicas.
+
 Esta edición de partner:
 
 - Solo idioma español (sin selector PT-BR).
@@ -23,7 +25,7 @@ El sitio pesa poco (~8 MB). Los mínimos de abajo dejan holgura para el SO, logs
 | RAM | 2 GB | 4 GB |
 | Disco | 40 GB | 120 GB |
 | Red | 100 Mbps | 1 Gbps |
-| Resolución de demo | 1366×768 | 1920×1080 (laptop del SE) |
+| Resolución de demo | 1366×768 | 1920×1080 (laptop del SE; el sitio es responsivo) |
 
 No hace falta GPU, ni cola de workers, ni disco SSD de alto IOPS.
 
@@ -162,7 +164,22 @@ No hay `.env`, no hay base de datos que crear, no hay migraciones.
 
 ---
 
-## 5. Seguridad al publicar
+## 5. Personalización del servicio
+
+Se recomienda **editar y adaptar esta edición con ayuda de IA**, para acortar el tiempo de personalización (textos, logos, tarjetas de demo, ocultar/mostrar secciones, i18n, estilos).
+
+Herramientas recomendadas:
+
+- **[Cursor](https://cursor.com)** — editor con agente sobre el repo: pide el cambio en lenguaje natural, revisa el diff y prueba en el navegador.
+- **[Claude](https://claude.ai)** (Anthropic) — para redactar copy, armar el plan de cambios y revisar HTML/PHP/JS antes de aplicarlos.
+
+Flujo sugerido: abre este repositorio en Cursor, describe el cambio (por ejemplo “cambia las referencias LATAM por los clientes del partner” o “oculta la tarjeta de VPN”), deja que el agente proponga el parche, verifica en local (`php -S` o el nginx del partner) y recién entonces despliega.
+
+No hace falta un stack de frontend aparte: las páginas son PHP/HTML autocontenidas. Un cambio de copy o de una tarjeta suele ser un solo archivo.
+
+---
+
+## 6. Seguridad al publicar
 
 - No subir `/etc/demo-chat.env` ni keys de AWS (esta edición no las usa).
 - No dejar `*.bak`, `.tgz` ni backups dentro del document root.
@@ -171,6 +188,6 @@ No hay `.env`, no hay base de datos que crear, no hay migraciones.
 
 ---
 
-## 6. Licencia
+## 7. Licencia
 
 Código propietario de Netskope. Uso limitado al partner autorizado. No redistribuir ni publicar como open source.
