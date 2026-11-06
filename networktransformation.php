@@ -1,22 +1,22 @@
 <?php
-// networktransformation.php - Demo "Transformación de la Red" (Single Vendor
-// SASE / SD-WAN). Cubre priorización de tráfico, DEM (Digital Experience
-// Monitoring, con modal de imagen ampliable) y resultados de negocio. Parte
-// del flujo de demo enlazado desde index.php.
+// networktransformation.php - Demo "Transformação da Rede" (Single Vendor
+// SASE / SD-WAN). Cobre priorização de tráfego, DEM (Digital Experience
+// Monitoring, com modal de imagem ampliável) e resultados de negócio. Parte
+// do fluxo de demo vinculado a partir de index.php.
 //
-// Las funciones JS comunes (changeLanguage, closeModal, etc.) viven en
-// assets/js/common.js y los textos i18n compartidos entre páginas viven en
-// assets/js/i18n-common.js. El diccionario `translations` de este archivo solo
-// contiene cadenas específicas de esta página.
+// As funções JS comuns (changeLanguage, closeModal, etc.) ficam em
+// assets/js/common.js e os textos i18n compartilhados entre páginas ficam em
+// assets/js/i18n-common.js. O dicionário `translations` deste arquivo contém
+// apenas strings específicas desta página.
 ?>
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Narrativa comercial sobre modernización de red y seguridad convergente con Netskope One.">
+    <meta name="description" content="Narrativa comercial sobre modernização de rede e segurança convergente com Netskope One.">
     
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Democenter Netskope | Transformación de la Red</title>
+    <title>Democenter Netskope | Transformação da Rede</title>
     <link href="assets/vendor/css/offline-fonts.css" rel="stylesheet">
     <link href="assets/vendor/css/site-global.css" rel="stylesheet">
     <script src="assets/vendor/js/site-global.js"></script>
@@ -77,7 +77,7 @@
 </head>
 <body class="flex flex-col min-h-screen antialiased text-base" data-site-shell="ready" data-page-name="networktransformation" data-page-kind="story">
 
-   <!-- Header: logo (link a index.php) + tagline (misma estructura site-shell-* que agenticai.php). -->
+   <!-- Header: logo (link para index.php) + tagline (mesma estrutura site-shell-* de agenticai.php). -->
    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 site-shell-header">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between site-shell-header-inner">
             <a href="index.php" class="site-shell-logo"><img src="assets/images/brand/netskope-logo-stacked-color.png" alt="Netskope" class="h-8 w-auto"></a>
@@ -91,7 +91,7 @@
         </div>
     </header>
 
-    <!-- Hero Section: título, descripción y bloque de estadísticas de mercado. -->
+    <!-- Hero Section: título, descrição e bloco de estatísticas de mercado. -->
     <section class="relative bg-white pt-20 pb-24 overflow-hidden">
         <div class="plus-pattern"></div>
         <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-bl from-netskope-lightBlue/50 to-transparent rounded-bl-[100px]"></div>
@@ -103,24 +103,24 @@
                     <span class="text-netskope-deepBlue font-bold text-sm tracking-widest uppercase">Netskope One SASE</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-bold text-netskope-deepBlue mb-8 leading-tight" data-i18n="hero.title">Transformación de Red<br><span class="font-lora italic font-normal text-netskope-green">Single Vendor SASE</span></h1>
+                <h1 class="text-5xl md:text-7xl font-bold text-netskope-deepBlue mb-8 leading-tight" data-i18n="hero.title">Transformação de Rede<br><span class="font-lora italic font-normal text-netskope-green">Single Vendor SASE</span></h1>
                 
-                <p class="text-xl md:text-2xl text-netskope-gray font-light leading-relaxed mb-12" data-i18n="hero.desc">Por qué cada vez más empresas transforman su red con Single Vendor SASE<br><strong class="text-netskope-deepBlue font-semibold">Consolida, simplifica y transforma tu infraestructura de red.</strong></p>
+                <p class="text-xl md:text-2xl text-netskope-gray font-light leading-relaxed mb-12" data-i18n="hero.desc">Por que cada vez mais empresas transformam sua rede com Single Vendor SASE<br><strong class="text-netskope-deepBlue font-semibold">Consolide, simplifique e transforme sua infraestrutura de rede.</strong></p>
 
                 <div class="bg-white/60 backdrop-blur-md border border-white/50 p-8 rounded-netskope shadow-soft inline-flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 w-full">
                     <div class="text-center">
                         <div class="text-5xl font-bold text-netskope-green mb-1">70%</div>
-                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.1">de compras SD-WAN serán Single Vendor SASE en 2028</div>
+                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.1">das compras de SD-WAN serão Single Vendor SASE em 2028</div>
                     </div>
                     <div class="hidden md:block w-px h-16 bg-gray-200"></div>
                     <div class="text-center">
                         <div class="text-5xl font-bold text-netskope-blue mb-1">50%</div>
-                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.2">nuevos implementaciones SASE serán Single Vendor en 2028</div>
+                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.2">das novas implantações de SASE serão Single Vendor em 2028</div>
                     </div>
                     <div class="hidden md:block w-px h-16 bg-gray-200"></div>
                     <div class="text-center">
                         <div class="text-5xl font-bold text-netskope-deepBlue mb-1">80%</div>
-                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.3">reducción tiempo troubleshooting</div>
+                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.3">redução no tempo de troubleshooting</div>
                     </div>
                 </div>
             </div>
@@ -131,55 +131,55 @@
         </div>
     </section>
 
-    <!-- Market Reality Section: citas de analistas (Gartner, Forrester) sobre Single Vendor SASE. -->
+    <!-- Market Reality Section: citações de analistas (Gartner, Forrester) sobre Single Vendor SASE. -->
     <section class="bg-netskope-deepBlue py-20 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#00A9CE 1px, transparent 1px); background-size: 24px 24px;"></div>
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-24">
-                <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="market.tag">Realidad del Mercado</span>
-                <h2 class="text-3xl font-bold text-white" data-i18n="market.title">Lo que dicen los analistas sobre Single Vendor SASE</h2>
+                <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="market.tag">Realidade do Mercado</span>
+                <h2 class="text-3xl font-bold text-white" data-i18n="market.title">O que dizem os analistas sobre Single Vendor SASE</h2>
             </div>
 
-            <!-- !important en margin-top/padding-top: el título de arriba ya tiene mb-24 (3rem) vía
-                 Tailwind, pero se necesitaba separación adicional entre el título y esta grilla de
-                 citas; se forzó inline con !important para no arriesgarse a que utilidades Tailwind
-                 de mayor especificidad (o el orden de las clases del <style> minificado más abajo)
-                 lo terminen anulando. -->
+            <!-- !important em margin-top/padding-top: o título acima já tem mb-24 (3rem) via
+                 Tailwind, mas era necessário um espaçamento adicional entre o título e esta grade de
+                 citações; foi forçado inline com !important para não arriscar que utilitários Tailwind
+                 de maior especificidade (ou a ordem das classes do <style> minificado mais abaixo)
+                 acabem anulando-o. -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" style="margin-top: 6rem !important; padding-top: 2rem !important;">
                 <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-8 rounded-netskope relative hover:bg-white/15 transition-all group flex flex-col h-full">
                     <div class="quote-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg></div>
-                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote.1">"Para 2028, el 70% de las compras de SD-WAN formarán parte de una oferta de plataforma SASE de un solo proveedor, frente al 25% en 2025."</p>
+                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote.1">"Até 2028, 70% das compras de SD-WAN farão parte de uma oferta de plataforma SASE de um único fornecedor, ante 25% em 2025."</p>
                     <div class="border-t border-white/20 pt-4 mt-auto">
                         <p class="text-white font-bold text-sm tracking-wide">Gartner Prediction</p>
-                        <p class="text-white/70 text-xs" data-i18n="quote.sub1">Tendencias del mercado SASE</p>
+                        <p class="text-white/70 text-xs" data-i18n="quote.sub1">Tendências do mercado SASE</p>
                     </div>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-8 rounded-netskope relative hover:bg-white/15 transition-all group flex flex-col h-full">
                     <div class="quote-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg></div>
-                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote.2">"Para 2028, el 50% de los nuevos implementaciones de SASE se basarán en una oferta de plataforma SASE de un solo proveedor, frente al 30% en 2025."</p>
+                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote.2">"Até 2028, 50% das novas implantações de SASE serão baseadas em uma oferta de plataforma SASE de um único fornecedor, ante 30% em 2025."</p>
                     <div class="border-t border-white/20 pt-4 mt-auto">
                         <p class="text-white font-bold text-sm tracking-wide">Gartner Prediction</p>
-                        <p class="text-white/70 text-xs" data-i18n="quote.sub2">Evolución de arquitecturas SASE</p>
+                        <p class="text-white/70 text-xs" data-i18n="quote.sub2">Evolução das arquiteturas SASE</p>
                     </div>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-8 rounded-netskope relative hover:bg-white/15 transition-all group flex flex-col h-full">
                     <div class="quote-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg></div>
-                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote.3">"Las organizaciones buscan plataformas SASE de un solo proveedor para reducir la complejidad, mejorar la experiencia del usuario y consolidar la gestión."</p>
+                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote.3">"As organizações buscam plataformas SASE de um único fornecedor para reduzir a complexidade, melhorar a experiência do usuário e consolidar a gestão."</p>
                     <div class="border-t border-white/20 pt-4 mt-auto">
                         <p class="text-white font-bold text-sm tracking-wide">Forrester Wave for SASE Solutions 2025</p>
-                        <p class="text-white/70 text-xs" data-i18n="quote.sub3">Netskope nombrado Líder</p>
+                        <p class="text-white/70 text-xs" data-i18n="quote.sub3">Netskope reconhecida como Líder</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Evolution Timeline Section: línea de tiempo MPLS -> SD-WAN -> Single Vendor SASE. -->
+    <!-- Evolution Timeline Section: linha do tempo MPLS -> SD-WAN -> Single Vendor SASE. -->
     <section class="py-20 bg-gradient-to-b from-white to-netskope-offWhite relative overflow-hidden">
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-24">
-                <span class="text-netskope-blue font-bold text-xs uppercase tracking-widest mb-3 block" data-i18n="evo.tag">EVOLUCIÓN DE LA CONECTIVIDAD</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-4" data-i18n="evo.title">Del MPLS a Single Vendor SASE</h2>
+                <span class="text-netskope-blue font-bold text-xs uppercase tracking-widest mb-3 block" data-i18n="evo.tag">EVOLUÇÃO DA CONECTIVIDADE</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-4" data-i18n="evo.title">Do MPLS ao Single Vendor SASE</h2>
             </div>
 
             <div class="max-w-4xl mx-auto">
@@ -193,12 +193,12 @@
                                     <div class="bg-netskope-deepBlue text-white px-4 py-2 rounded-full inline-block mb-3">
                                         <span class="text-xs font-bold uppercase">2000s</span>
                                     </div>
-                                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-2" data-i18n="evo.1.title">MPLS - Conectividad Hub-and-Spoke</h3>
+                                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-2" data-i18n="evo.1.title">MPLS - Conectividade Hub-and-Spoke</h3>
                                 </div>
                                 <div class="md:w-2/3">
-                                    <p class="text-netskope-gray mb-4" data-i18n="evo.1.desc"><strong>Topologías simples y estáticas:</strong> Conexión de sedes individuales a centros de datos corporativos. Enlaces privados, complejos de escalar y con poca flexibilidad para la nube.</p>
+                                    <p class="text-netskope-gray mb-4" data-i18n="evo.1.desc"><strong>Topologias simples e estáticas:</strong> Conexão de filiais individuais a data centers corporativos. Links privados, complexos de escalar e com pouca flexibilidade para a nuvem.</p>
                                     <div class="bg-netskope-offWhite p-4 rounded-lg">
-                                        <p class="text-sm text-netskope-gray font-medium" data-i18n="evo.1.bad">🚫 Complejidad en expansión<br>🚫 Sin optimización para nube</p>
+                                        <p class="text-sm text-netskope-gray font-medium" data-i18n="evo.1.bad">🚫 Complexidade na expansão<br>🚫 Sem otimização para nuvem</p>
                                     </div>
                                 </div>
                             </div>
@@ -217,9 +217,9 @@
                                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-2">SD-WAN - SDN</h3>
                                 </div>
                                 <div class="md:w-2/3">
-                                    <p class="text-netskope-gray mb-4" data-i18n="evo.2.desc"><strong>Conexión one-to-many:</strong> Sedes conectadas a nubes públicas y privadas. Reduce complejidad con internet, pero carece de seguridad integrada y visibilidad en aplicaciones SaaS.</p>
+                                    <p class="text-netskope-gray mb-4" data-i18n="evo.2.desc"><strong>Conexão one-to-many:</strong> Filiais conectadas a nuvens públicas e privadas. Reduz a complexidade com a internet, mas carece de segurança integrada e de visibilidade em aplicações SaaS.</p>
                                     <div class="bg-netskope-offWhite p-4 rounded-lg">
-                                        <p class="text-sm text-netskope-gray font-medium" data-i18n="evo.2.bad">⚠️ Múltiples appliances en sede<br>⚠️ Seguridad desacoplada<br>⚠️ Visibilidad limitada de SaaS</p>
+                                        <p class="text-sm text-netskope-gray font-medium" data-i18n="evo.2.bad">⚠️ Múltiplos appliances nas filiais<br>⚠️ Segurança desacoplada<br>⚠️ Visibilidade limitada de SaaS</p>
                                     </div>
                                 </div>
                             </div>
@@ -233,14 +233,14 @@
                             <div class="flex flex-col md:flex-row md:items-center gap-6">
                                 <div class="md:w-1/3">
                                     <div class="bg-netskope-green text-netskope-deepBlue px-4 py-2 rounded-full inline-block mb-3">
-                                        <span class="text-xs font-bold uppercase" data-i18n="evo.3.badge">2020s - Presente</span>
+                                        <span class="text-xs font-bold uppercase" data-i18n="evo.3.badge">Anos 2020 - Presente</span>
                                     </div>
                                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-2">Single Vendor SASE</h3>
                                 </div>
                                 <div class="md:w-2/3">
-                                    <p class="text-netskope-gray mb-4" data-i18n="evo.3.desc"><strong>Conexión many-to-many:</strong> Interconexión de hogares, máquinas, sedes y nubes con redes y seguridad. Arquitectura unificada con política única, console única y experiencia de usuario consistente.</p>
+                                    <p class="text-netskope-gray mb-4" data-i18n="evo.3.desc"><strong>Conexão many-to-many:</strong> Interconexão de residências, máquinas, filiais e nuvens com rede e segurança. Arquitetura unificada com política única, console única e experiência de usuário consistente.</p>
                                     <div class="bg-netskope-green/10 p-4 rounded-lg border border-netskope-green/20">
-                                        <p class="text-sm text-netskope-gray font-medium" data-i18n="evo.3.good">✅ Console única de gestión<br>✅ Políticas consistentes en todos los entornos<br>✅ Experiencia de usuario optimizada</p>
+                                        <p class="text-sm text-netskope-gray font-medium" data-i18n="evo.3.good">✅ Console única de gerenciamento<br>✅ Políticas consistentes em todos os ambientes<br>✅ Experiência de usuário otimizada</p>
                                     </div>
                                 </div>
                             </div>
@@ -251,119 +251,119 @@
         </div>
     </section>
 
-    <!-- STRATEGY SECTION: los 3 pilares de Netskope One SASE (Arquitectura Unificada,
-         SASE contextual y NewEdge Global Network). -->
+    <!-- STRATEGY SECTION: os 3 pilares do Netskope One SASE (Arquitetura Unificada,
+         SASE contextual e NewEdge Global Network). -->
     <section class="py-20 bg-gradient-confident text-white relative overflow-hidden">
         <div class="absolute inset-0 pattern-net opacity-10"></div>
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-12">
-                <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="strat.tag">Estrategia de Netskope</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="strat.title">Netskope One: Plataforma SASE de Un Solo Proveedor</h2>
+                <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="strat.tag">Estratégia da Netskope</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="strat.title">Netskope One: Plataforma SASE de Fornecedor Único</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-netskope hover:bg-white/15 transition-all">
                     <div class="w-12 h-12 bg-netskope-green/20 rounded-lg flex items-center justify-center text-netskope-green mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg></div>
-                    <h3 class="text-lg font-bold mb-3" data-i18n="strat.1.title">Arquitectura Unificada</h3>
-                    <p class="text-white/80 text-sm mb-3" data-i18n="strat.1.desc">Una plataforma construida desde cero, no una integración de productos dispares:</p>
-                    <ul class="text-white/70 text-xs space-y-1" data-i18n="strat.1.list"><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Motor de políticas único para red y seguridad</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Console única de gestión</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Cliente unificado para todos los escenarios</li></ul>
+                    <h3 class="text-lg font-bold mb-3" data-i18n="strat.1.title">Arquitetura Unificada</h3>
+                    <p class="text-white/80 text-sm mb-3" data-i18n="strat.1.desc">Uma plataforma construída do zero, não uma integração de produtos díspares:</p>
+                    <ul class="text-white/70 text-xs space-y-1" data-i18n="strat.1.list"><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Mecanismo de políticas único para rede e segurança</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Console única de gerenciamento</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Cliente unificado para todos os cenários</li></ul>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-netskope hover:bg-white/15 transition-all">
                     <div class="w-12 h-12 bg-netskope-green/20 rounded-lg flex items-center justify-center text-netskope-green mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
-                    <h3 class="text-lg font-bold mb-3" data-i18n="strat.2.title">SASE que usa el contexto</h3>
-                    <p class="text-white/80 text-sm mb-3" data-i18n="strat.2.desc">Inteligencia compartida entre SD-WAN y SSE:</p>
-                    <ul class="text-white/70 text-xs space-y-1" data-i18n="strat.2.list"><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Monitoreo de enlaces en tiempo real</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Priorización automática de 85k+ aplicaciones</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Priorización del tráfico en base al contexto</li></ul>
+                    <h3 class="text-lg font-bold mb-3" data-i18n="strat.2.title">SASE que usa o contexto</h3>
+                    <p class="text-white/80 text-sm mb-3" data-i18n="strat.2.desc">Inteligência compartilhada entre SD-WAN e SSE:</p>
+                    <ul class="text-white/70 text-xs space-y-1" data-i18n="strat.2.list"><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Monitoramento de links em tempo real</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Priorização automática de mais de 85 mil aplicações</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Priorização do tráfego com base no contexto</li></ul>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-netskope hover:bg-white/15 transition-all">
                     <div class="w-12 h-12 bg-netskope-green/20 rounded-lg flex items-center justify-center text-netskope-green mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
                     <h3 class="text-lg font-bold mb-3" data-i18n="strat.3.title">NewEdge Global Network</h3>
-                    <p class="text-white/80 text-sm mb-3" data-i18n="strat.3.desc">Red global construida para SASE sin compromisos de rendimiento:</p>
-                    <ul class="text-white/70 text-xs space-y-1" data-i18n="strat.3.list"><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> 79+ regiones globales con computación completa</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> 10K+ adyacencias de red</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> 5-9s SLA de disponibilidad</li></ul>
+                    <p class="text-white/80 text-sm mb-3" data-i18n="strat.3.desc">Rede global construída para SASE sem comprometer o desempenho:</p>
+                    <ul class="text-white/70 text-xs space-y-1" data-i18n="strat.3.list"><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Mais de 79 regiões globais com computação completa</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> Mais de 10 mil adjacências de rede</li><li class="flex items-start gap-1"><span class="text-netskope-green text-xs">✓</span> SLA de disponibilidade de 5 noves</li></ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- USE CASES SECTION: 6 tarjetas de casos de uso. La tarjeta 5 (DEM & Troubleshooting)
-         incluye el botón de lupa que abre el modal de imagen #dem-image-modal (más abajo). -->
+    <!-- USE CASES SECTION: 6 cards de casos de uso. O card 5 (DEM & Troubleshooting)
+         inclui o botão de lupa que abre o modal de imagem #dem-image-modal (mais abaixo). -->
     <section class="py-20 bg-gradient-to-b from-white to-netskope-offWhite relative overflow-hidden">
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-10">
-                <span class="text-netskope-blue font-bold text-xs uppercase tracking-widest mb-3 block" data-i18n="cases.tag">CASOS DE USO PRINCIPALES</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-4" data-i18n="cases.title">Transformación de Red con Single Vendor SASE</h2>
+                <span class="text-netskope-blue font-bold text-xs uppercase tracking-widest mb-3 block" data-i18n="cases.tag">PRINCIPAIS CASOS DE USO</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-4" data-i18n="cases.title">Transformação de Rede com Single Vendor SASE</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col relative">
                     <div class="w-12 h-12 bg-netskope-blue/10 rounded-xl flex items-center justify-center text-netskope-blue mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.1.title">Transformación de Sedes</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.1.desc">Reemplaza routers y múltiples appliances con un único SASE Gateway que ofrece SD-WAN, firewall, SWG y optimización en un solo dispositivo.</p>
-                    <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-teal uppercase tracking-wide">Consolidación</span></div>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.1.title">Transformação de Filiais</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.1.desc">Substitui roteadores e múltiplos appliances por um único SASE Gateway que oferece SD-WAN, firewall, SWG e otimização em um só dispositivo.</p>
+                    <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-teal uppercase tracking-wide">Consolidação</span></div>
                 </div>
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
                     <div class="w-12 h-12 bg-netskope-blue/10 rounded-xl flex items-center justify-center text-netskope-blue mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.2.title">Optimización SaaS & UCaaS</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.2.desc">Asegura la experiencia de los usuarios para aplicaciones críticas como Zoom, Teams y Office 365, incluso sobre enlaces domésticos o celulares.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.2.title">Otimização SaaS & UCaaS</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.2.desc">Garante a experiência dos usuários em aplicações críticas como Zoom, Teams e Office 365, mesmo em links residenciais ou celulares.</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-teal uppercase tracking-wide">App Performance</span></div>
                 </div>
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
                     <div class="w-12 h-12 bg-netskope-blue/10 rounded-xl flex items-center justify-center text-netskope-blue mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.3.title">Seguridad IoT/OT</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.3.desc">Descubrimiento y clasificación automática de dispositivos IoT/OT, con segmentación dinámica y control de acceso para reducir superficie de ataque.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.3.title">Segurança IoT/OT</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.3.desc">Descoberta e classificação automática de dispositivos IoT/OT, com segmentação dinâmica e controle de acesso para reduzir a superfície de ataque.</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-teal uppercase tracking-wide">Device Intelligence</span></div>
                 </div>
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
                     <div class="w-12 h-12 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl flex items-center justify-center text-purple-600 mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.4.title">WAN como Servicio</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.4.desc">Modelo de consumo flexible que elimina la complejidad de gestionar infraestructura propia, reduciendo TCO frente a soluciones DIY (Do It Yourself).</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.4.title">WAN como Serviço</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.4.desc">Modelo de consumo flexível que elimina a complexidade de gerenciar infraestrutura própria, reduzindo o TCO em relação a soluções DIY (Do It Yourself).</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-purple-600 uppercase tracking-wide">OpEx Model</span></div>
                 </div>
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
-                    <!-- Botón de lupa: abre #dem-image-modal vía openImageModal() (alias local que delega en openModal() de common.js). -->
+                    <!-- Botão de lupa: abre #dem-image-modal via openImageModal() (alias local que delega para openModal() de common.js). -->
                     <button type="button" onclick="openImageModal('dem-image-modal')" class="absolute top-4 right-4 text-netskope-blue hover:text-netskope-teal cursor-pointer"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></button>
                     <div class="w-12 h-12 bg-netskope-blue/10 rounded-xl flex items-center justify-center text-netskope-blue mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.5.title">DEM & Troubleshooting</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.5.desc">Monitoreo de experiencia digital (DEM) integrado para visibilidad hop-by-hop y mejora de los tiempos de resolución de problemas, reduciendo tiempo de troubleshooting en 80%.</p>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.5.desc">Monitoramento de experiência digital (DEM) integrado para visibilidade hop-by-hop e melhoria dos tempos de resolução de problemas, reduzindo o tempo de troubleshooting em 80%.</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-teal uppercase tracking-wide">AI Ops</span></div>
                 </div>
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
                     <div class="w-12 h-12 bg-netskope-blue/10 rounded-xl flex items-center justify-center text-netskope-blue mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4 4 0 003 15z"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.6.title">Networking Multi-Cloud</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.6.desc">Conexión segura y optimizada entre cargas de trabajo en AWS, Azure, GCP y centros de datos privados, con automatización que reduce tiempos de implementación de meses a días.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.6.title">Networking Multicloud</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.6.desc">Conexão segura e otimizada entre workloads na AWS, Azure, GCP e data centers privados, com automação que reduz os prazos de implantação de meses para dias.</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-teal uppercase tracking-wide">Cloud Automation</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact/Results Section: casos reales de clientes con métricas de impacto + panel resumen de resultados. -->
+    <!-- Impact/Results Section: casos reais de clientes com métricas de impacto + painel-resumo de resultados. -->
     <section class="py-20 bg-gradient-confident text-white relative overflow-hidden">
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="impact.tag">Impacto Cliente</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="impact.title">Resultados con Netskope One SASE</h2>
-                    <p class="text-lg text-netskope-lightBlue font-light leading-relaxed mb-8" data-i18n="impact.desc">Empresas líderes transforman sus redes con la plataforma SASE de Netskope, logrando resultados medibles en productividad, seguridad y eficiencia operativa.</p>
+                    <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="impact.tag">Impacto no Cliente</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="impact.title">Resultados com Netskope One SASE</h2>
+                    <p class="text-lg text-netskope-lightBlue font-light leading-relaxed mb-8" data-i18n="impact.desc">Empresas líderes transformam suas redes com a plataforma SASE da Netskope, alcançando resultados mensuráveis em produtividade, segurança e eficiência operacional.</p>
                     <div class="space-y-6 mb-8">
                         <div class="flex items-start gap-4">
                             <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
                             <div>
-                                <h4 class="font-bold text-lg mb-1" data-i18n="impact.1.title">80% Reducción en Tiempo de Troubleshooting</h4>
-                                <p class="text-sm text-white/80" data-i18n="impact.1.desc">Uno de los mayores distribuidores mayoristas de materiales para techos en Norteamérica (>1,000 ubicaciones)</p>
+                                <h4 class="font-bold text-lg mb-1" data-i18n="impact.1.title">80% de Redução no Tempo de Troubleshooting</h4>
+                                <p class="text-sm text-white/80" data-i18n="impact.1.desc">Um dos maiores distribuidores atacadistas de materiais para telhados da América do Norte (>1.000 locais)</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
                             <div>
-                                <h4 class="font-bold text-lg mb-1" data-i18n="impact.2.title">50% Reducción en TCO</h4>
-                                <p class="text-sm text-white/80" data-i18n="impact.2.desc">Minorista global de viajes operando en aeropuertos, líneas de cruceros y centros de viaje (>5,000 ubicaciones)</p>
+                                <h4 class="font-bold text-lg mb-1" data-i18n="impact.2.title">50% de Redução no TCO</h4>
+                                <p class="text-sm text-white/80" data-i18n="impact.2.desc">Varejista global de viagens operando em aeroportos, linhas de cruzeiros e centros de viagem (>5.000 locais)</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg></div>
                             <div>
-                                <h4 class="font-bold text-lg mb-1" data-i18n="impact.3.title">$2.6M Ahorrados con WAN as a Service</h4>
-                                <p class="text-sm text-white/80" data-i18n="impact.3.desc">Líder tecnológico en préstamos hipotecarios (>200 ubicaciones y >4,000 usuarios)</p>
+                                <h4 class="font-bold text-lg mb-1" data-i18n="impact.3.title">US$ 2,6 mi Economizados com WAN as a Service</h4>
+                                <p class="text-sm text-white/80" data-i18n="impact.3.desc">Líder em tecnologia de crédito hipotecário (>200 locais e >4.000 usuários)</p>
                             </div>
                         </div>
                     </div>
@@ -373,7 +373,7 @@
                     <div class="absolute -inset-1 bg-gradient-neon rounded-netskope blur opacity-30"></div>
                     <div class="relative bg-white text-netskope-darkGray p-8 rounded-netskope shadow-2xl">
                         <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
-                            <h3 class="text-xl font-bold text-netskope-deepBlue" data-i18n="res.title">Resultados Clave</h3>
+                            <h3 class="text-xl font-bold text-netskope-deepBlue" data-i18n="res.title">Resultados Principais</h3>
                             <span class="bg-netskope-lightBlue text-netskope-deepBlue px-3 py-1 rounded-full text-xs font-bold uppercase">Multi-industry</span>
                         </div>
                         <div class="space-y-4">
@@ -381,8 +381,8 @@
                                 <div class="flex items-center gap-3">
                                     <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">T</div>
                                     <div>
-                                        <div class="text-sm font-bold text-netskope-deepBlue" data-i18n="res.1.label">Tiempo Troubleshooting</div>
-                                        <div class="text-xs text-gray-500" data-i18n="res.1.sub">Reducción promedio</div>
+                                        <div class="text-sm font-bold text-netskope-deepBlue" data-i18n="res.1.label">Tempo de Troubleshooting</div>
+                                        <div class="text-xs text-gray-500" data-i18n="res.1.sub">Redução média</div>
                                     </div>
                                 </div>
                                 <div class="text-right">
@@ -394,8 +394,8 @@
                                 <div class="flex items-center gap-3">
                                     <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold">$</div>
                                     <div>
-                                        <div class="text-sm font-bold text-netskope-deepBlue" data-i18n="res.2.label">Reducción TCO</div>
-                                        <div class="text-xs text-gray-500" data-i18n="res.2.sub">Consolidación productos</div>
+                                        <div class="text-sm font-bold text-netskope-deepBlue" data-i18n="res.2.label">Redução de TCO</div>
+                                        <div class="text-xs text-gray-500" data-i18n="res.2.sub">Consolidação de produtos</div>
                                     </div>
                                 </div>
                                 <div class="text-right">
@@ -408,18 +408,18 @@
                                     <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold">I</div>
                                     <div>
                                         <div class="text-sm font-bold text-netskope-deepBlue">IoT Visibility</div>
-                                        <div class="text-xs text-gray-500" data-i18n="res.3.sub">Dispositivos descubiertos</div>
+                                        <div class="text-xs text-gray-500" data-i18n="res.3.sub">Dispositivos descobertos</div>
                                     </div>
                                 </div>
                                 <div class="text-right">
                                     <div class="text-sm font-bold text-green-600">+40%</div>
-                                    <div class="text-xs text-gray-400" data-i18n="res.risk">Reducción riesgo</div>
+                                    <div class="text-xs text-gray-400" data-i18n="res.risk">Redução de risco</div>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
                             <div class="flex justify-between mb-2">
-                                <span class="text-xs font-bold text-gray-500" data-i18n="res.roi">ROI en 3 años</span>
+                                <span class="text-xs font-bold text-gray-500" data-i18n="res.roi">ROI em 3 anos</span>
                                 <span class="text-xs font-bold text-netskope-blue">&gt;100%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -432,44 +432,44 @@
         </div>
     </section>
 
-    <!-- Action Buttons: cierre de flujo hacia keydifferentiators.php / index.php / demos.php. -->
+    <!-- Action Buttons: encerramento do fluxo para keydifferentiators.php / index.php / demos.php. -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-6 md:px-12">
             <div class="text-center">
                 <div class="flex flex-col md:flex-row justify-center gap-6">
                     <a href="keydifferentiators.php" class="bg-netskope-blue text-white px-8 py-4 rounded-netskope-sm font-bold hover:bg-netskope-teal transition-all shadow-soft hover:shadow-hover flex items-center justify-center gap-3">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                        <span data-i18n="nav_who">¿Quién es Netskope?</span>
+                        <span data-i18n="nav_who">Quem é a Netskope?</span>
                     </a>
 
                     <a href="index.php" class="bg-white text-netskope-deepBlue border border-netskope-blue px-8 py-4 rounded-netskope-sm font-bold hover:bg-netskope-lightBlue transition-all shadow-soft hover:shadow-hover flex items-center justify-center gap-3">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                        <span data-i18n="nav_back">Volver a la landing</span>
+                        <span data-i18n="nav_back">Voltar para a landing</span>
                     </a>
 
                     <a href="demos.php" class="bg-gradient-to-r from-netskope-orange to-yellow-500 text-white px-8 py-4 rounded-netskope-sm font-bold hover:opacity-90 transition-all shadow-soft hover:shadow-hover flex items-center justify-center gap-3 animate-pulse">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                        <span data-i18n="nav_demo">¿Quieres Verlo? 😉</span>
+                        <span data-i18n="nav_demo">Quer Ver? 😉</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DEM Image Modal: se abre desde el botón de lupa de la tarjeta "DEM & Troubleshooting"
-         de arriba; cierra con closeModal(), la función compartida de assets/js/common.js. -->
+    <!-- DEM Image Modal: abre a partir do botão de lupa do card "DEM & Troubleshooting"
+         acima; fecha com closeModal(), a função compartilhada de assets/js/common.js. -->
     <div id="dem-image-modal" class="modal-overlay">
         <div class="modal-content image-modal-content">
             <div class="modal-close" onclick="closeModal('dem-image-modal')">×</div>
             <div class="p-4">
                 <h3 class="text-xl font-bold text-netskope-deepBlue mb-4">DEM (Digital Experience Monitoring)</h3>
                 <img src="assets/images/external/dem-digital-experience.png" alt="DEM - Digital Experience Monitoring" class="w-full h-auto rounded-lg">
-                <p class="text-sm text-netskope-gray mt-4" data-i18n="modal.desc">Monitoreo de experiencia digital integrada para visibilidad completa del rendimiento de aplicaciones y red.</p>
+                <p class="text-sm text-netskope-gray mt-4" data-i18n="modal.desc">Monitoramento de experiência digital integrado para visibilidade completa do desempenho de aplicações e da rede.</p>
             </div>
         </div>
     </div>
 
-    <!-- Footer: logo pequeño + texto de derechos reservados (hardcodeado en inglés). -->
+    <!-- Footer: logo pequeno + texto de direitos reservados (hardcoded em inglês). -->
     <footer class="bg-white border-t border-gray-200 py-12 mt-auto site-shell-footer">
         <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 site-shell-footer-inner">
             <div class="flex items-center gap-4 site-shell-footer-meta">
@@ -482,100 +482,100 @@
         </div>
     </footer>
 
-    <!-- Utilidades JS compartidas (changeLanguage, closeModal, etc.) y diccionario
-         de traducciones común. Deben cargarse antes del script inline de abajo. -->
+    <!-- Utilitários JS compartilhados (changeLanguage, closeModal, etc.) e dicionário
+         de traduções comum. Devem ser carregados antes do script inline abaixo. -->
     <script src="assets/js/common.js"></script>
     <script src="assets/js/i18n-common.js"></script>
     <script>
-        // Diccionario específico de esta página, fusionado con NetskopeCommonI18n.
+        // Dicionário específico desta página, mesclado com NetskopeCommonI18n.
         const translations = {
             es: {
                 ...NetskopeCommonI18n.es,
                 "header.tagline": "Single Vendor SASE & Network Transformation",
-                "hero.title": "Transformación de Red<br><span class=\"font-lora italic font-normal text-netskope-green\">Single Vendor SASE</span>",
-                "hero.desc": "Por qué cada vez más empresas transforman su red con Single Vendor SASE<br><strong class=\"text-netskope-deepBlue font-semibold\">Consolida, simplifica y transforma tu infraestructura de red.</strong>",
-                "stat.1": "de compras SD-WAN serán Single Vendor SASE en 2028",
-                "stat.2": "nuevos implementaciones SASE serán Single Vendor en 2028",
-                "stat.3": "reducción tiempo troubleshooting",
-                "market.tag": "Realidad del Mercado",
-                "market.title": "Lo que dicen los analistas sobre Single Vendor SASE",
-                "quote.1": "\"Para 2028, el 70% de las compras de SD-WAN formarán parte de una oferta de plataforma SASE de un solo proveedor, frente al 25% en 2025.\"",
-                "quote.sub1": "Tendencias del mercado SASE",
-                "quote.2": "\"Para 2028, el 50% de los nuevos implementaciones de SASE se basarán en una oferta de plataforma SASE de un solo proveedor, frente al 30% en 2025.\"",
-                "quote.sub2": "Evolución de arquitecturas SASE",
-                "quote.3": "\"Las organizaciones buscan plataformas SASE de un solo proveedor para reducir la complejidad, mejorar la experiencia del usuario y consolidar la gestión.\"",
-                "quote.sub3": "Netskope nombrado Líder",
-                "evo.tag": "EVOLUCIÓN DE LA CONECTIVIDAD",
-                "evo.title": "Del MPLS a Single Vendor SASE",
-                "evo.1.title": "MPLS - Conectividad Hub-and-Spoke",
-                "evo.1.desc": "<strong>Topologías simples y estáticas:</strong> Conexión de sedes individuales a centros de datos corporativos. Enlaces privados, complejos de escalar y con poca flexibilidad para la nube.",
-                "evo.1.bad": "🚫 Complejidad en expansión<br>🚫 Sin optimización para nube",
-                "evo.2.desc": "<strong>Conexión one-to-many:</strong> Sedes conectadas a nubes públicas y privadas. Reduce complejidad con internet, pero carece de seguridad integrada y visibilidad en aplicaciones SaaS.",
-                "evo.2.bad": "⚠️ Múltiples appliances en sede<br>⚠️ Seguridad desacoplada<br>⚠️ Visibilidad limitada de SaaS",
-                "evo.3.badge": "2020s - Presente",
-                "evo.3.desc": "<strong>Conexión many-to-many:</strong> Interconexión de hogares, máquinas, sedes y nubes con redes y seguridad. Arquitectura unificada con política única, console única y experiencia de usuario consistente.",
-                "evo.3.good": "✅ Console única de gestión<br>✅ Políticas consistentes en todos los entornos<br>✅ Experiencia de usuario optimizada",
-                "strat.tag": "Estrategia de Netskope",
-                "strat.title": "Netskope One: Plataforma SASE de Un Solo Proveedor",
-                "strat.1.title": "Arquitectura Unificada",
-                "strat.1.desc": "Una plataforma construida desde cero, no una integración de productos dispares:",
-                "strat.1.list": "<li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Motor de políticas único para red y seguridad</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Console única de gestión</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Cliente unificado para todos los escenarios</li>",
-                "strat.2.title": "SASE que usa el contexto",
-                "strat.2.desc": "Inteligencia compartida entre SD-WAN y SSE:",
-                "strat.2.list": "<li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Monitoreo de enlaces en tiempo real</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Priorización automática de 85k+ aplicaciones</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Priorización del tráfico en base al contexto</li>",
+                "hero.title": "Transformação de Rede<br><span class=\"font-lora italic font-normal text-netskope-green\">Single Vendor SASE</span>",
+                "hero.desc": "Por que cada vez mais empresas transformam sua rede com Single Vendor SASE<br><strong class=\"text-netskope-deepBlue font-semibold\">Consolide, simplifique e transforme sua infraestrutura de rede.</strong>",
+                "stat.1": "das compras de SD-WAN serão Single Vendor SASE em 2028",
+                "stat.2": "das novas implantações de SASE serão Single Vendor em 2028",
+                "stat.3": "redução no tempo de troubleshooting",
+                "market.tag": "Realidade do Mercado",
+                "market.title": "O que dizem os analistas sobre Single Vendor SASE",
+                "quote.1": "\"Até 2028, 70% das compras de SD-WAN farão parte de uma oferta de plataforma SASE de um único fornecedor, ante 25% em 2025.\"",
+                "quote.sub1": "Tendências do mercado SASE",
+                "quote.2": "\"Até 2028, 50% das novas implantações de SASE serão baseadas em uma oferta de plataforma SASE de um único fornecedor, ante 30% em 2025.\"",
+                "quote.sub2": "Evolução das arquiteturas SASE",
+                "quote.3": "\"As organizações buscam plataformas SASE de um único fornecedor para reduzir a complexidade, melhorar a experiência do usuário e consolidar a gestão.\"",
+                "quote.sub3": "Netskope reconhecida como Líder",
+                "evo.tag": "EVOLUÇÃO DA CONECTIVIDADE",
+                "evo.title": "Do MPLS ao Single Vendor SASE",
+                "evo.1.title": "MPLS - Conectividade Hub-and-Spoke",
+                "evo.1.desc": "<strong>Topologias simples e estáticas:</strong> Conexão de filiais individuais a data centers corporativos. Links privados, complexos de escalar e com pouca flexibilidade para a nuvem.",
+                "evo.1.bad": "🚫 Complexidade na expansão<br>🚫 Sem otimização para nuvem",
+                "evo.2.desc": "<strong>Conexão one-to-many:</strong> Filiais conectadas a nuvens públicas e privadas. Reduz a complexidade com a internet, mas carece de segurança integrada e de visibilidade em aplicações SaaS.",
+                "evo.2.bad": "⚠️ Múltiplos appliances nas filiais<br>⚠️ Segurança desacoplada<br>⚠️ Visibilidade limitada de SaaS",
+                "evo.3.badge": "Anos 2020 - Presente",
+                "evo.3.desc": "<strong>Conexão many-to-many:</strong> Interconexão de residências, máquinas, filiais e nuvens com rede e segurança. Arquitetura unificada com política única, console única e experiência de usuário consistente.",
+                "evo.3.good": "✅ Console única de gerenciamento<br>✅ Políticas consistentes em todos os ambientes<br>✅ Experiência de usuário otimizada",
+                "strat.tag": "Estratégia da Netskope",
+                "strat.title": "Netskope One: Plataforma SASE de Fornecedor Único",
+                "strat.1.title": "Arquitetura Unificada",
+                "strat.1.desc": "Uma plataforma construída do zero, não uma integração de produtos díspares:",
+                "strat.1.list": "<li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Mecanismo de políticas único para rede e segurança</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Console única de gerenciamento</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Cliente unificado para todos os cenários</li>",
+                "strat.2.title": "SASE que usa o contexto",
+                "strat.2.desc": "Inteligência compartilhada entre SD-WAN e SSE:",
+                "strat.2.list": "<li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Monitoramento de links em tempo real</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Priorização automática de mais de 85 mil aplicações</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Priorização do tráfego com base no contexto</li>",
                 "strat.3.title": "NewEdge Global Network",
-                "strat.3.desc": "Red global construida para SASE sin compromisos de rendimiento:",
-                "strat.3.list": "<li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> 79+ regiones globales con computación completa</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> 10K+ adyacencias de red</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> 5-9s SLA de disponibilidad</li>",
-                "cases.tag": "CASOS DE USO PRINCIPALES",
-                "cases.title": "Transformación de Red con Single Vendor SASE",
-                "case.1.title": "Transformación de Sedes",
-                "case.1.desc": "Reemplaza routers y múltiples appliances con un único SASE Gateway que ofrece SD-WAN, firewall, SWG y optimización en un solo dispositivo.",
-                "case.2.title": "Optimización SaaS & UCaaS",
-                "case.2.desc": "Asegura la experiencia de los usuarios para aplicaciones críticas como Zoom, Teams y Office 365, incluso sobre enlaces domésticos o celulares.",
-                "case.3.title": "Seguridad IoT/OT",
-                "case.3.desc": "Descubrimiento y clasificación automática de dispositivos IoT/OT, con segmentación dinámica y control de acceso para reducir superficie de ataque.",
-                "case.4.title": "WAN como Servicio",
-                "case.4.desc": "Modelo de consumo flexible que elimina la complejidad de gestionar infraestructura propia, reduciendo TCO frente a soluciones DIY (Do It Yourself).",
+                "strat.3.desc": "Rede global construída para SASE sem comprometer o desempenho:",
+                "strat.3.list": "<li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Mais de 79 regiões globais com computação completa</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> Mais de 10 mil adjacências de rede</li><li class=\"flex items-start gap-1\"><span class=\"text-netskope-green text-xs\">✓</span> SLA de disponibilidade de 5 noves</li>",
+                "cases.tag": "PRINCIPAIS CASOS DE USO",
+                "cases.title": "Transformação de Rede com Single Vendor SASE",
+                "case.1.title": "Transformação de Filiais",
+                "case.1.desc": "Substitui roteadores e múltiplos appliances por um único SASE Gateway que oferece SD-WAN, firewall, SWG e otimização em um só dispositivo.",
+                "case.2.title": "Otimização SaaS & UCaaS",
+                "case.2.desc": "Garante a experiência dos usuários em aplicações críticas como Zoom, Teams e Office 365, mesmo em links residenciais ou celulares.",
+                "case.3.title": "Segurança IoT/OT",
+                "case.3.desc": "Descoberta e classificação automática de dispositivos IoT/OT, com segmentação dinâmica e controle de acesso para reduzir a superfície de ataque.",
+                "case.4.title": "WAN como Serviço",
+                "case.4.desc": "Modelo de consumo flexível que elimina a complexidade de gerenciar infraestrutura própria, reduzindo o TCO em relação a soluções DIY (Do It Yourself).",
                 "case.5.title": "DEM & Troubleshooting",
-                "case.5.desc": "Monitoreo de experiencia digital (DEM) integrado para visibilidad hop-by-hop y mejora de los tiempos de resolución de problemas, reduciendo tiempo de troubleshooting en 80%.",
-                "case.6.title": "Networking Multi-Cloud",
-                "case.6.desc": "Conexión segura y optimizada entre cargas de trabajo en AWS, Azure, GCP y centros de datos privados, con automatización que reduce tiempos de implementación de meses a días.",
-                "impact.tag": "Impacto Cliente",
-                "impact.title": "Resultados con Netskope One SASE",
-                "impact.desc": "Empresas líderes transforman sus redes con la plataforma SASE de Netskope, logrando resultados medibles en productividad, seguridad y eficiencia operativa.",
-                "impact.1.title": "80% Reducción en Tiempo de Troubleshooting",
-                "impact.1.desc": "Uno de los mayores distribuidores mayoristas de materiales para techos en Norteamérica (>1,000 ubicaciones)",
-                "impact.2.title": "50% Reducción en TCO",
-                "impact.2.desc": "Minorista global de viajes operando en aeropuertos, líneas de cruceros y centros de viaje (>5,000 ubicaciones)",
-                "impact.3.title": "$2.6M Ahorrados con WAN as a Service",
-                "impact.3.desc": "Líder tecnológico en préstamos hipotecarios (>200 ubicaciones y >4,000 usuarios)",
-                "res.title": "Resultados Clave",
-                "res.1.label": "Tiempo Troubleshooting",
-                "res.1.sub": "Reducción promedio",
+                "case.5.desc": "Monitoramento de experiência digital (DEM) integrado para visibilidade hop-by-hop e melhoria dos tempos de resolução de problemas, reduzindo o tempo de troubleshooting em 80%.",
+                "case.6.title": "Networking Multicloud",
+                "case.6.desc": "Conexão segura e otimizada entre workloads na AWS, Azure, GCP e data centers privados, com automação que reduz os prazos de implantação de meses para dias.",
+                "impact.tag": "Impacto no Cliente",
+                "impact.title": "Resultados com Netskope One SASE",
+                "impact.desc": "Empresas líderes transformam suas redes com a plataforma SASE da Netskope, alcançando resultados mensuráveis em produtividade, segurança e eficiência operacional.",
+                "impact.1.title": "80% de Redução no Tempo de Troubleshooting",
+                "impact.1.desc": "Um dos maiores distribuidores atacadistas de materiais para telhados da América do Norte (>1.000 locais)",
+                "impact.2.title": "50% de Redução no TCO",
+                "impact.2.desc": "Varejista global de viagens operando em aeroportos, linhas de cruzeiros e centros de viagem (>5.000 locais)",
+                "impact.3.title": "US$ 2,6 mi Economizados com WAN as a Service",
+                "impact.3.desc": "Líder em tecnologia de crédito hipotecário (>200 locais e >4.000 usuários)",
+                "res.title": "Resultados Principais",
+                "res.1.label": "Tempo de Troubleshooting",
+                "res.1.sub": "Redução média",
                 "res.high": "Impacto Alto",
-                "res.2.label": "Reducción TCO",
-                "res.2.sub": "Consolidación productos",
+                "res.2.label": "Redução de TCO",
+                "res.2.sub": "Consolidação de produtos",
                 "res.crit": "Impacto Crítico",
-                "res.3.sub": "Dispositivos descubiertos",
-                "res.risk": "Reducción riesgo",
-                "res.roi": "ROI en 3 años",
-                // nav_who / nav_back / nav_demo ahora vienen de NetskopeCommonI18n
-                "modal.desc": "Monitoreo de experiencia digital integrada para visibilidad completa del rendimiento de aplicaciones y red."
+                "res.3.sub": "Dispositivos descobertos",
+                "res.risk": "Redução de risco",
+                "res.roi": "ROI em 3 anos",
+                // nav_who / nav_back / nav_demo agora vêm de NetskopeCommonI18n
+                "modal.desc": "Monitoramento de experiência digital integrado para visibilidade completa do desempenho de aplicações e da rede."
             }
         };
 
-        // changeLanguage(lang) y closeModal(modalId) son ahora las funciones
-        // compartidas de assets/js/common.js. Nota: la versión local que había aquí
-        // incluía chequeos defensivos a window.NetskopeSiteLanguageUtils y
-        // window.NetskopeSecurityUtils, dos helpers que nunca llegaron a existir en
-        // este proyecto (código muerto); el comportamiento real ya era idéntico a
-        // usar localStorage/innerHTML directamente, como hace la versión compartida.
+        // changeLanguage(lang) e closeModal(modalId) agora são as funções
+        // compartilhadas de assets/js/common.js. Nota: a versão local que existia aqui
+        // incluía verificações defensivas para window.NetskopeSiteLanguageUtils e
+        // window.NetskopeSecurityUtils, dois helpers que nunca chegaram a existir neste
+        // projeto (código morto); o comportamento real já era idêntico a
+        // usar localStorage/innerHTML diretamente, como faz a versão compartilhada.
 
         /**
          * openImageModal(modalId)
-         * Alias de compatibilidad: el HTML de esta página usa onclick="openImageModal(...)"
-         * (nombre histórico) en vez de openModal(...). Delega en la función openModal
-         * compartida de assets/js/common.js para no duplicar la lógica de mostrar el modal.
+         * Alias de compatibilidade: o HTML desta página usa onclick="openImageModal(...)"
+         * (nome histórico) em vez de openModal(...). Delega para a função openModal
+         * compartilhada de assets/js/common.js para não duplicar a lógica de exibir o modal.
          */
         function openImageModal(modalId) {
             openModal(modalId);
@@ -583,23 +583,23 @@
 
         /**
          * initializePage() (IIFE)
-         * Inicialización específica de esta página, ejecutada una sola vez al
-         * evaluar el script (no espera DOMContentLoaded porque este <script> ya
-         * está al final del <body>). Hace, en orden: (1) aplica el idioma guardado
-         * en localStorage vía changeLanguage(); (2) renderiza los íconos Lucide si
-         * la librería está disponible; (3) anima con IntersectionObserver los
-         * .timeline-item de la sección de evolución al entrar en viewport; (4)
-         * registra el cierre del modal de imagen (#dem-image-modal, vía
-         * .modal-overlay) al hacer click fuera del contenido o al presionar Escape,
-         * como respaldo adicional a closeModal()/openImageModal() de más arriba.
+         * Inicialização específica desta página, executada uma única vez ao
+         * avaliar o script (não espera DOMContentLoaded porque este <script> já
+         * está no final do <body>). Faz, em ordem: (1) aplica o idioma salvo
+         * em localStorage via changeLanguage(); (2) renderiza os ícones Lucide se
+         * a biblioteca estiver disponível; (3) anima com IntersectionObserver os
+         * .timeline-item da seção de evolução ao entrar no viewport; (4)
+         * registra o fechamento do modal de imagem (#dem-image-modal, via
+         * .modal-overlay) ao clicar fora do conteúdo ou ao pressionar Escape,
+         * como reforço adicional a closeModal()/openImageModal() mais acima.
          *
          * @returns {void}
          */
         (function initializePage() {
-            // Inicializar idioma (usa el valor guardado o 'es' por defecto)
+            // Inicializar idioma (usa o valor salvo ou 'es' por padrão)
             changeLanguage(localStorage.getItem('netskope-lang') || 'es');
 
-            // Iconos
+            // Ícones
             if (typeof lucide !== 'undefined') lucide.createIcons();
             
             // Timeline animation on scroll

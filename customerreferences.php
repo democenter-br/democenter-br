@@ -1,19 +1,19 @@
 <?php
-// customerreferences.php - Casos de éxito / referencias de clientes de Netskope
-// en LATAM (Brasil, México, resto de LATAM), con filtro por región. Página de
-// apoyo dentro del flujo de demo, enlazada normalmente desde index.php.
+// customerreferences.php - Casos de sucesso / referências de clientes da Netskope
+// na LATAM (Brasil, México, restante da LATAM), com filtro por região. Página de
+// apoio dentro do fluxo de demo, normalmente vinculada a partir de index.php.
 //
-// Las funciones JS comunes (changeLanguage, etc.) viven en assets/js/common.js
-// y los textos de i18n compartidos entre páginas viven en assets/js/i18n-common.js.
-// El diccionario `translations` de este archivo solo contiene cadenas propias
-// de esta página (encabezados, filtros de región y descripciones de clientes).
+// As funções JS comuns (changeLanguage, etc.) ficam em assets/js/common.js
+// e os textos de i18n compartilhados entre páginas ficam em assets/js/i18n-common.js.
+// O dicionário `translations` deste arquivo contém apenas strings próprias
+// desta página (cabeçalhos, filtros de região e descrições de clientes).
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Casos de éxito de Netskope en Latinoamérica organizados por región.">
+    <meta name="description" content="Casos de sucesso da Netskope na América Latina organizados por região.">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>Democenter Netskope | Referencias LATAM</title>
     
@@ -60,27 +60,27 @@
     <div class="plus-decoration text-8xl top-40 right-10 text-netskope-green">+</div>
     <div class="plus-decoration text-4xl bottom-20 left-1/4">+</div>
 
-    <!-- Header fijo: logo (link a index.php), etiqueta de página. -->
+    <!-- Cabeçalho fixo: logo (link para index.php), rótulo da página. -->
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <a href="index.php"><img src="assets/images/brand/netskope-logo-stacked-color.png" alt="Netskope" class="h-8 w-auto"></a>
             </div>
             <div class="flex items-center gap-4">
-                <div class="text-sm font-medium text-netskope-gray hidden md:block tracking-wide" data-i18n="header_title">Casos de Éxito LATAM</div>
+                <div class="text-sm font-medium text-netskope-gray hidden md:block tracking-wide" data-i18n="header_title">Casos de Sucesso LATAM</div>
             </div>
         </div>
     </header>
 
-    <!-- Hero: título y descripción de la sección de casos de éxito, sobre fondo azul con decoraciones. -->
+    <!-- Hero: título e descrição da seção de casos de sucesso, sobre fundo azul com decorações. -->
     <div class="relative bg-netskope-deepBlue text-white overflow-hidden pb-12 pt-16 md:pt-24 md:pb-20">
         <div class="absolute inset-0 bg-pattern opacity-10"></div>
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] rounded-full bg-netskope-blue opacity-20 blur-3xl"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-netskope-green opacity-10 blur-3xl"></div>
 
         <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-tight" data-i18n="hero_title">Historias de Transformación</h1>
-            <p class="text-lg text-gray-300 max-w-2xl mx-auto mt-4" data-i18n="hero_desc">Descubre cómo las organizaciones líderes en Latinoamérica confían en Netskope para proteger su viaje hacia la nube.</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-tight" data-i18n="hero_title">Histórias de Transformação</h1>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mt-4" data-i18n="hero_desc">Descubra como as organizações líderes na América Latina confiam na Netskope para proteger sua jornada rumo à nuvem.</p>
             <div class="w-24 h-1 bg-netskope-green mx-auto mt-8 rounded-full"></div>
         </div>
     </div>
@@ -88,16 +88,16 @@
     <main class="flex-grow bg-[#F9FAFB] relative z-10 px-4 sm:px-6 lg:px-8 py-16 -mt-8 rounded-t-[40px] shadow-[0_-10px_40px_rgba(0,0,0,0.03)]">
         <div class="max-w-7xl mx-auto">
             
-            <!-- Botones de filtro por región (all/br/mx/latam); la lógica de filtrado está en el script inline de abajo. -->
+            <!-- Botões de filtro por região (all/br/mx/latam); a lógica de filtragem está no script inline abaixo. -->
             <div class="flex flex-wrap justify-center gap-3 mb-12">
                 <button class="filter-btn active px-6 py-2 rounded-full bg-netskope-deepBlue text-white font-semibold text-sm transition-colors shadow-md" data-filter="all" data-i18n="filter_all">Todos</button>
                 <button class="filter-btn px-6 py-2 rounded-full bg-white text-netskope-deepBlue border border-gray-200 hover:bg-netskope-lightBlue font-semibold text-sm transition-colors shadow-sm" data-filter="br" data-i18n="filter_br">Brasil</button>
                 <button class="filter-btn px-6 py-2 rounded-full bg-white text-netskope-deepBlue border border-gray-200 hover:bg-netskope-lightBlue font-semibold text-sm transition-colors shadow-sm" data-filter="mx" data-i18n="filter_mx">México</button>
-                <button class="filter-btn px-6 py-2 rounded-full bg-white text-netskope-deepBlue border border-gray-200 hover:bg-netskope-lightBlue font-semibold text-sm transition-colors shadow-sm" data-filter="latam" data-i18n="filter_latam">Resto de LATAM</button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-white text-netskope-deepBlue border border-gray-200 hover:bg-netskope-lightBlue font-semibold text-sm transition-colors shadow-sm" data-filter="latam" data-i18n="filter_latam">Restante da LATAM</button>
             </div>
 
-            <!-- Grilla de tarjetas de clientes (una por empresa); cada una lleva data-region
-                 para el filtro de arriba y enlaza al portal público de clientes de Netskope. -->
+            <!-- Grade de cartões de clientes (um por empresa); cada um leva data-region
+                 para o filtro acima e aponta para o portal público de clientes da Netskope. -->
             <div class="flex flex-wrap justify-center gap-6 md:gap-8" id="reference-grid">
 
                 <a href="https://www.netskope.com/customers" target="_blank" class="ref-card w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl card-hover border border-gray-100 flex flex-col relative overflow-hidden text-center items-center" data-region="br">
@@ -106,7 +106,7 @@
                     </div>
                     <span class="text-[10px] font-bold text-netskope-teal uppercase tracking-widest mb-2 bg-netskope-lightBlue px-2 py-1 rounded-full">Brasil</span>
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 group-hover:text-netskope-blue transition-colors">Votorantim</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_votorantim_desc">Transformación digital segura para uno de los mayores conglomerados industriales de Brasil.</p>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_votorantim_desc">Transformação digital segura para um dos maiores conglomerados industriais do Brasil.</p>
                     <div class="mt-4 text-netskope-teal text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         <span data-i18n="btn_view">Ver referencia</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </div>
@@ -118,7 +118,7 @@
                     </div>
                     <span class="text-[10px] font-bold text-netskope-teal uppercase tracking-widest mb-2 bg-netskope-lightBlue px-2 py-1 rounded-full">México</span>
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 group-hover:text-netskope-blue transition-colors">Cinépolis</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_cinepolis_desc">Protección de datos y experiencia de usuario optimizada para la cadena de cines líder.</p>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_cinepolis_desc">Proteção de dados e experiência do usuário otimizada para a rede de cinemas líder.</p>
                     <div class="mt-4 text-netskope-teal text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         <span data-i18n="btn_view">Ver referencia</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </div>
@@ -130,7 +130,7 @@
                     </div>
                     <span class="text-[10px] font-bold text-netskope-teal uppercase tracking-widest mb-2 bg-netskope-lightBlue px-2 py-1 rounded-full">Colombia</span>
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 group-hover:text-netskope-blue transition-colors">Grupo SURA</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_sura_desc">Estrategia SASE unificada para proteger operaciones financieras en toda la región andina.</p>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_sura_desc">Estratégia SASE unificada para proteger operações financeiras em toda a região andina.</p>
                     <div class="mt-4 text-netskope-teal text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         <span data-i18n="btn_view">Ver referencia</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </div>
@@ -142,7 +142,7 @@
                     </div>
                     <span class="text-[10px] font-bold text-netskope-teal uppercase tracking-widest mb-2 bg-netskope-lightBlue px-2 py-1 rounded-full">Brasil</span>
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 group-hover:text-netskope-blue transition-colors">Lojas Renner</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_renner_desc">Seguridad en la nube y cumplimiento normativo para el gigante del retail brasileño.</p>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_renner_desc">Segurança na nuvem e conformidade regulatória para o gigante do varejo brasileiro.</p>
                     <div class="mt-4 text-netskope-teal text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         <span data-i18n="btn_view">Ver referencia</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </div>
@@ -154,7 +154,7 @@
                     </div>
                     <span class="text-[10px] font-bold text-netskope-teal uppercase tracking-widest mb-2 bg-netskope-lightBlue px-2 py-1 rounded-full">México</span>
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 group-hover:text-netskope-blue transition-colors">Kavak</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_kavak_desc">Protección de infraestructura cloud nativa para el unicornio automotriz de mayor crecimiento.</p>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_kavak_desc">Proteção de infraestrutura cloud nativa para o unicórnio automotivo de maior crescimento.</p>
                     <div class="mt-4 text-netskope-teal text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         <span data-i18n="btn_view">Ver referencia</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </div>
@@ -166,7 +166,7 @@
                     </div>
                     <span class="text-[10px] font-bold text-netskope-teal uppercase tracking-widest mb-2 bg-netskope-lightBlue px-2 py-1 rounded-full">Argentina</span>
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 group-hover:text-netskope-blue transition-colors">Mercado Libre</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_meli_desc">Visibilidad y control granular para el ecosistema de e-commerce y fintech más grande de LATAM.</p>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_meli_desc">Visibilidade e controle granular para o maior ecossistema de e-commerce e fintech da LATAM.</p>
                     <div class="mt-4 text-netskope-teal text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         <span data-i18n="btn_view">Ver referencia</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </div>
@@ -176,7 +176,7 @@
         </div>
     </main>
 
-    <!-- Footer: logo pequeño + texto de derechos reservados (hardcodeado en inglés). -->
+    <!-- Rodapé: logo pequeno + texto de direitos reservados (fixo em inglês). -->
     <footer class="bg-white border-t border-gray-200 py-12 mt-auto">
         <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
             <a href="index.php"><img src="assets/images/brand/netskope-logo-stacked-color.png" alt="Netskope" class="h-6 w-auto"></a>
@@ -186,40 +186,40 @@
         </div>
     </footer>
 
-    <!-- Utilidades JS compartidas (changeLanguage, modales, portapapeles) y diccionario
-         de traducciones común. Deben cargarse antes del script inline de abajo. -->
+    <!-- Utilitários JS compartilhados (changeLanguage, modais, área de transferência) e dicionário
+         de traduções comum. Devem ser carregados antes do script inline abaixo. -->
     <script src="assets/js/common.js"></script>
     <script src="assets/js/i18n-common.js"></script>
     <script>
-        // Diccionario específico de esta página, fusionado con NetskopeCommonI18n.
+        // Dicionário específico desta página, mesclado com NetskopeCommonI18n.
         const translations = {
             es: {
                 ...NetskopeCommonI18n.es,
-                "header_title": "Casos de Éxito LATAM",
-                "hero_title": "Historias de Transformación",
-                "hero_desc": "Descubre cómo las organizaciones líderes en Latinoamérica confían en Netskope para proteger su viaje hacia la nube.",
+                "header_title": "Casos de Sucesso LATAM",
+                "hero_title": "Histórias de Transformação",
+                "hero_desc": "Descubra como as organizações líderes na América Latina confiam na Netskope para proteger sua jornada rumo à nuvem.",
                 "filter_all": "Todos",
                 "filter_br": "Brasil",
                 "filter_mx": "México",
-                "filter_latam": "Resto de LATAM",
-                "card_votorantim_desc": "Transformación digital segura para uno de los mayores conglomerados industriales de Brasil.",
-                "card_cinepolis_desc": "Protección de datos y experiencia de usuario optimizada para la cadena de cines líder.",
-                "card_sura_desc": "Estrategia SASE unificada para proteger operaciones financieras en toda la región andina.",
-                "card_renner_desc": "Seguridad en la nube y cumplimiento normativo para el gigante del retail brasileño.",
-                "card_kavak_desc": "Protección de infraestructura cloud nativa para el unicornio automotriz de mayor crecimiento.",
-                "card_meli_desc": "Visibilidad y control granular para el ecosistema de e-commerce y fintech más grande de LATAM.",
-                "btn_view": "Ir al portal de clientes"
+                "filter_latam": "Restante da LATAM",
+                "card_votorantim_desc": "Transformação digital segura para um dos maiores conglomerados industriais do Brasil.",
+                "card_cinepolis_desc": "Proteção de dados e experiência do usuário otimizada para a rede de cinemas líder.",
+                "card_sura_desc": "Estratégia SASE unificada para proteger operações financeiras em toda a região andina.",
+                "card_renner_desc": "Segurança na nuvem e conformidade regulatória para o gigante do varejo brasileiro.",
+                "card_kavak_desc": "Proteção de infraestrutura cloud nativa para o unicórnio automotivo de maior crescimento.",
+                "card_meli_desc": "Visibilidade e controle granular para o maior ecossistema de e-commerce e fintech da LATAM.",
+                "btn_view": "Ir para o portal de clientes"
             }
         };
 
-        // changeLanguage(lang) es ahora la función compartida de assets/js/common.js,
-        // que opera sobre el objeto global `translations` definido arriba.
+        // changeLanguage(lang) agora é a função compartilhada de assets/js/common.js,
+        // que opera sobre o objeto global `translations` definido acima.
 
-        // Lógica del Filtro de Regiones (específica de esta página: filtra las
-        // tarjetas de referencias de clientes por región usando data-region).
+        // Lógica do Filtro de Regiões (específica desta página: filtra os
+        // cartões de referências de clientes por região usando data-region).
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                // Estilos de los botones
+                // Estilos dos botões
                 document.querySelectorAll('.filter-btn').forEach(b => {
                     b.classList.remove('bg-netskope-deepBlue', 'text-white', 'shadow-md');
                     b.classList.add('bg-white', 'text-netskope-deepBlue', 'shadow-sm');
@@ -227,7 +227,7 @@
                 e.target.classList.remove('bg-white', 'text-netskope-deepBlue', 'shadow-sm');
                 e.target.classList.add('bg-netskope-deepBlue', 'text-white', 'shadow-md');
 
-                // Filtrar Tarjetas
+                // Filtrar Cartões
                 const filter = e.target.getAttribute('data-filter');
                 document.querySelectorAll('.ref-card').forEach(card => {
                     if(filter === 'all' || card.getAttribute('data-region') === filter) {

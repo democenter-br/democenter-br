@@ -1,22 +1,22 @@
 <?php
-// agenticai.php - Demo "Adopción Segura de IA agéntica". Presenta 6 tarjetas de
-// capacidades (IA Gateway, IA Guardrails, IA Red Teaming, etc.) con diagramas
-// ampliables (zoom) y enlaces de cierre de flujo hacia keydifferentiators.php,
-// index.php y demos.php. Parte del flujo de demo enlazado desde index.php.
+// agenticai.php - Demo "Adoção Segura de IA agêntica". Apresenta 6 cartões de
+// capacidades (IA Gateway, IA Guardrails, IA Red Teaming, etc.) com diagramas
+// ampliáveis (zoom) e links de fechamento de fluxo para keydifferentiators.php,
+// index.php e demos.php. Parte do fluxo de demo vinculado a partir de index.php.
 //
-// Las funciones JS comunes (changeLanguage, portapapeles) viven en
-// assets/js/common.js y los textos i18n compartidos entre páginas viven en
-// assets/js/i18n-common.js. El diccionario `translations` de este archivo solo
-// contiene cadenas específicas de esta página. El "diagram preview modal" (zoom
-// de diagramas) es una función auto-contenida y específica de esta página: NO
-// se movió a common.js porque crea su propio modal dinámicamente y define su
-// propia closeModal local de alcance limitado (no colisiona con la global).
+// As funções JS comuns (changeLanguage, área de transferência) ficam em
+// assets/js/common.js e os textos i18n compartilhados entre páginas ficam em
+// assets/js/i18n-common.js. O dicionário `translations` deste arquivo contém
+// apenas strings específicas desta página. O "diagram preview modal" (zoom
+// de diagramas) é uma função autocontida e específica desta página: NÃO
+// foi movida para common.js porque cria seu próprio modal dinamicamente e define
+// sua própria closeModal local de escopo limitado (não colide com a global).
 ?>
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Guía visual para explicar la adopción segura de Agentic AI con visibilidad, guardrails y Zero Trust.">
+    <meta name="description" content="Guia visual para explicar a adoção segura de Agentic AI com visibilidade, guardrails e Zero Trust.">
     
     <link rel="icon" type="image/png" href="favicon.png">
     <title>Democenter Netskope | Agentic AI</title>
@@ -125,28 +125,28 @@
             <div class="max-w-5xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 mb-6">
                     <span class="w-8 h-1 bg-netskope-green"></span>
-                    <span class="text-netskope-deepBlue font-bold text-sm tracking-widest uppercase" data-i18n="hero.badge">Seguridad de IA agéntica</span>
+                    <span class="text-netskope-deepBlue font-bold text-sm tracking-widest uppercase" data-i18n="hero.badge">Segurança de IA agêntica</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-bold text-netskope-deepBlue mb-6 leading-tight" data-i18n="hero.title">Adopción Segura de<br><span class="font-lora italic font-normal text-netskope-green">IA agéntica</span></h1>
+                <h1 class="text-5xl md:text-7xl font-bold text-netskope-deepBlue mb-6 leading-tight" data-i18n="hero.title">Adoção Segura de<br><span class="font-lora italic font-normal text-netskope-green">IA agêntica</span></h1>
                 
-                <p class="text-xl md:text-2xl text-netskope-gray font-light leading-relaxed mb-10" data-i18n="hero.desc">El 74% de los líderes de aplicaciones IT creen que los agentes de IA representan un nuevo vector de ataque.<br><strong class="text-netskope-deepBlue font-semibold">Protege las interacciones IA a IA y asegura la autonomía responsable.</strong></p>
+                <p class="text-xl md:text-2xl text-netskope-gray font-light leading-relaxed mb-10" data-i18n="hero.desc">74% dos líderes de aplicações de TI acreditam que os agentes de IA representam um novo vetor de ataque.<br><strong class="text-netskope-deepBlue font-semibold">Proteja as interações de IA para IA e garanta a autonomia responsável.</strong></p>
 
                 <!-- Stats -->
                 <div class="bg-white/60 backdrop-blur-md border border-white/50 p-6 rounded-netskope shadow-soft inline-flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 w-full">
                     <div class="text-center">
                         <div class="text-4xl font-bold text-netskope-green mb-1">33%</div>
-                        <div class="text-[10px] text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.1">apps con IA agéntica en 2028</div>
+                        <div class="text-[10px] text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.1">apps com IA agêntica em 2028</div>
                     </div>
                     <div class="hidden md:block w-px h-12 bg-gray-200"></div>
                     <div class="text-center">
                         <div class="text-4xl font-bold text-netskope-blue mb-1">74%</div>
-                        <div class="text-[10px] text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.2">ven un nuevo vector de ataque</div>
+                        <div class="text-[10px] text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.2">veem um novo vetor de ataque</div>
                     </div>
                     <div class="hidden md:block w-px h-12 bg-gray-200"></div>
                     <div class="text-center">
                         <div class="text-4xl font-bold text-netskope-deepBlue mb-1">100%</div>
-                        <div class="text-[10px] text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.3">interacciones IA a IA protegidas</div>
+                        <div class="text-[10px] text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.3">interações de IA para IA protegidas</div>
                     </div>
                 </div>
             </div>
@@ -159,24 +159,24 @@
         
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-12">
-                <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="market.tag">Realidad del Mercado</span>
-                <h2 class="text-3xl font-bold text-white" data-i18n="market.title">Lo que dicen los analistas</h2>
+                <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="market.tag">Realidade do Mercado</span>
+                <h2 class="text-3xl font-bold text-white" data-i18n="market.title">O que dizem os analistas</h2>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
                 <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-netskope relative hover:bg-white/15 transition-all group flex flex-col h-full">
                     <div class="quote-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg></div>
-                    <p class="text-netskope-lightBlue font-lora italic text-base leading-relaxed mb-4 mt-2 flex-grow" data-i18n="quote.1">"Las tecnologías de GenAI evolucionan a un ritmo sin precedentes, haciendo que sea un desafío para los CIO navegar este panorama dinámico."</p>
+                    <p class="text-netskope-lightBlue font-lora italic text-base leading-relaxed mb-4 mt-2 flex-grow" data-i18n="quote.1">"As tecnologias de GenAI evoluem em um ritmo sem precedentes, tornando um desafio para os CIOs navegar neste cenário dinâmico."</p>
                     <div class="border-t border-white/20 pt-3 mt-auto"><p class="text-white font-bold text-xs tracking-wide">Gartner</p></div>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-netskope relative hover:bg-white/15 transition-all group flex flex-col h-full mt-0 lg:-mt-4">
                     <div class="quote-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg></div>
-                    <p class="text-netskope-lightBlue font-lora italic text-base leading-relaxed mb-4 mt-2 flex-grow" data-i18n="quote.2">"Para 2028, un tercio de las aplicaciones de software empresarial incluirán IA agéntica, frente a menos del 1% en 2024."</p>
+                    <p class="text-netskope-lightBlue font-lora italic text-base leading-relaxed mb-4 mt-2 flex-grow" data-i18n="quote.2">"Até 2028, um terço dos aplicativos de software empresarial incluirá IA agêntica, contra menos de 1% em 2024."</p>
                     <div class="border-t border-white/20 pt-3 mt-auto"><p class="text-white font-bold text-xs tracking-wide">Gartner Predicts</p></div>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-6 rounded-netskope relative hover:bg-white/15 transition-all group flex flex-col h-full">
                     <div class="quote-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg></div>
-                    <p class="text-netskope-lightBlue font-lora italic text-base leading-relaxed mb-4 mt-2 flex-grow" data-i18n="quote.3">"74% de los líderes de aplicaciones IT creen que los agentes de IA representan un nuevo vector de ataque en su organización."</p>
+                    <p class="text-netskope-lightBlue font-lora italic text-base leading-relaxed mb-4 mt-2 flex-grow" data-i18n="quote.3">"74% dos líderes de aplicações de TI acreditam que os agentes de IA representam um novo vetor de ataque em sua organização."</p>
                     <div class="border-t border-white/20 pt-3 mt-auto"><p class="text-white font-bold text-xs tracking-wide">Gartner Survey</p></div>
                 </div>
             </div>
@@ -188,54 +188,54 @@
         <div class="absolute inset-0 pattern-net opacity-10"></div>
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-10">
-                <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="strat.tag">Estrategia de Netskope</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="strat.title">Protección Integral para IA agéntica</h2>
-                <p class="text-netskope-lightBlue max-w-3xl mx-auto text-lg" data-i18n="strat.subtitle">Soluciones específicas para los desafíos únicos de las arquitecturas IA a IA</p>
+                <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="strat.tag">Estratégia da Netskope</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="strat.title">Proteção Integral para IA agêntica</h2>
+                <p class="text-netskope-lightBlue max-w-3xl mx-auto text-lg" data-i18n="strat.subtitle">Soluções específicas para os desafios únicos das arquiteturas de IA para IA</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-5 rounded-netskope hover:bg-white/15 transition-all">
                     <div class="w-8 h-8 bg-netskope-green/20 rounded-lg flex items-center justify-center text-netskope-green mb-3"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div>
                     <h3 class="text-base font-bold mb-2">AI Gateway</h3>
-                    <p class="text-white/80 text-xs" data-i18n="strat.gw.desc">Puerta de enlace unificada para comunicaciones agénticas en implementaciones privadas.</p>
+                    <p class="text-white/80 text-xs" data-i18n="strat.gw.desc">Gateway unificado para comunicações agênticas em implantações privadas.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-5 rounded-netskope hover:bg-white/15 transition-all">
                     <div class="w-8 h-8 bg-netskope-green/20 rounded-lg flex items-center justify-center text-netskope-green mb-3"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
                     <h3 class="text-base font-bold mb-2">AI Security Guardrails</h3>
-                    <p class="text-white/80 text-xs" data-i18n="strat.guard.desc">Protección contra amenazas de IA como prompt injection y moderación de contenido.</p>
+                    <p class="text-white/80 text-xs" data-i18n="strat.guard.desc">Proteção contra ameaças de IA como prompt injection e moderação de conteúdo.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-5 rounded-netskope hover:bg-white/15 transition-all">
                     <div class="w-8 h-8 bg-netskope-green/20 rounded-lg flex items-center justify-center text-netskope-green mb-3"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg></div>
                     <h3 class="text-base font-bold mb-2">AI Red Teaming</h3>
-                    <p class="text-white/80 text-xs" data-i18n="strat.red.desc">Pruebas de estrés proactivas y descubrimiento de vulnerabilidades en LLMs.</p>
+                    <p class="text-white/80 text-xs" data-i18n="strat.red.desc">Testes de estresse proativos e descoberta de vulnerabilidades em LLMs.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-5 rounded-netskope hover:bg-white/15 transition-all">
                     <div class="w-8 h-8 bg-netskope-green/20 rounded-lg flex items-center justify-center text-netskope-green mb-3"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg></div>
                     <h3 class="text-base font-bold mb-2">DSPM for RAG</h3>
-                    <p class="text-white/80 text-xs" data-i18n="strat.dspm.desc">Protección del pipeline de datos, descubrimiento y clasificación para RAG.</p>
+                    <p class="text-white/80 text-xs" data-i18n="strat.dspm.desc">Proteção do pipeline de dados, descoberta e classificação para RAG.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-5 rounded-netskope hover:bg-white/15 transition-all">
                     <div class="w-8 h-8 bg-netskope-green/20 rounded-lg flex items-center justify-center text-netskope-green mb-3"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
                     <h3 class="text-base font-bold mb-2">AI-SPM</h3>
-                    <p class="text-white/80 text-xs" data-i18n="strat.aispm.desc">Gestión continua de postura de seguridad e inventario de activos IA.</p>
+                    <p class="text-white/80 text-xs" data-i18n="strat.aispm.desc">Gestão contínua da postura de segurança e inventário de ativos de IA.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-5 rounded-netskope hover:bg-white/15 transition-all border-l-4 border-l-netskope-orange">
                     <div class="w-8 h-8 bg-netskope-orange/20 rounded-lg flex items-center justify-center text-netskope-orange mb-3"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg></div>
                     <h3 class="text-base font-bold mb-2">Agentic Broker</h3>
-                    <p class="text-white/80 text-xs" data-i18n="strat.broker.desc">Detecta y monitorea tráfico MCP expuesto a internet y aplica control de acceso.</p>
+                    <p class="text-white/80 text-xs" data-i18n="strat.broker.desc">Detecta e monitora tráfego MCP exposto à internet e aplica controle de acesso.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW PARADIGM SECTION (CON ZOOM INTACTO) -->
+    <!-- NEW PARADIGM SECTION (COM ZOOM INTACTO) -->
     <section class="py-16 bg-gradient-to-b from-white to-netskope-offWhite relative overflow-hidden">
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-netskope-deepBlue mb-3" data-i18n="paradigm.title">El Nuevo Paradigma: Interacciones IA a IA</h2>
-                <p class="text-netskope-gray max-w-3xl mx-auto text-base" data-i18n="paradigm.desc">Mientras que la IA generativa tradicional se centra en interacciones usuario-a-LLM, la IA agéntica introduce comunicaciones autónomas.</p>
+                <h2 class="text-3xl font-bold text-netskope-deepBlue mb-3" data-i18n="paradigm.title">O Novo Paradigma: Interações de IA para IA</h2>
+                <p class="text-netskope-gray max-w-3xl mx-auto text-base" data-i18n="paradigm.desc">Enquanto a IA generativa tradicional se concentra em interações usuário-para-LLM, a IA agêntica introduz comunicações autônomas.</p>
             </div>
-            <div class="grid grid-cols-1 gap-10 max-w-[92rem] mx-auto diagram-preview-trigger" data-preview-label="Click para ampliar">
+            <div class="grid grid-cols-1 gap-10 max-w-[92rem] mx-auto diagram-preview-trigger" data-preview-label="Clique para ampliar">
                 <!-- ROW 1 -->
                 <div class="bg-white p-8 md:p-10 rounded-netskope shadow-soft flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12 relative border border-gray-100 min-h-[240px]">
                     <div class="flex flex-col items-center gap-3 w-32 md:w-44 shrink-0">
@@ -271,7 +271,7 @@
                         <div class="w-20 h-20 md:w-24 md:h-24 rounded-2xl border-2 border-netskope-deepBlue flex items-center justify-center bg-white shadow-md">
                             <svg class="w-10 h-10 md:w-12 md:h-12 text-netskope-deepBlue" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path><circle cx="12" cy="11" r="1.5" fill="currentColor"></circle></svg>
                         </div>
-                        <span class="text-xs md:text-sm font-bold text-netskope-deepBlue text-center" data-i18n="flow.agentic">IA agéntica using LLMs</span>
+                        <span class="text-xs md:text-sm font-bold text-netskope-deepBlue text-center" data-i18n="flow.agentic">IA agêntica using LLMs</span>
                     </div>
                     <div class="flex-grow w-full flex flex-col gap-6 relative px-2 md:px-8">
                         <div class="flow-arrow-container" style="height: 40px;">
@@ -298,10 +298,10 @@
         <div class="container mx-auto px-6 md:px-12">
             <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-2" data-i18n="zt.title">Netskope Zero Trust Engine + IA Guardrails</h2>
-                <p class="text-netskope-gray max-w-2xl mx-auto text-sm" data-i18n="zt.desc">Extensión del motor Zero Trust para cubrir el ciclo de vida completo de la IA.</p>
+                <p class="text-netskope-gray max-w-2xl mx-auto text-sm" data-i18n="zt.desc">Extensão do mecanismo Zero Trust para cobrir todo o ciclo de vida da IA.</p>
             </div>
 
-            <div class="flex flex-col items-center justify-center gap-10 max-w-[96rem] mx-auto diagram-preview-trigger" data-preview-label="Click para ampliar">
+            <div class="flex flex-col items-center justify-center gap-10 max-w-[96rem] mx-auto diagram-preview-trigger" data-preview-label="Clique para ampliar">
                 <div class="flex items-end gap-6 xl:gap-8 flex-wrap justify-center w-full">
                     <!-- Standard Trust -->
                     <div class="flex items-end gap-4 xl:gap-5">
@@ -339,51 +339,51 @@
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-10">
                 <span class="text-netskope-blue font-bold text-xs uppercase tracking-widest mb-3 block" data-i18n="cases.badge">CASOS DE USO CLAVE</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-4" data-i18n="cases.title">Seis Casos de Uso para Asegurar GenAI</h2>
-                <p class="text-netskope-gray max-w-3xl mx-auto text-lg mb-10" data-i18n="cases.desc">Visibilidad y control para el uso gestionado y no gestionado en toda la organización</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-4" data-i18n="cases.title">Seis Casos de Uso para Proteger a GenAI</h2>
+                <p class="text-netskope-gray max-w-3xl mx-auto text-lg mb-10" data-i18n="cases.desc">Visibilidade e controle para o uso gerenciado e não gerenciado em toda a organização</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Case 1 -->
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
                     <div class="w-12 h-12 bg-netskope-green/10 rounded-xl flex items-center justify-center text-netskope-green mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.1.title">Acceso Seguro a Herramientas de IA</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.1.desc">Control contextual de acceso. Diferencia entre instancias personales y corporativas para bloquear datos sensibles en cuentas no sancionadas.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.1.title">Acesso Seguro a Ferramentas de IA</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.1.desc">Controle de acesso contextual. Diferencia instâncias pessoais e corporativas para bloquear dados sensíveis em contas não autorizadas.</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-green uppercase tracking-wide">Instance Awareness</span></div>
                 </div>
                 <!-- Case 2 -->
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
                     <div class="w-12 h-12 bg-netskope-blue/10 rounded-xl flex items-center justify-center text-netskope-blue mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.2.title">Seguridad para Apps de IA Propias</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.2.desc">Integra Netskope DLP en aplicaciones personalizadas. Obtén un veredicto de seguridad antes de enviar datos al LLM para prevenir fugas.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.2.title">Segurança para Apps de IA Próprios</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.2.desc">Integre o Netskope DLP em aplicações personalizadas. Obtenha um veredito de segurança antes de enviar dados ao LLM para prevenir vazamentos.</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-blue uppercase tracking-wide">DLP on Demand</span></div>
                 </div>
                 <!-- Case 3 -->
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
                     <div class="w-12 h-12 bg-netskope-green/10 rounded-xl flex items-center justify-center text-netskope-green mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.3.title">Protección del Pipeline de Datos</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.3.desc">Visibilidad de dónde viven y fluyen los datos de IA. Descubre y clasifica datos sensibles en datasets de entrenamiento y RAG con DSPM.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.3.title">Proteção do Pipeline de Dados</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.3.desc">Visibilidade de onde os dados de IA vivem e fluem. Descubra e classifique dados sensíveis em datasets de treinamento e RAG com DSPM.</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-green uppercase tracking-wide">DSPM for AI</span></div>
                 </div>
                 <!-- Case 4 -->
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
                     <div class="w-12 h-12 bg-netskope-blue/10 rounded-xl flex items-center justify-center text-netskope-blue mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.4.title">Seguridad en Interacciones de Agentes</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.4.desc">Elimina puntos ciegos en comunicaciones IA a IA y servicio-a-servicio. Inspección de contenido para prevenir ataques y fugas de datos.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.4.title">Segurança nas Interações de Agentes</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.4.desc">Elimine pontos cegos nas comunicações de IA para IA e serviço-para-serviço. Inspeção de conteúdo para prevenir ataques e vazamentos de dados.</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-blue uppercase tracking-wide">AI Gateway</span></div>
                 </div>
                 <!-- Case 5 -->
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
                     <div class="w-12 h-12 bg-netskope-green/10 rounded-xl flex items-center justify-center text-netskope-green mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.998-.833-2.732 0L4.346 16.5c-.77.833.192 2.5 1.732 2.5z"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.5.title">Protección contra Amenazas de IA</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.5.desc">Defensa proactiva contra Prompt Injection, Jailbreaking y malware. Red teaming para evaluar la exposición a riesgos antes de producción.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.5.title">Proteção contra Ameaças de IA</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.5.desc">Defesa proativa contra Prompt Injection, Jailbreaking e malware. Red teaming para avaliar a exposição a riscos antes da produção.</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-green uppercase tracking-wide">Threat Protection</span></div>
                 </div>
                 <!-- Case 6 -->
                 <div class="bg-white p-8 rounded-netskope shadow-soft card-hover group flex flex-col">
                     <div class="w-12 h-12 bg-netskope-blue/10 rounded-xl flex items-center justify-center text-netskope-blue mb-4"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.6.title">Postura de Seguridad y Compliance</h3>
-                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.6.desc">Inventario continuo de activos de IA, identificación de rutas de ataque y evaluación de privilegios de acceso excesivos.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3" data-i18n="case.6.title">Postura de Segurança e Compliance</h3>
+                    <p class="text-netskope-gray mb-6 flex-grow" data-i18n="case.6.desc">Inventário contínuo de ativos de IA, identificação de caminhos de ataque e avaliação de privilégios de acesso excessivos.</p>
                     <div class="pt-4 border-t border-gray-100"><span class="text-xs font-bold text-netskope-blue uppercase tracking-wide">AI-SPM</span></div>
                 </div>
             </div>
@@ -396,16 +396,16 @@
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="w-full lg:w-1/2">
                     <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-3 block" data-i18n="vis.badge">VISIBILIDAD AVANZADA</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="vis.title">Obtén Visibilidad Total del Uso de IA</h2>
-                    <p class="text-lg text-white/80 mb-8 leading-relaxed" data-i18n="vis.desc">Identifica qué aplicaciones de IA se utilizan en tu organización, quién las usa y con qué datos. Detecta Shadow IA y evalúa el riesgo de uso de instancias personales frente a corporativas.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="vis.title">Obtenha Visibilidade Total do Uso de IA</h2>
+                    <p class="text-lg text-white/80 mb-8 leading-relaxed" data-i18n="vis.desc">Identifique quais aplicações de IA são utilizadas em sua organização, quem as usa e com quais dados. Detecte Shadow IA e avalie o risco do uso de instâncias pessoais em comparação com as corporativas.</p>
                     <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-netskope-green/20 flex items-center justify-center text-netskope-green font-bold">✓</span> <span data-i18n="vis.list.1">Tendencias de uso de Apps de IA y Shadow IA</span></li>
-                        <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-netskope-green/20 flex items-center justify-center text-netskope-green font-bold">✓</span> <span data-i18n="vis.list.2">Análisis de actividad e instancias (Personal vs Corp)</span></li>
-                        <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-netskope-green/20 flex items-center justify-center text-netskope-green font-bold">✓</span> <span data-i18n="vis.list.3">Detección de violaciones DLP y movimiento de datos</span></li>
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-netskope-green/20 flex items-center justify-center text-netskope-green font-bold">✓</span> <span data-i18n="vis.list.1">Tendências de uso de Apps de IA e Shadow IA</span></li>
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-netskope-green/20 flex items-center justify-center text-netskope-green font-bold">✓</span> <span data-i18n="vis.list.2">Análise de atividade e instâncias (Pessoal vs Corp)</span></li>
+                        <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-netskope-green/20 flex items-center justify-center text-netskope-green font-bold">✓</span> <span data-i18n="vis.list.3">Detecção de violações de DLP e movimentação de dados</span></li>
                     </ul>
                     <a href="reportai.php" class="inline-flex items-center gap-2 bg-netskope-green text-netskope-deepBlue font-bold px-6 py-3 rounded-full hover:bg-white transition-colors shadow-lg">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                        <span data-i18n="vis.btn">Ver Reporte de Visibilidad</span>
+                        <span data-i18n="vis.btn">Ver Relatório de Visibilidade</span>
                     </a>
                 </div>
                 <div class="w-full lg:w-1/2">
@@ -429,17 +429,17 @@
                 <div class="flex flex-col md:flex-row justify-center gap-6">
                     <a href="keydifferentiators.php" class="bg-netskope-blue text-white px-8 py-4 rounded-netskope-sm font-bold hover:bg-netskope-teal transition-all shadow-soft hover:shadow-hover flex items-center justify-center gap-3">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                        <span data-i18n="nav_who">¿Quién es Netskope?</span>
+                        <span data-i18n="nav_who">Quem é a Netskope?</span>
                     </a>
 
                     <a href="index.php" class="bg-white text-netskope-deepBlue border border-netskope-blue px-8 py-4 rounded-netskope-sm font-bold hover:bg-netskope-lightBlue transition-all shadow-soft hover:shadow-hover flex items-center justify-center gap-3">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                        <span data-i18n="nav_back">Volver a la landing</span>
+                        <span data-i18n="nav_back">Voltar para a landing</span>
                     </a>
 
                     <a href="demos.php" class="bg-gradient-to-r from-netskope-orange to-yellow-500 text-white px-8 py-4 rounded-netskope-sm font-bold hover:opacity-90 transition-all shadow-soft hover:shadow-hover flex items-center justify-center gap-3 animate-pulse">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                        <span data-i18n="nav_demo">¿Quieres Verlo? 😉</span>
+                        <span data-i18n="nav_demo">Quer Ver? 😉</span>
                     </a>
                 </div>
             </div>
@@ -460,47 +460,47 @@
         </div>
     </footer>
 
-    <!-- Utilidades JS compartidas (changeLanguage, portapapeles) y diccionario de
-         traducciones común. Deben cargarse antes del script inline de abajo. -->
+    <!-- Utilitários JS compartilhados (changeLanguage, área de transferência) e dicionário de
+         traduções comum. Devem ser carregados antes do script inline abaixo. -->
     <script src="assets/js/common.js"></script>
     <script src="assets/js/i18n-common.js"></script>
-    <!-- Script de Traducción Nativa, Zoom y Fallback -->
+    <!-- Script de Tradução Nativa, Zoom e Fallback -->
     <script>
-        // Diccionario específico de esta página, fusionado con NetskopeCommonI18n.
+        // Dicionário específico desta página, mesclado com NetskopeCommonI18n.
         const translations = {
             es: {
                 ...NetskopeCommonI18n.es,
                 "header.tagline": "IA Security & Governance",
-                "hero.badge": "Seguridad de IA agéntica",
-                "hero.title": "Adopción Segura de<br><span class=\"font-lora italic font-normal text-netskope-green\">IA agéntica</span>",
-                "hero.desc": "El 74% de los líderes de aplicaciones IT creen que los agentes de IA representan un nuevo vector de ataque.<br><strong class=\"text-netskope-deepBlue font-semibold\">Protege las interacciones IA a IA y asegura la autonomía responsable.</strong>",
-                "stat.1": "apps con IA agéntica en 2028",
-                "stat.2": "ven un nuevo vector de ataque",
-                "stat.3": "interacciones IA a IA protegidas",
-                "market.tag": "Realidad del Mercado",
-                "market.title": "Lo que dicen los analistas",
-                "quote.1": "\"Las tecnologías de GenAI evolucionan a un ritmo sin precedentes, haciendo que sea un desafío para los CIO navegar este panorama dinámico.\"",
-                "quote.2": "\"Para 2028, un tercio de las aplicaciones de software empresarial incluirán IA agéntica, frente a menos del 1% en 2024.\"",
-                "quote.3": "\"74% de los líderes de aplicaciones IT creen que los agentes de IA representan un nuevo vector de ataque en su organización.\"",
-                "strat.tag": "Estrategia de Netskope",
-                "strat.title": "Protección Integral para IA agéntica",
-                "strat.subtitle": "Soluciones específicas para los desafíos únicos de las arquitecturas IA a IA",
-                "strat.gw.desc": "Puerta de enlace unificada para comunicaciones agénticas en implementaciones privadas.",
-                "strat.guard.desc": "Protección contra amenazas de IA como prompt injection y moderación de contenido.",
-                "strat.red.desc": "Pruebas de estrés proactivas y descubrimiento de vulnerabilidades en LLMs.",
-                "strat.dspm.desc": "Protección del pipeline de datos, descubrimiento y clasificación para RAG.",
-                "strat.aispm.desc": "Gestión continua de postura de seguridad e inventario de activos IA.",
-                "strat.broker.desc": "Detecta y monitorea tráfico MCP expuesto a internet y aplica control de acceso.",
-                "paradigm.title": "El Nuevo Paradigma: Interacciones IA a IA",
-                "paradigm.desc": "Mientras que la IA generativa tradicional se centra en interacciones usuario-a-LLM, la IA agéntica introduce comunicaciones autónomas.",
+                "hero.badge": "Segurança de IA agêntica",
+                "hero.title": "Adoção Segura de<br><span class=\"font-lora italic font-normal text-netskope-green\">IA agêntica</span>",
+                "hero.desc": "74% dos líderes de aplicações de TI acreditam que os agentes de IA representam um novo vetor de ataque.<br><strong class=\"text-netskope-deepBlue font-semibold\">Proteja as interações de IA para IA e garanta a autonomia responsável.</strong>",
+                "stat.1": "apps com IA agêntica em 2028",
+                "stat.2": "veem um novo vetor de ataque",
+                "stat.3": "interações de IA para IA protegidas",
+                "market.tag": "Realidade do Mercado",
+                "market.title": "O que dizem os analistas",
+                "quote.1": "\"As tecnologias de GenAI evoluem em um ritmo sem precedentes, tornando um desafio para os CIOs navegar neste cenário dinâmico.\"",
+                "quote.2": "\"Até 2028, um terço dos aplicativos de software empresarial incluirá IA agêntica, contra menos de 1% em 2024.\"",
+                "quote.3": "\"74% dos líderes de aplicações de TI acreditam que os agentes de IA representam um novo vetor de ataque em sua organização.\"",
+                "strat.tag": "Estratégia da Netskope",
+                "strat.title": "Proteção Integral para IA agêntica",
+                "strat.subtitle": "Soluções específicas para os desafios únicos das arquiteturas de IA para IA",
+                "strat.gw.desc": "Gateway unificado para comunicações agênticas em implantações privadas.",
+                "strat.guard.desc": "Proteção contra ameaças de IA como prompt injection e moderação de conteúdo.",
+                "strat.red.desc": "Testes de estresse proativos e descoberta de vulnerabilidades em LLMs.",
+                "strat.dspm.desc": "Proteção do pipeline de dados, descoberta e classificação para RAG.",
+                "strat.aispm.desc": "Gestão contínua da postura de segurança e inventário de ativos de IA.",
+                "strat.broker.desc": "Detecta e monitora tráfego MCP exposto à internet e aplica controle de acesso.",
+                "paradigm.title": "O Novo Paradigma: Interações de IA para IA",
+                "paradigm.desc": "Enquanto a IA generativa tradicional se concentra em interações usuário-para-LLM, a IA agêntica introduz comunicações autônomas.",
                 "flow.user": "User using GenAI",
                 "flow.zt": "Zero Trust Engine",
                 "flow.genai": "GenAI Apps",
-                "flow.agentic": "IA agéntica using LLMs",
+                "flow.agentic": "IA agêntica using LLMs",
                 "flow.gw": "IA GW + Guardrails",
                 "flow.llm": "On-prem & Cloud LLMs",
                 "zt.title": "Netskope Zero Trust Engine + IA Guardrails",
-                "zt.desc": "Extensión del motor Zero Trust para cubrir el ciclo de vida completo de la IA.",
+                "zt.desc": "Extensão do mecanismo Zero Trust para cobrir todo o ciclo de vida da IA.",
                 "zt.p1": "Identity<br>Trust",
                 "zt.p2": "Device<br>Trust",
                 "zt.p3": "Location<br>Trust",
@@ -514,46 +514,46 @@
                 "zt.outcome": "Policy Decision",
                 "zt.result": "Block Upload<br>& Coach the User",
                 "cases.badge": "CASOS DE USO CLAVE",
-                "cases.title": "Seis Casos de Uso para Asegurar GenAI",
-                "cases.desc": "Visibilidad y control para el uso gestionado y no gestionado en toda la organización",
-                "case.1.title": "Acceso Seguro a Herramientas de IA",
-                "case.1.desc": "Control contextual de acceso. Diferencia entre instancias personales y corporativas para bloquear datos sensibles en cuentas no sancionadas.",
-                "case.2.title": "Seguridad para Apps de IA Propias",
-                "case.2.desc": "Integra Netskope DLP en aplicaciones personalizadas. Obtén un veredicto de seguridad antes de enviar datos al LLM para prevenir fugas.",
-                "case.3.title": "Protección del Pipeline de Datos",
-                "case.3.desc": "Visibilidad de dónde viven y fluyen los datos de IA. Descubre y clasifica datos sensibles en datasets de entrenamiento y RAG con DSPM.",
-                "case.4.title": "Seguridad en Interacciones de Agentes",
-                "case.4.desc": "Elimina puntos ciegos en comunicaciones IA a IA y servicio-a-servicio. Inspección de contenido para prevenir ataques y fugas de datos.",
-                "case.5.title": "Protección contra Amenazas de IA",
-                "case.5.desc": "Defensa proactiva contra Prompt Injection, Jailbreaking y malware. Red teaming para evaluar la exposición a riesgos antes de producción.",
-                "case.6.title": "Postura de Seguridad y Compliance",
-                "case.6.desc": "Inventario continuo de activos de IA, identificación de rutas de ataque y evaluación de privilegios de acceso excesivos.",
+                "cases.title": "Seis Casos de Uso para Proteger a GenAI",
+                "cases.desc": "Visibilidade e controle para o uso gerenciado e não gerenciado em toda a organização",
+                "case.1.title": "Acesso Seguro a Ferramentas de IA",
+                "case.1.desc": "Controle de acesso contextual. Diferencia instâncias pessoais e corporativas para bloquear dados sensíveis em contas não autorizadas.",
+                "case.2.title": "Segurança para Apps de IA Próprios",
+                "case.2.desc": "Integre o Netskope DLP em aplicações personalizadas. Obtenha um veredito de segurança antes de enviar dados ao LLM para prevenir vazamentos.",
+                "case.3.title": "Proteção do Pipeline de Dados",
+                "case.3.desc": "Visibilidade de onde os dados de IA vivem e fluem. Descubra e classifique dados sensíveis em datasets de treinamento e RAG com DSPM.",
+                "case.4.title": "Segurança nas Interações de Agentes",
+                "case.4.desc": "Elimine pontos cegos nas comunicações de IA para IA e serviço-para-serviço. Inspeção de conteúdo para prevenir ataques e vazamentos de dados.",
+                "case.5.title": "Proteção contra Ameaças de IA",
+                "case.5.desc": "Defesa proativa contra Prompt Injection, Jailbreaking e malware. Red teaming para avaliar a exposição a riscos antes da produção.",
+                "case.6.title": "Postura de Segurança e Compliance",
+                "case.6.desc": "Inventário contínuo de ativos de IA, identificação de caminhos de ataque e avaliação de privilégios de acesso excessivos.",
                 "vis.badge": "VISIBILIDAD AVANZADA",
-                "vis.title": "Obtén Visibilidad Total del Uso de IA",
-                "vis.desc": "Identifica qué aplicaciones de IA se utilizan en tu organización, quién las usa y con qué datos. Detecta Shadow IA y evalúa el riesgo de uso de instancias personales frente a corporativas.",
-                "vis.list.1": "Tendencias de uso de Apps de IA y Shadow IA",
-                "vis.list.2": "Análisis de actividad e instancias (Personal vs Corp)",
-                "vis.list.3": "Detección de violaciones DLP y movimiento de datos",
-                "vis.btn": "Ver Reporte de Visibilidad"
-                // nav_who / nav_back / nav_demo ahora vienen de NetskopeCommonI18n
+                "vis.title": "Obtenha Visibilidade Total do Uso de IA",
+                "vis.desc": "Identifique quais aplicações de IA são utilizadas em sua organização, quem as usa e com quais dados. Detecte Shadow IA e avalie o risco do uso de instâncias pessoais em comparação com as corporativas.",
+                "vis.list.1": "Tendências de uso de Apps de IA e Shadow IA",
+                "vis.list.2": "Análise de atividade e instâncias (Pessoal vs Corp)",
+                "vis.list.3": "Detecção de violações de DLP e movimentação de dados",
+                "vis.btn": "Ver Relatório de Visibilidade"
+                // nav_who / nav_back / nav_demo agora vêm de NetskopeCommonI18n
             }
         };
 
-        // changeLanguage(lang) es ahora la función compartida de assets/js/common.js,
-        // que opera sobre el objeto global `translations` definido arriba.
+        // changeLanguage(lang) agora é a função compartilhada de assets/js/common.js,
+        // que opera sobre o objeto global `translations` definido acima.
 
         /**
          * initDiagramPreviews()
-         * Construye dinámicamente un modal de "zoom" para previsualizar los
-         * diagramas de arquitectura (.diagram-preview-trigger) en grande. Es
-         * específico de esta página: crea su propio <div class="diagram-preview-modal">
-         * en document.body y define una función closeModal() LOCAL (de alcance de
-         * función, no global) que solo cierra ese modal dinámico. No colisiona con
-         * closeModal/openModal globales de assets/js/common.js.
+         * Constrói dinamicamente um modal de "zoom" para pré-visualizar os
+         * diagramas de arquitetura (.diagram-preview-trigger) em tamanho grande. É
+         * específico desta página: cria seu próprio <div class="diagram-preview-modal">
+         * em document.body e define uma função closeModal() LOCAL (de escopo de
+         * função, não global) que apenas fecha esse modal dinâmico. Não colide com
+         * closeModal/openModal globais de assets/js/common.js.
          *
-         * No recibe parámetros ni retorna nada; se invoca una sola vez desde el
-         * DOMContentLoaded de más abajo. Si la página no tiene ningún
-         * .diagram-preview-trigger, no hace nada (early return).
+         * Não recebe parâmetros nem retorna nada; é invocada uma única vez a partir do
+         * DOMContentLoaded mais abaixo. Se a página não tiver nenhum
+         * .diagram-preview-trigger, não faz nada (early return).
          *
          * @returns {void}
          */
@@ -568,7 +568,7 @@
             modal.className = 'diagram-preview-modal';
             modal.innerHTML = `
                 <div class="diagram-preview-dialog">
-                    <button type="button" class="diagram-preview-close" aria-label="Cerrar preview">&times;</button>
+                    <button type="button" class="diagram-preview-close" aria-label="Fechar preview">&times;</button>
                     <div class="diagram-preview-body"></div>
                 </div>
             `;

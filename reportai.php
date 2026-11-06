@@ -1,21 +1,21 @@
 <?php
-// reportai.php - Reporte/dashboard de ejemplo sobre uso de IA generativa y
-// Shadow IA (gráficas Chart.js: distribución de apps de IA, tendencias). Se
-// enlaza normalmente desde aicontrol.php como "informe de IA" de cierre de demo.
+// reportai.php - Relatório/dashboard de exemplo sobre uso de IA generativa e
+// Shadow IA (gráficos Chart.js: distribuição de apps de IA, tendências). É
+// vinculado normalmente a partir de aicontrol.php como "relatório de IA" de encerramento da demo.
 //
-// Las funciones JS comunes (changeLanguage boilerplate, etc.) viven en
-// assets/js/common.js y los textos i18n compartidos entre páginas viven en
-// assets/js/i18n-common.js. El diccionario `translations` de este archivo solo
-// contiene cadenas específicas de esta página. changeLanguage() sigue
-// definida localmente porque además debe refrescar las gráficas Chart.js
-// (updateCharts) cuando cambia el idioma; delega el trabajo repetitivo de
-// aplicar el diccionario al DOM en NetskopeCommon.applyLanguage().
+// As funções JS comuns (changeLanguage boilerplate, etc.) ficam em
+// assets/js/common.js e os textos i18n compartilhados entre páginas ficam em
+// assets/js/i18n-common.js. O dicionário `translations` deste arquivo contém
+// apenas strings específicas desta página. changeLanguage() continua
+// definida localmente porque também precisa atualizar os gráficos Chart.js
+// (updateCharts) quando o idioma muda; delega o trabalho repetitivo de
+// aplicar o dicionário ao DOM para NetskopeCommon.applyLanguage().
 ?>
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dashboard y narrativa comercial para analizar el uso de IA con una presentación consistente y reutilizable.">
+    <meta name="description" content="Dashboard e narrativa comercial para analisar o uso de IA com uma apresentação consistente e reutilizável.">
     
     <link rel="icon" type="image/png" href="favicon.png">
     <title>Democenter Netskope | Report IA</title>
@@ -75,7 +75,7 @@
         
         .image-preview { cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
         .image-preview:hover { transform: translateY(-4px); box-shadow: 0 15px 40px -10px rgba(0, 169, 206, 0.25); }
-        .image-preview::after { content: '🔍 Click para ampliar'; position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(8, 26, 89, 0.8)); color: white; padding: 12px; font-size: 12px; text-align: center; opacity: 0; transition: opacity 0.3s ease; }
+        .image-preview::after { content: '🔍 Clique para ampliar'; position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(8, 26, 89, 0.8)); color: white; padding: 12px; font-size: 12px; text-align: center; opacity: 0; transition: opacity 0.3s ease; }
         .image-preview:hover::after { opacity: 1; }
 
         /* Unified language switcher */
@@ -88,19 +88,19 @@
 </head>
 <body class="antialiased text-base" data-site-shell="ready" data-page-name="reportai" data-page-kind="tool">
 
-    <!-- Header fijo: logo (link a index.php), etiqueta de página. -->
+    <!-- Header fixo: logo (link para index.php), etiqueta da página. -->
     <header class="bg-white/90 backdrop-blur-xl sticky top-0 z-50 border-b border-gray-100/50 site-shell-header">
         <div class="container mx-auto px-6 md:px-12 py-5 flex justify-between items-center site-shell-header-inner">
             <a href="index.php" class="site-shell-logo"><img src="assets/images/brand/netskope-logo-stacked-color.png" alt="Netskope" class="h-8 w-auto"></a>
             
             <div class="flex items-center gap-6 site-shell-toolbar">
-                <span class="text-xs font-bold text-netskope-deepBlue tracking-widest uppercase opacity-80 hidden md:block" data-i18n="header.title">Reporte de IA y Shadow IA</span>
+                <span class="text-xs font-bold text-netskope-deepBlue tracking-widest uppercase opacity-80 hidden md:block" data-i18n="header.title">Relatório de IA e Shadow IA</span>
                 
             </div>
         </div>
     </header>
 
-    <!-- Hero: título, descripción y stats destacados (Shadow IA, incidentes, apps de IA detectadas). -->
+    <!-- Hero: título, descrição e stats em destaque (Shadow IA, incidentes, apps de IA detectados). -->
     <section class="relative bg-white pt-20 pb-24 overflow-hidden">
         <div class="plus-pattern"></div>
         <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-bl from-netskope-lightBlue/50 to-transparent rounded-bl-[100px]"></div>
@@ -109,27 +109,27 @@
             <div class="max-w-5xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 mb-8">
                     <span class="w-8 h-1 bg-netskope-teal"></span>
-                    <span class="text-netskope-deepBlue font-bold text-sm tracking-widest uppercase" data-i18n="hero.badge">Análisis de Seguridad</span>
+                    <span class="text-netskope-deepBlue font-bold text-sm tracking-widest uppercase" data-i18n="hero.badge">Análise de Segurança</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-bold text-netskope-deepBlue mb-8 leading-tight" data-i18n="hero.title">Reporte de Uso de <br><span class="font-lora italic font-normal text-netskope-blue">IA y Shadow IA</span></h1>
+                <h1 class="text-5xl md:text-7xl font-bold text-netskope-deepBlue mb-8 leading-tight" data-i18n="hero.title">Relatório de Uso de <br><span class="font-lora italic font-normal text-netskope-blue">IA e Shadow IA</span></h1>
                 
-                <p class="text-xl md:text-2xl text-netskope-gray font-light leading-relaxed mb-12" data-i18n="hero.desc">El 68% de las organizaciones utilizan IA no autorizada. <br><strong class="text-netskope-deepBlue font-semibold">La Shadow IA representa un riesgo crítico de fuga de datos.</strong></p>
+                <p class="text-xl md:text-2xl text-netskope-gray font-light leading-relaxed mb-12" data-i18n="hero.desc">68% das organizações utilizam IA não autorizada. <br><strong class="text-netskope-deepBlue font-semibold">A Shadow IA representa um risco crítico de vazamento de dados.</strong></p>
 
                 <div class="bg-white/60 backdrop-blur-md border border-white/50 p-8 rounded-netskope shadow-soft inline-flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 w-full">
                     <div class="text-center">
                         <div class="text-5xl font-bold text-netskope-orange mb-1">68%</div>
-                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.1">Usan Shadow IA</div>
+                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.1">Usam Shadow IA</div>
                     </div>
                     <div class="hidden md:block w-px h-16 bg-gray-200"></div>
                     <div class="text-center">
                         <div class="text-5xl font-bold text-netskope-blue mb-1">42%</div>
-                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.2">Incidentes de Datos</div>
+                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.2">Incidentes de Dados</div>
                     </div>
                     <div class="hidden md:block w-px h-16 bg-gray-200"></div>
                     <div class="text-center">
                         <div class="text-5xl font-bold text-netskope-deepBlue mb-1">150+</div>
-                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.3">Apps de IA Detectadas</div>
+                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat.3">Apps de IA Detectados</div>
                     </div>
                 </div>
             </div>
@@ -140,17 +140,17 @@
         </div>
     </section>
 
-    <!-- Dashboard de Uso de IA: grilla de 3 gráficas Chart.js (distribución IA/Shadow IA,
-         top apps de IA y riesgo por departamento); su configuración e inicialización
-         están en el script inline de abajo (initCharts). -->
+    <!-- Dashboard de Uso de IA: grade de 3 gráficos Chart.js (distribuição IA/Shadow IA,
+         top apps de IA e risco por departamento); sua configuração e inicialização
+         estão no script inline abaixo (initCharts). -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-6 md:px-12">
             <h2 class="text-3xl font-bold text-netskope-deepBlue mb-2" data-i18n="dash.title">Dashboard de Uso de IA</h2>
-            <p class="text-netskope-gray mb-10" data-i18n="dash.desc">Análisis completo del uso de aplicaciones de IA autorizadas y no autorizadas en la organización</p>
+            <p class="text-netskope-gray mb-10" data-i18n="dash.desc">Análise completa do uso de aplicativos de IA autorizados e não autorizados na organização</p>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
                 <div class="bg-netskope-offWhite p-6 rounded-netskope card-hover">
-                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-4" data-i18n="chart.1.title">Distribución de IA vs Shadow IA</h3>
+                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-4" data-i18n="chart.1.title">Distribuição de IA vs Shadow IA</h3>
                     <div class="chart-container">
                         <canvas id="iaDistributionChart" style="display: block; box-sizing: border-box; height: 300px; width: 100%;"></canvas>
                     </div>
@@ -161,117 +161,117 @@
                 </div>
                 
                 <div class="bg-netskope-offWhite p-6 rounded-netskope card-hover">
-                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-4" data-i18n="chart.2.title">Top Apps de IA Detectadas</h3>
+                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-4" data-i18n="chart.2.title">Top Apps de IA Detectados</h3>
                     <div class="chart-container">
                         <canvas id="topAppsChart" style="display: block; box-sizing: border-box; height: 300px; width: 100%;"></canvas>
                     </div>
                     <div class="mt-4 text-sm text-netskope-gray">
-                        <p data-i18n="chart.2.desc">ChatGPT representa el 45% del uso total de IA, seguido por Copilot (22%) y Midjourney (18%).</p>
+                        <p data-i18n="chart.2.desc">O ChatGPT representa 45% do uso total de IA, seguido pelo Copilot (22%) e pelo Midjourney (18%).</p>
                     </div>
                 </div>
                 
                 <div class="bg-netskope-offWhite p-6 rounded-netskope card-hover">
-                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-4" data-i18n="chart.3.title">Riesgo por Departamento</h3>
+                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-4" data-i18n="chart.3.title">Risco por Departamento</h3>
                     <div class="chart-container">
                         <canvas id="riskByDeptChart" style="display: block; box-sizing: border-box; height: 300px; width: 100%;"></canvas>
                     </div>
                     <div class="mt-4 text-sm text-netskope-gray">
-                        <p data-i18n="chart.3.desc">I+D y Marketing presentan mayor exposición debido al uso intensivo de herramientas generativas.</p>
+                        <p data-i18n="chart.3.desc">P&amp;D e Marketing apresentam maior exposição devido ao uso intensivo de ferramentas generativas.</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Flujo de Datos Sensibles: infografía estática (no es Chart.js) con 3 métricas
-                 destacadas y flechas decorativas. -->
+            <!-- Fluxo de Dados Sensíveis: infográfico estático (não é Chart.js) com 3 métricas
+                 em destaque e setas decorativas. -->
             <div class="bg-gradient-confident text-white p-8 rounded-netskope mb-12">
-                <h3 class="text-2xl font-bold mb-6 text-center" data-i18n="flow.title">Flujo de Datos Sensibles hacia Apps de IA</h3>
+                <h3 class="text-2xl font-bold mb-6 text-center" data-i18n="flow.title">Fluxo de Dados Sensíveis para Apps de IA</h3>
                 <div class="flex flex-col md:flex-row justify-between items-center mb-8">
                     <div class="text-center mb-6 md:mb-0">
                         <div class="text-4xl font-bold mb-2">2.3TB</div>
-                        <div class="text-netskope-lightBlue" data-i18n="flow.1">Datos sensibles transferidos</div>
+                        <div class="text-netskope-lightBlue" data-i18n="flow.1">Dados sensíveis transferidos</div>
                     </div>
                     <div class="text-center">
                         <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                     </div>
                     <div class="text-center mb-6 md:mb-0">
                         <div class="text-4xl font-bold mb-2">87%</div>
-                        <div class="text-netskope-lightBlue" data-i18n="flow.2">Hacia apps no autorizadas</div>
+                        <div class="text-netskope-lightBlue" data-i18n="flow.2">Para apps não autorizados</div>
                     </div>
                     <div class="text-center">
                         <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
                     </div>
                     <div class="text-center">
                         <div class="text-4xl font-bold mb-2">42%</div>
-                        <div class="text-netskope-lightBlue" data-i18n="flow.3">Contienen Propiedad Intelectual o PII</div>
+                        <div class="text-netskope-lightBlue" data-i18n="flow.3">Contêm Propriedade Intelectual ou PII</div>
                     </div>
                 </div>
-                <p class="text-center text-netskope-lightBlue text-sm" data-i18n="flow.period">Análisis realizado en el período: Enero 2025 - Enero 2026</p>
+                <p class="text-center text-netskope-lightBlue text-sm" data-i18n="flow.period">Análise realizada no período: Janeiro 2025 - Janeiro 2026</p>
             </div>
             
-            <!-- Riesgos Principales Detectados y Recomendaciones de Mitigación (dos columnas). -->
+            <!-- Principais Riscos Detectados e Recomendações de Mitigação (duas colunas). -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <div class="bg-white border border-gray-200 p-6 rounded-netskope shadow-soft">
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-4 flex items-center gap-2">
                         <svg class="w-6 h-6 text-netskope-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.698-.833-2.464 0L4.346 16.5c-.77.833.192 2.5 1.732 2.5z"></path></svg>
-                        <span data-i18n="risk.title">Riesgos Principales Detectados</span>
+                        <span data-i18n="risk.title">Principais Riscos Detectados</span>
                     </h3>
                     <ul class="space-y-3">
-                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="risk.1"><strong>Fuga de IP:</strong> Código fuente subido a ChatGPT (47 incidentes)</span></li>
-                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="risk.2"><strong>Exposición de PII:</strong> Datos de clientes en Midjourney prompts (23 incidentes)</span></li>
-                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="risk.3"><strong>Violación de cumplimiento:</strong> Datos financieros en apps no GDPR-compliant (18 incidentes)</span></li>
-                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="risk.4"><strong>Model poisoning:</strong> Entrada de datos maliciosos en LLMs (9 incidentes)</span></li>
+                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="risk.1"><strong>Vazamento de PI:</strong> Código-fonte enviado ao ChatGPT (47 incidentes)</span></li>
+                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="risk.2"><strong>Exposição de PII:</strong> Dados de clientes em prompts do Midjourney (23 incidentes)</span></li>
+                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="risk.3"><strong>Violação de conformidade:</strong> Dados financeiros em apps não compatíveis com a GDPR (18 incidentes)</span></li>
+                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="risk.4"><strong>Model poisoning:</strong> Entrada de dados maliciosos em LLMs (9 incidentes)</span></li>
                     </ul>
                 </div>
                 
                 <div class="bg-white border border-gray-200 p-6 rounded-netskope shadow-soft">
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-4 flex items-center gap-2">
                         <svg class="w-6 h-6 text-netskope-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span data-i18n="rec.title">Recomendaciones de Mitigación</span>
+                        <span data-i18n="rec.title">Recomendações de Mitigação</span>
                     </h3>
                     <ul class="space-y-3">
-                        <li class="flex items-start gap-2"><span class="text-netskope-green font-bold">✓</span><span data-i18n="rec.1"><strong>Implementar DLP para IA:</strong> Bloquear uploads de datos sensibles a apps no autorizadas</span></li>
-                        <li class="flex items-start gap-2"><span class="text-netskope-green font-bold">✓</span><span data-i18n="rec.2"><strong>Crear política de uso de IA:</strong> Educar empleados sobre riesgos y alternativas seguras</span></li>
-                        <li class="flex items-start gap-2"><span class="text-netskope-green font-bold">✓</span><span data-i18n="rec.3"><strong>Adoptar soluciones empresariales:</strong> Migrar a ChatGPT Enterprise, Copilot con protecciones</span></li>
-                        <li class="flex items-start gap-2"><span class="text-netskope-green font-bold">✓</span><span data-i18n="rec.4"><strong>Monitoreo continuo:</strong> Usar Netskope para detectar nuevas apps de IA en tiempo real</span></li>
+                        <li class="flex items-start gap-2"><span class="text-netskope-green font-bold">✓</span><span data-i18n="rec.1"><strong>Implementar DLP para IA:</strong> Bloquear uploads de dados sensíveis para apps não autorizados</span></li>
+                        <li class="flex items-start gap-2"><span class="text-netskope-green font-bold">✓</span><span data-i18n="rec.2"><strong>Criar política de uso de IA:</strong> Educar colaboradores sobre riscos e alternativas seguras</span></li>
+                        <li class="flex items-start gap-2"><span class="text-netskope-green font-bold">✓</span><span data-i18n="rec.3"><strong>Adotar soluções corporativas:</strong> Migrar para ChatGPT Enterprise, Copilot com proteções</span></li>
+                        <li class="flex items-start gap-2"><span class="text-netskope-green font-bold">✓</span><span data-i18n="rec.4"><strong>Monitoramento contínuo:</strong> Usar a Netskope para detectar novos apps de IA em tempo real</span></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Visibilidad Avanzada: captura de pantalla real (mainImage) ampliable en el modal
-                 #imageModal (lógica de apertura/cierre al final del script inline), más
-                 hallazgos e implicaciones de seguridad en texto. -->
+            <!-- Visibilidade Avançada: captura de tela real (mainImage) ampliável no modal
+                 #imageModal (lógica de abertura/fechamento no final do script inline), além de
+                 achados e implicações de segurança em texto. -->
             <section class="py-16 bg-netskope-offWhite">
                 <div class="container mx-auto px-6 md:px-12">
-                    <h2 class="text-3xl font-bold text-netskope-deepBlue mb-2" data-i18n="adv.title">Visibilidad Avanzada de Uso de IA</h2>
+                    <h2 class="text-3xl font-bold text-netskope-deepBlue mb-2" data-i18n="adv.title">Visibilidade Avançada do Uso de IA</h2>
                     <p class="text-netskope-gray mb-10">
-                        <span data-i18n="adv.desc">Análisis detallado de las instancias detectadas de aplicaciones de IA en la organización.</span>
-                        <span class="text-netskope-blue font-medium" data-i18n="adv.click">Haz clic en la imagen para ampliarla.</span>
+                        <span data-i18n="adv.desc">Análise detalhada das instâncias detectadas de aplicativos de IA na organização.</span>
+                        <span class="text-netskope-blue font-medium" data-i18n="adv.click">Clique na imagem para ampliá-la.</span>
                     </p>
 
                     <div class="bg-white p-8 rounded-netskope shadow-soft card-hover">
                         <div class="image-container">
-                            <!-- onerror: si el screenshot local no carga, cae a un placeholder
-                                 genérico de placehold.co en vez de mostrar una imagen rota. -->
-                            <img src="assets/images/screenshot-2026-02-04-16-45-38.png" alt="Top Instancias Detectadas - Google Gemini" class="w-full rounded-netskope-sm border border-gray-200 image-preview" id="mainImage" onerror="this.onerror=null; this.src='https://placehold.co/800x400/eef5fc/081A59?text=Screenshot+Pendiente';">
+                            <!-- onerror: se o screenshot local não carregar, usa um placeholder
+                                 genérico de placehold.co em vez de mostrar uma imagem quebrada. -->
+                            <img src="assets/images/screenshot-2026-02-04-16-45-38.png" alt="Top Instâncias Detectadas - Google Gemini" class="w-full rounded-netskope-sm border border-gray-200 image-preview" id="mainImage" onerror="this.onerror=null; this.src='https://placehold.co/800x400/eef5fc/081A59?text=Screenshot+Pendiente';">
                         </div>
 
                         <div class="mt-8">
-                            <h4 class="text-lg font-bold text-netskope-deepBlue mb-4" data-i18n="det.title">Análisis Detallado</h4>
+                            <h4 class="text-lg font-bold text-netskope-deepBlue mb-4" data-i18n="det.title">Análise Detalhada</h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <h5 class="font-bold text-netskope-gray mb-2" data-i18n="det.find">Hallazgos Principales:</h5>
+                                    <h5 class="font-bold text-netskope-gray mb-2" data-i18n="det.find">Principais Achados:</h5>
                                     <ul class="space-y-2 text-sm text-netskope-gray">
-                                        <li class="flex items-start gap-2"><span class="text-netskope-blue font-bold">•</span><span data-i18n="det.f1">Se han detectado <strong>610 actividades</strong> de riesgo en Gen IA</span></li>
-                                        <li class="flex items-start gap-2"><span class="text-netskope-blue font-bold">•</span><span data-i18n="det.f2">Se han detectado más de 400 usuarios utilizando Gen IA NO Corporativa</span></li>
-                                        <li class="flex items-start gap-2"><span class="text-netskope-blue font-bold">•</span><span data-i18n="det.f3">El 68% de las aplicaciones pertenecen a Shadow IA</span></li>
+                                        <li class="flex items-start gap-2"><span class="text-netskope-blue font-bold">•</span><span data-i18n="det.f1">Foram detectadas <strong>610 atividades</strong> de risco em Gen IA</span></li>
+                                        <li class="flex items-start gap-2"><span class="text-netskope-blue font-bold">•</span><span data-i18n="det.f2">Foram detectados mais de 400 usuários utilizando Gen IA NÃO Corporativa</span></li>
+                                        <li class="flex items-start gap-2"><span class="text-netskope-blue font-bold">•</span><span data-i18n="det.f3">68% dos aplicativos pertencem à Shadow IA</span></li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h5 class="font-bold text-netskope-gray mb-2" data-i18n="det.imp">Implicaciones de Seguridad:</h5>
+                                    <h5 class="font-bold text-netskope-gray mb-2" data-i18n="det.imp">Implicações de Segurança:</h5>
                                     <ul class="space-y-2 text-sm text-netskope-gray">
-                                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="det.i1">Posible uso no autorizado de IA generativa</span></li>
-                                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="det.i2">Riesgo de fuga de datos a servicios en la nube</span></li>
-                                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="det.i3">Falta de visibilidad sobre el tipo de datos compartidos</span></li>
+                                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="det.i1">Possível uso não autorizado de IA generativa</span></li>
+                                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="det.i2">Risco de vazamento de dados para serviços em nuvem</span></li>
+                                        <li class="flex items-start gap-2"><span class="text-netskope-orange font-bold">•</span><span data-i18n="det.i3">Falta de visibilidade sobre o tipo de dados compartilhados</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -280,34 +280,34 @@
                 </div>
             </section>
             
-            <!-- Tendencia de Uso de IA: gráfica de línea Chart.js (12 meses) con uso total de
-                 IA, Shadow IA e incidentes de seguridad, más 3 métricas resumen debajo. -->
+            <!-- Tendência de Uso de IA: gráfico de linhas Chart.js (12 meses) com uso total de
+                 IA, Shadow IA e incidentes de segurança, além de 3 métricas-resumo abaixo. -->
             <div class="bg-netskope-offWhite p-8 rounded-netskope mt-12">
-                <h3 class="text-2xl font-bold text-netskope-deepBlue mb-6" data-i18n="trend.title">Tendencia de Uso de IA (Últimos 12 Meses)</h3>
+                <h3 class="text-2xl font-bold text-netskope-deepBlue mb-6" data-i18n="trend.title">Tendência de Uso de IA (Últimos 12 Meses)</h3>
                 <div class="chart-container" style="height: 400px;">
                     <canvas id="trendChart" style="display: block; box-sizing: border-box; height: 400px; width: 100%;"></canvas>
                 </div>
                 <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                     <div class="text-center p-4 bg-white rounded-netskope-sm">
                         <div class="text-2xl font-bold text-netskope-blue">+247%</div>
-                        <div class="text-netskope-gray" data-i18n="trend.1">Crecimiento en uso de IA</div>
+                        <div class="text-netskope-gray" data-i18n="trend.1">Crescimento no uso de IA</div>
                     </div>
                     <div class="text-center p-4 bg-white rounded-netskope-sm">
                         <div class="text-2xl font-bold text-netskope-orange">+189%</div>
-                        <div class="text-netskope-gray" data-i18n="trend.2">Crecimiento en Shadow IA</div>
+                        <div class="text-netskope-gray" data-i18n="trend.2">Crescimento em Shadow IA</div>
                     </div>
                     <div class="text-center p-4 bg-white rounded-netskope-sm">
                         <div class="text-2xl font-bold text-netskope-teal">-32%</div>
-                        <div class="text-netskope-gray" data-i18n="trend.3">Reducción tras políticas</div>
+                        <div class="text-netskope-gray" data-i18n="trend.3">Redução após políticas</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal de imagen: oculto por defecto (display:none via .image-modal), se activa con
-         la clase .active al hacer clic en mainImage; se cierra con el botón ×, clic fuera
-         del contenido o la tecla Escape. Lógica de apertura/cierre en el script inline. -->
+    <!-- Modal de imagem: oculto por padrão (display:none via .image-modal), ativado com
+         a classe .active ao clicar em mainImage; fecha com o botão ×, clique fora
+         do conteúdo ou a tecla Escape. Lógica de abertura/fechamento no script inline. -->
     <div class="image-modal" id="imageModal">
         <button class="modal-close" id="modalClose">×</button>
         <div class="modal-content">
@@ -315,34 +315,34 @@
         </div>
     </div>
 
-    <!-- Cómo Netskope Protege contra los Riesgos de Shadow IA (3 tarjetas de capacidades). -->
+    <!-- Como a Netskope Protege contra os Riscos da Shadow IA (3 cards de capacidades). -->
     <section class="py-16 bg-gradient-confident text-white">
         <div class="container mx-auto px-6 md:px-12">
-            <h2 class="text-3xl font-bold text-center mb-12" data-i18n="help.title">Cómo Netskope Protege contra los Riesgos de Shadow IA</h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-i18n="help.title">Como a Netskope Protege contra os Riscos da Shadow IA</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white/10 backdrop-blur-md p-6 rounded-netskope text-center">
                     <div class="w-16 h-16 rounded-full bg-netskope-blue flex items-center justify-center mx-auto mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></div>
-                    <h3 class="text-xl font-bold mb-3" data-i18n="help.1.title">Detección en Tiempo Real</h3>
-                    <p class="text-netskope-lightBlue" data-i18n="help.1.desc">Identifica automáticamente más de 150 aplicaciones de IA, incluyendo nuevas que no están en las listas tradicionales.</p>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="help.1.title">Detecção em Tempo Real</h3>
+                    <p class="text-netskope-lightBlue" data-i18n="help.1.desc">Identifica automaticamente mais de 150 aplicativos de IA, incluindo novos que não estão nas listas tradicionais.</p>
                 </div>
                 
                 <div class="bg-white/10 backdrop-blur-md p-6 rounded-netskope text-center">
                     <div class="w-16 h-16 rounded-full bg-netskope-green flex items-center justify-center mx-auto mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></div>
-                    <h3 class="text-xl font-bold mb-3" data-i18n="help.2.title">Protección de Datos</h3>
-                    <p class="text-netskope-lightBlue" data-i18n="help.2.desc">DLP avanzado para prevenir la fuga de Propiedad Intelectual, PII y datos regulados hacia aplicaciones de IA no autorizadas.</p>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="help.2.title">Proteção de Dados</h3>
+                    <p class="text-netskope-lightBlue" data-i18n="help.2.desc">DLP avançado para prevenir o vazamento de Propriedade Intelectual, PII e dados regulados para aplicativos de IA não autorizados.</p>
                 </div>
                 
                 <div class="bg-white/10 backdrop-blur-md p-6 rounded-netskope text-center">
                     <div class="w-16 h-16 rounded-full bg-netskope-teal flex items-center justify-center mx-auto mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2 6 6 0 006 6zm0 0V9m0 0a2 2 0 100-4 2 2 0 000 4zm0 0h4m-4 0H5m4 0h4m4 0a2 2 0 100-4 2 2 0 000 4zm0 0v6m0-6h4m-4 0h4"></path></svg></div>
-                    <h3 class="text-xl font-bold mb-3" data-i18n="help.3.title">Control Granular</h3>
-                    <p class="text-netskope-lightBlue" data-i18n="help.3.desc">Políticas contextuales que permiten usos productivos mientras bloquean actividades de riesgo.</p>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="help.3.title">Controle Granular</h3>
+                    <p class="text-netskope-lightBlue" data-i18n="help.3.desc">Políticas contextuais que permitem usos produtivos enquanto bloqueiam atividades de risco.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer: logo pequeño + texto de derechos reservados (hardcodeado en inglés). -->
+    <!-- Footer: logo pequeno + texto de direitos reservados (hardcoded em inglês). -->
     <footer class="bg-white border-t border-gray-200 py-12 mt-auto site-shell-footer">
         <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 site-shell-footer-inner">
             <div class="flex items-center gap-4 site-shell-footer-meta">
@@ -355,86 +355,86 @@
         </div>
     </footer>
 
-    <!-- Utilidades JS compartidas (NetskopeCommon.applyLanguage, etc.) y diccionario
-         de traducciones común. Deben cargarse antes del script inline de abajo. -->
+    <!-- Utilitários JS compartilhados (NetskopeCommon.applyLanguage, etc.) e dicionário
+         de traduções comum. Devem ser carregados antes do script inline abaixo. -->
     <script src="assets/js/common.js"></script>
     <script src="assets/js/i18n-common.js"></script>
     <script>
-        // Referencias a las 4 instancias Chart.js activas (llenadas en initCharts) para
-        // poder actualizar sus etiquetas/labels desde updateCharts al cambiar de idioma.
+        // Referências às 4 instâncias Chart.js ativas (preenchidas em initCharts) para
+        // poder atualizar seus rótulos/labels a partir de updateCharts ao trocar de idioma.
         let chartInstances = {};
 
-        // Diccionario específico de esta página, fusionado con NetskopeCommonI18n.
+        // Dicionário específico desta página, mesclado com NetskopeCommonI18n.
         const translations = {
             es: {
                 ...NetskopeCommonI18n.es,
-                "header.title": "Reporte de IA y Shadow IA",
-                "hero.badge": "Análisis de Seguridad",
-                "hero.title": "Reporte de Uso de <br><span class=\"font-lora italic font-normal text-netskope-blue\">IA y Shadow IA</span>",
-                "hero.desc": "El 68% de las organizaciones utilizan IA no autorizada. <br><strong class=\"text-netskope-deepBlue font-semibold\">La Shadow IA representa un riesgo crítico de fuga de datos.</strong>",
-                "stat.1": "Usan Shadow IA",
-                "stat.2": "Incidentes de Datos",
-                "stat.3": "Apps de IA Detectadas",
+                "header.title": "Relatório de IA e Shadow IA",
+                "hero.badge": "Análise de Segurança",
+                "hero.title": "Relatório de Uso de <br><span class=\"font-lora italic font-normal text-netskope-blue\">IA e Shadow IA</span>",
+                "hero.desc": "68% das organizações utilizam IA não autorizada. <br><strong class=\"text-netskope-deepBlue font-semibold\">A Shadow IA representa um risco crítico de vazamento de dados.</strong>",
+                "stat.1": "Usam Shadow IA",
+                "stat.2": "Incidentes de Dados",
+                "stat.3": "Apps de IA Detectados",
                 "dash.title": "Dashboard de Uso de IA",
-                "dash.desc": "Análisis completo del uso de aplicaciones de IA autorizadas y no autorizadas en la organización",
-                "chart.1.title": "Distribución de IA vs Shadow IA",
+                "dash.desc": "Análise completa do uso de aplicativos de IA autorizados e não autorizados na organização",
+                "chart.1.title": "Distribuição de IA vs Shadow IA",
                 "chart.1.leg1": "IA Autorizada (32%):",
                 "chart.1.leg2": "Shadow IA (68%):",
-                "chart.2.title": "Top Apps de IA Detectadas",
-                "chart.2.desc": "ChatGPT representa el 45% del uso total de IA, seguido por Copilot (22%) y Midjourney (18%).",
-                "chart.3.title": "Riesgo por Departamento",
-                "chart.3.desc": "I+D y Marketing presentan mayor exposición debido al uso intensivo de herramientas generativas.",
-                "flow.title": "Flujo de Datos Sensibles hacia Apps de IA",
-                "flow.1": "Datos sensibles transferidos",
-                "flow.2": "Hacia apps no autorizadas",
-                "flow.3": "Contienen Propiedad Intelectual o PII",
-                "flow.period": "Análisis realizado en el período: Enero 2025 - Enero 2026",
-                "risk.title": "Riesgos Principales Detectados",
-                "risk.1": "<strong>Fuga de IP:</strong> Código fuente subido a ChatGPT (47 incidentes)",
-                "risk.2": "<strong>Exposición de PII:</strong> Datos de clientes en Midjourney prompts (23 incidentes)",
-                "risk.3": "<strong>Violación de cumplimiento:</strong> Datos financieros en apps no GDPR-compliant (18 incidentes)",
-                "risk.4": "<strong>Model poisoning:</strong> Entrada de datos maliciosos en LLMs (9 incidentes)",
-                "rec.title": "Recomendaciones de Mitigación",
-                "rec.1": "<strong>Implementar DLP para IA:</strong> Bloquear uploads de datos sensibles a apps no autorizadas",
-                "rec.2": "<strong>Crear política de uso de IA:</strong> Educar empleados sobre riesgos y alternativas seguras",
-                "rec.3": "<strong>Adoptar soluciones empresariales:</strong> Migrar a ChatGPT Enterprise, Copilot con protecciones",
-                "rec.4": "<strong>Monitoreo continuo:</strong> Usar Netskope para detectar nuevas apps de IA en tiempo real",
-                "adv.title": "Visibilidad Avanzada de Uso de IA",
-                "adv.desc": "Análisis detallado de las instancias detectadas de aplicaciones de IA en la organización.",
-                "adv.click": "Haz clic en la imagen para ampliarla.",
-                "det.title": "Análisis Detallado",
-                "det.find": "Hallazgos Principales:",
-                "det.f1": "Se han detectado <strong>610 actividades</strong> de riesgo en Gen IA",
-                "det.f2": "Se han detectado más de 400 usuarios utilizando Gen IA NO Corporativa",
-                "det.f3": "El 68% de las aplicaciones pertenecen a Shadow IA",
-                "det.imp": "Implicaciones de Seguridad:",
-                "det.i1": "Posible uso no autorizado de IA generativa",
-                "det.i2": "Riesgo de fuga de datos a servicios en la nube",
-                "det.i3": "Falta de visibilidad sobre el tipo de datos compartidos",
-                "trend.title": "Tendencia de Uso de IA (Últimos 12 Meses)",
-                "trend.1": "Crecimiento en uso de IA",
-                "trend.2": "Crecimiento en Shadow IA",
-                "trend.3": "Reducción tras políticas",
-                "help.title": "Cómo Netskope Protege contra los Riesgos de Shadow IA",
-                "help.1.title": "Detección en Tiempo Real",
-                "help.1.desc": "Identifica automáticamente más de 150 aplicaciones de IA, incluyendo nuevas que no están en las listas tradicionales.",
-                "help.2.title": "Protección de Datos",
-                "help.2.desc": "DLP avanzado para prevenir la fuga de Propiedad Intelectual, PII y datos regulados hacia aplicaciones de IA no autorizadas.",
-                "help.3.title": "Control Granular",
-                "help.3.desc": "Políticas contextuales que permiten usos productivos mientras bloquean actividades de riesgo.",
+                "chart.2.title": "Top Apps de IA Detectados",
+                "chart.2.desc": "O ChatGPT representa 45% do uso total de IA, seguido pelo Copilot (22%) e pelo Midjourney (18%).",
+                "chart.3.title": "Risco por Departamento",
+                "chart.3.desc": "P&amp;D e Marketing apresentam maior exposição devido ao uso intensivo de ferramentas generativas.",
+                "flow.title": "Fluxo de Dados Sensíveis para Apps de IA",
+                "flow.1": "Dados sensíveis transferidos",
+                "flow.2": "Para apps não autorizados",
+                "flow.3": "Contêm Propriedade Intelectual ou PII",
+                "flow.period": "Análise realizada no período: Janeiro 2025 - Janeiro 2026",
+                "risk.title": "Principais Riscos Detectados",
+                "risk.1": "<strong>Vazamento de PI:</strong> Código-fonte enviado ao ChatGPT (47 incidentes)",
+                "risk.2": "<strong>Exposição de PII:</strong> Dados de clientes em prompts do Midjourney (23 incidentes)",
+                "risk.3": "<strong>Violação de conformidade:</strong> Dados financeiros em apps não compatíveis com a GDPR (18 incidentes)",
+                "risk.4": "<strong>Model poisoning:</strong> Entrada de dados maliciosos em LLMs (9 incidentes)",
+                "rec.title": "Recomendações de Mitigação",
+                "rec.1": "<strong>Implementar DLP para IA:</strong> Bloquear uploads de dados sensíveis para apps não autorizados",
+                "rec.2": "<strong>Criar política de uso de IA:</strong> Educar colaboradores sobre riscos e alternativas seguras",
+                "rec.3": "<strong>Adotar soluções corporativas:</strong> Migrar para ChatGPT Enterprise, Copilot com proteções",
+                "rec.4": "<strong>Monitoramento contínuo:</strong> Usar a Netskope para detectar novos apps de IA em tempo real",
+                "adv.title": "Visibilidade Avançada do Uso de IA",
+                "adv.desc": "Análise detalhada das instâncias detectadas de aplicativos de IA na organização.",
+                "adv.click": "Clique na imagem para ampliá-la.",
+                "det.title": "Análise Detalhada",
+                "det.find": "Principais Achados:",
+                "det.f1": "Foram detectadas <strong>610 atividades</strong> de risco em Gen IA",
+                "det.f2": "Foram detectados mais de 400 usuários utilizando Gen IA NÃO Corporativa",
+                "det.f3": "68% dos aplicativos pertencem à Shadow IA",
+                "det.imp": "Implicações de Segurança:",
+                "det.i1": "Possível uso não autorizado de IA generativa",
+                "det.i2": "Risco de vazamento de dados para serviços em nuvem",
+                "det.i3": "Falta de visibilidade sobre o tipo de dados compartilhados",
+                "trend.title": "Tendência de Uso de IA (Últimos 12 Meses)",
+                "trend.1": "Crescimento no uso de IA",
+                "trend.2": "Crescimento em Shadow IA",
+                "trend.3": "Redução após políticas",
+                "help.title": "Como a Netskope Protege contra os Riscos da Shadow IA",
+                "help.1.title": "Detecção em Tempo Real",
+                "help.1.desc": "Identifica automaticamente mais de 150 aplicativos de IA, incluindo novos que não estão nas listas tradicionais.",
+                "help.2.title": "Proteção de Dados",
+                "help.2.desc": "DLP avançado para prevenir o vazamento de Propriedade Intelectual, PII e dados regulados para aplicativos de IA não autorizados.",
+                "help.3.title": "Controle Granular",
+                "help.3.desc": "Políticas contextuais que permitem usos produtivos enquanto bloqueiam atividades de risco.",
 
-                // Etiquetas de las 4 gráficas Chart.js, usadas por updateCharts() al cambiar idioma.
+                // Rótulos dos 4 gráficos Chart.js, usados por updateCharts() ao trocar de idioma.
                 "chartLabels": {
                     "iaDist": ["IA Autorizada", "Shadow IA"],
-                    "topApps": ["ChatGPT", "Copilot", "Midjourney", "Claude", "Stable Diffusion", "Otros"],
+                    "topApps": ["ChatGPT", "Copilot", "Midjourney", "Claude", "Stable Diffusion", "Outros"],
                     "topAppsLabel": "% de Uso",
-                    "riskDept": ["I+D", "Marketing", "Finanzas", "Operaciones", "Legal", "RRHH"],
-                    "riskLabel": "Nivel de Riesgo",
-                    "trendLabels": ["Ene 25", "Mar 25", "May 25", "Jul 25", "Sep 25", "Nov 25", "Ene 26"],
+                    "riskDept": ["P&D", "Marketing", "Finanças", "Operações", "Legal", "RH"],
+                    "riskLabel": "Nível de Risco",
+                    "trendLabels": ["Jan 25", "Mar 25", "Mai 25", "Jul 25", "Set 25", "Nov 25", "Jan 26"],
                     "trendTotal": "Uso Total de IA",
                     "trendShadow": "Shadow IA",
-                    "trendIncidents": "Incidentes de Seguridad",
-                    "trendYAxis": "Usuarios Activos (miles)"
+                    "trendIncidents": "Incidentes de Segurança",
+                    "trendYAxis": "Usuários Ativos (milhares)"
                 }
             }
         };
@@ -442,13 +442,13 @@
         /**
          * updateCharts(lang)
          * ---------------------------------------------------------------------------
-         * Refresca las etiquetas (labels de ejes/leyendas) de las 4 gráficas Chart.js
-         * de esta página con el diccionario chartLabels del idioma indicado, sin tocar
-         * los datos numéricos ni los colores. Llamada desde changeLanguage(). No hace
-         * nada si las instancias de Chart.js todavía no existen (p. ej. si initCharts
-         * falló) o si el diccionario del idioma no trae chartLabels.
+         * Atualiza os rótulos (labels de eixos/legendas) dos 4 gráficos Chart.js
+         * desta página com o dicionário chartLabels do idioma indicado, sem alterar
+         * os dados numéricos nem as cores. Chamada a partir de changeLanguage(). Não faz
+         * nada se as instâncias do Chart.js ainda não existirem (p. ex. se initCharts
+         * falhou) ou se o dicionário do idioma não trouxer chartLabels.
          *
-         * @param {string} lang - partner edition: solo 'es'
+         * @param {string} lang - partner edition: somente 'es'
          */
         function updateCharts(lang) {
             if (!translations[lang] || !translations[lang].chartLabels) return;
@@ -483,10 +483,10 @@
 
         /**
          * changeLanguage(lang)
-         * Se mantiene local (no se delega por completo en assets/js/common.js) porque,
-         * además de traducir el DOM, esta página necesita refrescar las etiquetas de
-         * las gráficas Chart.js (updateCharts). El trabajo repetitivo de aplicar el
-         * diccionario al DOM se delega en NetskopeCommon.applyLanguage (common.js).
+         * É mantida local (não é totalmente delegada a assets/js/common.js) porque,
+         * além de traduzir o DOM, esta página precisa atualizar os rótulos dos
+         * gráficos Chart.js (updateCharts). O trabalho repetitivo de aplicar o
+         * dicionário ao DOM é delegado a NetskopeCommon.applyLanguage (common.js).
          */
         function changeLanguage(lang) {
             lang = NetskopeCommon.applyLanguage(lang, translations);
@@ -496,19 +496,19 @@
         /**
          * initCharts()
          * ---------------------------------------------------------------------------
-         * Crea las 4 gráficas Chart.js del dashboard (una por <canvas>) y guarda cada
-         * instancia en chartInstances para que updateCharts() pueda refrescar sus
-         * labels al cambiar de idioma. Cada gráfica se crea en su propio try/catch
-         * para que un canvas faltante o un error de Chart.js no tumbe a las demás.
-         * Datos de demo (fijos), no vienen de ningún backend.
+         * Cria os 4 gráficos Chart.js do dashboard (um por <canvas>) e guarda cada
+         * instância em chartInstances para que updateCharts() possa atualizar seus
+         * labels ao trocar de idioma. Cada gráfico é criado em seu próprio try/catch
+         * para que um canvas ausente ou um erro do Chart.js não derrube os demais.
+         * Dados de demo (fixos), não vêm de nenhum backend.
          */
         function initCharts() {
             if (typeof Chart === 'undefined') {
-                console.error("Chart.js no pudo cargar.");
+                console.error("Não foi possível carregar o Chart.js.");
                 return;
             }
 
-            // Doughnut: % de uso de IA autorizada (32%) vs Shadow IA no autorizada (68%).
+            // Doughnut: % de uso de IA autorizada (32%) vs Shadow IA não autorizada (68%).
             try {
                 const iaDistributionCtx = document.getElementById('iaDistributionChart').getContext('2d');
                 chartInstances.iaDistributionChart = new Chart(iaDistributionCtx, {
@@ -529,13 +529,13 @@
                 });
             } catch(e) {}
 
-            // Barras: top apps de IA detectadas por % de uso (ChatGPT, Copilot, etc.).
+            // Barras: top apps de IA detectados por % de uso (ChatGPT, Copilot, etc.).
             try {
                 const topAppsCtx = document.getElementById('topAppsChart').getContext('2d');
                 chartInstances.topAppsChart = new Chart(topAppsCtx, {
                     type: 'bar',
                     data: {
-                        labels: ['ChatGPT', 'Copilot', 'Midjourney', 'Claude', 'Stable Diffusion', 'Otros'],
+                        labels: ['ChatGPT', 'Copilot', 'Midjourney', 'Claude', 'Stable Diffusion', 'Outros'],
                         datasets: [{
                             label: '% de Uso',
                             data: [45, 22, 18, 8, 4, 3],
@@ -552,15 +552,15 @@
                 });
             } catch(e) {}
 
-            // Radar: nivel de riesgo (0-100) por departamento (I+D, Marketing, Finanzas, etc.).
+            // Radar: nível de risco (0-100) por departamento (P&D, Marketing, Finanças, etc.).
             try {
                 const riskDeptCtx = document.getElementById('riskByDeptChart').getContext('2d');
                 chartInstances.riskByDeptChart = new Chart(riskDeptCtx, {
                     type: 'radar',
                     data: {
-                        labels: ['I+D', 'Marketing', 'Finanzas', 'Operaciones', 'Legal', 'RRHH'],
+                        labels: ['P&D', 'Marketing', 'Finanças', 'Operações', 'Legal', 'RH'],
                         datasets: [{
-                            label: 'Nivel de Riesgo',
+                            label: 'Nível de Risco',
                             data: [85, 78, 45, 32, 60, 28],
                             backgroundColor: 'rgba(255, 130, 0, 0.2)',
                             borderColor: '#FF8200',
@@ -578,24 +578,24 @@
                 });
             } catch(e) {}
 
-            // Línea: tendencia de 12 meses de uso total de IA, Shadow IA e incidentes de seguridad.
+            // Linha: tendência de 12 meses de uso total de IA, Shadow IA e incidentes de segurança.
             try {
                 const trendCtx = document.getElementById('trendChart').getContext('2d');
                 chartInstances.trendChart = new Chart(trendCtx, {
                     type: 'line',
                     data: {
-                        labels: ['Ene 25', 'Mar 25', 'May 25', 'Jul 25', 'Sep 25', 'Nov 25', 'Ene 26'],
+                        labels: ['Jan 25', 'Mar 25', 'Mai 25', 'Jul 25', 'Set 25', 'Nov 25', 'Jan 26'],
                         datasets: [
                             { label: 'Uso Total de IA', data: [120, 185, 220, 280, 320, 380, 415], borderColor: '#00A9CE', backgroundColor: 'rgba(0, 169, 206, 0.1)', fill: true, tension: 0.4 },
                             { label: 'Shadow IA', data: [85, 130, 155, 205, 245, 300, 320], borderColor: '#FF8200', backgroundColor: 'rgba(255, 130, 0, 0.1)', fill: true, tension: 0.4 },
-                            { label: 'Incidentes de Seguridad', data: [5, 8, 12, 15, 18, 22, 14], borderColor: '#081A59', backgroundColor: 'rgba(8, 26, 89, 0.1)', fill: false, tension: 0.4, borderDash: [5, 5] }
+                            { label: 'Incidentes de Segurança', data: [5, 8, 12, 15, 18, 22, 14], borderColor: '#081A59', backgroundColor: 'rgba(8, 26, 89, 0.1)', fill: false, tension: 0.4, borderDash: [5, 5] }
                         ]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
                         interaction: { mode: 'index', intersect: false },
-                        scales: { y: { beginAtZero: true, title: { display: true, text: 'Usuarios Activos (miles)' } } }
+                        scales: { y: { beginAtZero: true, title: { display: true, text: 'Usuários Ativos (milhares)' } } }
                     }
                 });
             } catch(e) {}
@@ -604,19 +604,19 @@
         /**
          * initializePage() (IIFE)
          * ---------------------------------------------------------------------------
-         * Punto de entrada de esta página: inicializa gráficas, idioma, íconos y la
-         * lógica del modal de imagen ampliable. Cada paso corre en su propio try/catch
-         * (ejecución segura y secuencial) para que un fallo puntual (p. ej. Chart.js no
-         * cargó) no impida que el resto de la página siga funcionando.
+         * Ponto de entrada desta página: inicializa gráficos, idioma, ícones e a
+         * lógica do modal de imagem ampliável. Cada etapa roda em seu próprio try/catch
+         * (execução segura e sequencial) para que uma falha pontual (p. ex. o Chart.js não
+         * carregar) não impeça o restante da página de continuar funcionando.
          */
         (function initializePage() {
-            try { initCharts(); } catch(e) { console.error('Error cargando gráficas', e); }
-            try { changeLanguage(localStorage.getItem('netskope-lang') || 'es'); } catch(e) { console.error('Error de idioma', e); }
+            try { initCharts(); } catch(e) { console.error('Erro ao carregar gráficos', e); }
+            try { changeLanguage(localStorage.getItem('netskope-lang') || 'es'); } catch(e) { console.error('Erro de idioma', e); }
             try { if (typeof lucide !== 'undefined') lucide.createIcons(); } catch(e) {}
 
-            // Lógica del modal de imagen: abre #imageModal con la captura ampliada al
-            // hacer clic en mainImage, y lo cierra con el botón ×, clic fuera del
-            // contenido, o la tecla Escape.
+            // Lógica do modal de imagem: abre #imageModal com a captura ampliada ao
+            // clicar em mainImage, e o fecha com o botão ×, clique fora do
+            // conteúdo ou a tecla Escape.
             const imageModal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const modalClose = document.getElementById('modalClose');

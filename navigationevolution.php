@@ -1,24 +1,24 @@
 <?php
-// navigationevolution.php - Demo "Evolución de la Navegación" (Next Gen SWG).
-// Explica la evolución de la seguridad web/SaaS: estadísticas de mercado, citas
-// de analistas, los 5 pilares de la estrategia de Netskope, casos de uso y el
-// enlace al informe de visibilidad (reportit.php). Parte del flujo de demo
-// enlazado desde index.php.
+// navigationevolution.php - Demo "Evolução da Navegação" (Next Gen SWG).
+// Explica a evolução da segurança web/SaaS: estatísticas de mercado, citações
+// de analistas, os 5 pilares da estratégia da Netskope, casos de uso e o
+// link para o relatório de visibilidade (reportit.php). Parte do fluxo de demo
+// vinculado a partir de index.php.
 //
-// Las funciones JS comunes (changeLanguage, modales, portapapeles) viven en
-// assets/js/common.js y los textos de i18n compartidos entre páginas (botones
-// de navegación como "¿Quién es Netskope?"/"Volver a la landing"/"¿Quieres
-// verlo?") viven en assets/js/i18n-common.js. El diccionario `translations`
-// de este archivo solo contiene las cadenas específicas de esta página.
+// As funções JS comuns (changeLanguage, modais, área de transferência) ficam em
+// assets/js/common.js e os textos de i18n compartilhados entre páginas (botões
+// de navegação como "Quem é a Netskope?"/"Voltar para a landing"/"Quer ver?")
+// ficam em assets/js/i18n-common.js. O dicionário `translations` deste arquivo
+// contém apenas as strings específicas desta página.
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Demo sobre la evolución de la navegación segura con visibilidad, control y protección de datos en SaaS y web.">
+    <meta name="description" content="Demo sobre a evolução da navegação segura com visibilidade, controle e proteção de dados em SaaS e web.">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Democenter Netskope | Evolución de la Navegación</title>
+    <title>Democenter Netskope | Evolução da Navegação</title>
     
     <!-- CDNs -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -90,7 +90,7 @@
             <a href="index.php"><img src="assets/images/brand/netskope-logo-stacked-color.png" alt="Netskope" class="h-8 w-auto"></a>
             
             <div class="flex items-center gap-6">
-                <span class="hidden md:block text-xs font-bold text-netskope-deepBlue tracking-widest uppercase opacity-80" data-i18n="secure_saas">SaaS y Navegación Segura</span>
+                <span class="hidden md:block text-xs font-bold text-netskope-deepBlue tracking-widest uppercase opacity-80" data-i18n="secure_saas">SaaS e Navegação Segura</span>
                 
             </div>
         </div>
@@ -109,11 +109,11 @@
                 </div>
                 
                 <h1 class="text-5xl md:text-7xl font-bold text-netskope-deepBlue mb-8 leading-tight">
-                    <span data-i18n="hero_title_1">La Evolución de la</span> <br>
-                    <span class="font-lora italic font-normal text-netskope-blue" data-i18n="hero_title_2">Navegación Web.</span>
+                    <span data-i18n="hero_title_1">A Evolução da</span> <br>
+                    <span class="font-lora italic font-normal text-netskope-blue" data-i18n="hero_title_2">Navegação Web.</span>
                 </h1>
                 
-                <p class="text-xl md:text-2xl text-netskope-gray font-light leading-relaxed mb-12" data-i18n="hero_subtitle">Más del 95% del tráfico está cifrado. Más del 50% del malware viene de la nube. <br><strong class="text-netskope-deepBlue font-semibold">Los proxies tradicionales están ciegos ante las amenazas actuales.</strong></p>
+                <p class="text-xl md:text-2xl text-netskope-gray font-light leading-relaxed mb-12" data-i18n="hero_subtitle">Mais de 95% do tráfego está criptografado. Mais de 50% do malware vem da nuvem. <br><strong class="text-netskope-deepBlue font-semibold">Os proxies tradicionais estão cegos diante das ameaças atuais.</strong></p>
 
                 <!-- Stats Single Line -->
                 <div class="bg-white/60 backdrop-blur-md border border-white/50 p-8 rounded-netskope shadow-sm inline-flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 w-full">
@@ -124,12 +124,12 @@
                     <div class="hidden md:block w-px h-16 bg-gray-200"></div>
                     <div class="text-center">
                         <div class="text-5xl font-bold text-netskope-blue mb-1">70%</div>
-                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat_traffic">Tráfico es SaaS</div>
+                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat_traffic">Do tráfego é SaaS</div>
                     </div>
                     <div class="hidden md:block w-px h-16 bg-gray-200"></div>
                     <div class="text-center">
                         <div class="text-5xl font-bold text-netskope-deepBlue mb-1">+50%</div>
-                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat_malware">malware en SaaS</div>
+                        <div class="text-xs text-netskope-deepBlue font-bold uppercase tracking-wide" data-i18n="stat_malware">malware em SaaS</div>
                     </div>
                 </div>
             </div>
@@ -147,14 +147,14 @@
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-16">
                 <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block">Market Reality</span>
-                <h2 class="text-3xl font-bold text-white" data-i18n="analyst_title">Lo que dicen los analistas</h2>
+                <h2 class="text-3xl font-bold text-white" data-i18n="analyst_title">O que dizem os analistas</h2>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-6">
                 <!-- Quote 1 -->
                 <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-8 rounded-netskope relative hover:bg-white/15 transition-all group flex flex-col h-full">
                     <div class="quote-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg></div>
-                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote_1">"Los Threat Actors aprovechan servicios legítimos de la nube y SaaS para eludir los controles de seguridad tradicionales basados en el perímetro."</p>
+                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote_1">"Os Threat Actors aproveitam serviços legítimos de nuvem e SaaS para burlar os controles de segurança tradicionais baseados em perímetro."</p>
                     <div class="border-t border-white/20 pt-4 mt-auto">
                         <p class="text-white font-bold text-sm tracking-wide">IDC — Worldwide Secure Access Service Edge Market Analysis, 2024</p>
                     </div>
@@ -163,7 +163,7 @@
                 <!-- Quote 2 -->
                 <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-8 rounded-netskope relative hover:bg-white/15 transition-all group flex flex-col h-full mt-0 lg:-mt-6">
                     <div class="quote-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg></div>
-                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote_2">"La mayoría del tráfico empresarial está ahora encriptado, limitando la efectividad de los controles de seguridad tradicionales."</p>
+                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote_2">"A maior parte do tráfego corporativo agora é criptografada, limitando a eficácia dos controles de segurança tradicionais."</p>
                     <div class="border-t border-white/20 pt-4 mt-auto">
                         <p class="text-white font-bold text-sm tracking-wide">IDC Worldwide SASE/SSE Market Analysis 2024</p>
                     </div>
@@ -172,7 +172,7 @@
                 <!-- Quote 3 -->
                 <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-8 rounded-netskope relative hover:bg-white/15 transition-all group flex flex-col h-full">
                     <div class="quote-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg></div>
-                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote_3">"Más de la mitad de las aplicaciones SaaS utilizadas por los empleados no están gestionadas por TI. La falta de visibilidad sigue siendo uno de los principales desafíos."</p>
+                    <p class="text-netskope-lightBlue font-lora italic text-lg leading-relaxed mb-6 mt-4 flex-grow" data-i18n="quote_3">"Mais da metade dos aplicativos SaaS usados pelos colaboradores não é gerenciada pela TI. A falta de visibilidade continua sendo um dos principais desafios."</p>
                     <div class="border-t border-white/20 pt-4 mt-auto">
                         <p class="text-white font-bold text-sm tracking-wide">Forrester Research, SSE 2024</p>
                     </div>
@@ -182,15 +182,15 @@
         </div>
     </section>
 
-    <!-- Estrategia de Netskope -->
+    <!-- Estratégia da Netskope -->
     <section class="py-20 bg-gradient-to-br from-netskope-deepBlue to-netskope-blue text-white relative overflow-hidden">
         <div class="absolute inset-0 pattern-net opacity-10"></div>
         
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-12">
-                <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="strat_label">Estrategia de Netskope</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="strat_title">Cinco pilares para la Evolución de la Navegación</h2>
-                <p class="text-netskope-lightBlue max-w-3xl mx-auto text-lg" data-i18n="strat_subtitle">Next-Gen Secure Web Gateway que incluye CASB, DLP y Enterprise Browser</p>
+                <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="strat_label">Estratégia da Netskope</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="strat_title">Cinco pilares para a Evolução da Navegação</h2>
+                <p class="text-netskope-lightBlue max-w-3xl mx-auto text-lg" data-i18n="strat_subtitle">Next-Gen Secure Web Gateway que inclui CASB, DLP e Enterprise Browser</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
@@ -203,10 +203,10 @@
                         </div>
                         <h3 class="text-xl font-bold">Control Everywhere</h3>
                     </div>
-                    <p class="text-netskope-lightBlue text-sm leading-relaxed mb-4" data-i18n="pillar_1_desc">Protección constante esté donde esté el usuario: oficina, casa o una cafetería.</p>
+                    <p class="text-netskope-lightBlue text-sm leading-relaxed mb-4" data-i18n="pillar_1_desc">Proteção constante onde quer que o usuário esteja: escritório, casa ou uma cafeteria.</p>
                     <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2"><span class="text-netskope-green">✓</span> <span data-i18n="pillar_1_item_1">Sin backhauling al CPD, direct-to-cloud</span></li>
-                        <li class="flex items-center gap-2"><span class="text-netskope-green">✓</span> <span data-i18n="pillar_1_item_2">Un solo agente, Netskope Client</span></li>
+                        <li class="flex items-center gap-2"><span class="text-netskope-green">✓</span> <span data-i18n="pillar_1_item_1">Sem backhauling para o data center, direct-to-cloud</span></li>
+                        <li class="flex items-center gap-2"><span class="text-netskope-green">✓</span> <span data-i18n="pillar_1_item_2">Um único agente, Netskope Client</span></li>
                     </ul>
                 </div>
 
@@ -218,7 +218,7 @@
                         </div>
                         <h3 class="text-xl font-bold">CASB Inline</h3>
                     </div>
-                    <p class="text-netskope-lightBlue text-sm leading-relaxed mb-4" data-i18n="pillar_2_desc">Control granular de actividades e instancias. No bloquees la app, controla su uso y actividades.</p>
+                    <p class="text-netskope-lightBlue text-sm leading-relaxed mb-4" data-i18n="pillar_2_desc">Controle granular de atividades e instâncias. Não bloqueie o app, controle seu uso e suas atividades.</p>
                     <div class="bg-white/10 rounded p-3 text-xs font-mono border border-white/10">
                         <div class="flex justify-between mb-1">
                             <span>App: OneDrive</span><span class="text-cyan-300 font-bold">Instance: Corporate -> ALLOW</span>
@@ -235,12 +235,12 @@
                         <div class="w-12 h-12 rounded-xl bg-netskope-teal flex items-center justify-center text-white shadow-lg">
                             <i data-lucide="eye" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold" data-i18n="pillar_3_title">Visibilidad - Shadow IT</h3>
+                        <h3 class="text-xl font-bold" data-i18n="pillar_3_title">Visibilidade - Shadow IT</h3>
                     </div>
-                    <p class="text-netskope-lightBlue text-sm leading-relaxed mb-4" data-i18n="pillar_3_desc">Descubre el 97% de apps que el firewall no ve. Evalua riesgos automáticamente.</p>
+                    <p class="text-netskope-lightBlue text-sm leading-relaxed mb-4" data-i18n="pillar_3_desc">Descubra os 97% de apps que o firewall não enxerga. Avalie riscos automaticamente.</p>
                     <ul class="space-y-2 text-sm">
                         <li class="flex items-center gap-2"><span class="text-netskope-teal">✓</span> Cloud Confidence Index (CCI)</li>
-                        <li class="flex items-center gap-2"><span class="text-netskope-teal">✓</span> <span data-i18n="pillar_3_item_2">+80,000 Apps Clasificadas</span></li>
+                        <li class="flex items-center gap-2"><span class="text-netskope-teal">✓</span> <span data-i18n="pillar_3_item_2">+80.000 Apps Classificadas</span></li>
                     </ul>
                 </div>
 
@@ -252,10 +252,10 @@
                         </div>
                         <h3 class="text-xl font-bold">Threat Protection</h3>
                     </div>
-                    <p class="text-netskope-lightBlue text-sm leading-relaxed mb-4" data-i18n="pillar_4_desc">Defensa avanzada contra malware en la nube y web. Sandboxing y ML en tiempo real.</p>
+                    <p class="text-netskope-lightBlue text-sm leading-relaxed mb-4" data-i18n="pillar_4_desc">Defesa avançada contra malware na nuvem e na web. Sandboxing e ML em tempo real.</p>
                     <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> <span data-i18n="pillar_4_item_1">50% del malware viene de la nube</span></li>
-                        <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> <span data-i18n="pillar_4_item_2">Antiphishing con Machine Learning</span></li>
+                        <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> <span data-i18n="pillar_4_item_1">50% do malware vem da nuvem</span></li>
+                        <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> <span data-i18n="pillar_4_item_2">Antiphishing com Machine Learning</span></li>
                     </ul>
                 </div>
 
@@ -267,10 +267,10 @@
                         </div>
                         <h3 class="text-xl font-bold" data-i18n="pillar_5_title">Enterprise Browser</h3>
                     </div>
-                    <p class="text-netskope-lightBlue text-sm leading-relaxed mb-4" data-i18n="pillar_5_desc">Navegador seguro gestionado para dispositivos no gestionados y terceros.</p>
+                    <p class="text-netskope-lightBlue text-sm leading-relaxed mb-4" data-i18n="pillar_5_desc">Navegador seguro gerenciado para dispositivos não gerenciados e terceiros.</p>
                     <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2"><span class="text-netskope-orange">✓</span> <span data-i18n="pillar_5_item_1">Acceso Zero Trust sin agentes</span></li>
-                        <li class="flex items-center gap-2"><span class="text-netskope-orange">✓</span> <span data-i18n="pillar_5_item_2">DLP y Protección contra amenazas nativa</span></li>
+                        <li class="flex items-center gap-2"><span class="text-netskope-orange">✓</span> <span data-i18n="pillar_5_item_1">Acesso Zero Trust sem agentes</span></li>
+                        <li class="flex items-center gap-2"><span class="text-netskope-orange">✓</span> <span data-i18n="pillar_5_item_2">DLP e Proteção contra ameaças nativa</span></li>
                     </ul>
                 </div>
 
@@ -282,21 +282,21 @@
     <section class="py-20 bg-gray-50 relative overflow-hidden">
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="text-center mb-10">
-                <span class="text-netskope-blue font-bold text-xs uppercase tracking-widest mb-3 block" data-i18n="use_case_label">IMPLEMENTACIÓN PRÁCTICA</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-4" data-i18n="use_case_title">Casos de uso clave</h2>
-                <p class="text-netskope-gray max-w-3xl mx-auto text-lg mb-10" data-i18n="use_case_subtitle">Descubre cómo Netskope transforma la seguridad de navegación en escenarios reales</p>
+                <span class="text-netskope-blue font-bold text-xs uppercase tracking-widest mb-3 block" data-i18n="use_case_label">IMPLEMENTAÇÃO PRÁTICA</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-4" data-i18n="use_case_title">Casos de uso principais</h2>
+                <p class="text-netskope-gray max-w-3xl mx-auto text-lg mb-10" data-i18n="use_case_subtitle">Descubra como a Netskope transforma a segurança de navegação em cenários reais</p>
                 
                 <!-- Zero Trust Engine -->
                 <div class="bg-white rounded-netskope p-8 shadow-sm border border-gray-100 mb-10">
-                    <h3 class="text-2xl font-bold text-netskope-blue mb-4 text-center" data-i18n="context_title">El Contexto Importa: Zero Trust Engine</h3>
-                    <p class="text-netskope-gray text-center mb-8 max-w-2xl mx-auto" data-i18n="context_desc">Las políticas basadas en "Permitir/Bloquear Dominio" ya no sirven. Netskope decodifica el lenguaje de la nube (API/JSON) en tiempo real.</p>
+                    <h3 class="text-2xl font-bold text-netskope-blue mb-4 text-center" data-i18n="context_title">O Contexto Importa: Zero Trust Engine</h3>
+                    <p class="text-netskope-gray text-center mb-8 max-w-2xl mx-auto" data-i18n="context_desc">As políticas baseadas em "Permitir/Bloquear Domínio" não funcionam mais. A Netskope decodifica a linguagem da nuvem (API/JSON) em tempo real.</p>
                     
                     <div class="flex flex-wrap justify-center gap-6 mb-4">
                         <div class="flex flex-col items-center">
                             <div class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-netskope-blue font-bold mb-2 border border-gray-200">
                                 <i data-lucide="user" class="w-5 h-5"></i>
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-gray-500" data-i18n="context_who">QUIÉN</span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gray-500" data-i18n="context_who">QUEM</span>
                         </div>
                         <div class="flex flex-col items-center">
                             <div class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-netskope-blue font-bold mb-2 border border-gray-200">
@@ -308,41 +308,41 @@
                             <div class="w-14 h-14 rounded-full bg-netskope-blue flex items-center justify-center text-white font-bold mb-2 shadow-lg ring-4 ring-blue-100">
                                 <i data-lucide="box" class="w-6 h-6"></i>
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-netskope-blue" data-i18n="context_app">APP & INSTANCIA</span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-netskope-blue" data-i18n="context_app">APP & INSTÂNCIA</span>
                         </div>
                         <div class="flex flex-col items-center relative">
                             <div class="w-14 h-14 rounded-full bg-netskope-green flex items-center justify-center text-netskope-deepBlue font-bold mb-2 shadow-lg ring-4 ring-green-100">
                                 <i data-lucide="activity" class="w-6 h-6"></i>
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-green-500" data-i18n="context_activity">ACTIVIDAD</span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-green-500" data-i18n="context_activity">ATIVIDADE</span>
                         </div>
                         <div class="flex flex-col items-center">
                             <div class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-netskope-blue font-bold mb-2 border border-gray-200">
                                 <i data-lucide="file-text" class="w-5 h-5"></i>
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-gray-500" data-i18n="context_data">DATO</span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gray-500" data-i18n="context_data">DADO</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tarjetas Casos de Uso -->
+            <!-- Cards de Casos de Uso -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- 1 -->
                 <div class="bg-white p-6 rounded-netskope shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 card-hover flex flex-col">
                     <div class="w-10 h-10 rounded-xl bg-netskope-blue/10 flex items-center justify-center text-netskope-blue mb-4">
                         <i data-lucide="globe" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-3" data-i18n="card_1_title">Navegación</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_1_desc">Protección contra amenazas web y phishing con inspección SSL completa y control de acceso granular basado en contexto.</p>
+                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-3" data-i18n="card_1_title">Navegação</h3>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_1_desc">Proteção contra ameaças web e phishing com inspeção SSL completa e controle de acesso granular baseado em contexto.</p>
                 </div>
                 <!-- 2 -->
                 <div class="bg-white p-6 rounded-netskope shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 card-hover flex flex-col">
                     <div class="w-10 h-10 rounded-xl bg-netskope-green/10 flex items-center justify-center text-netskope-green mb-4">
                         <i data-lucide="shield" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-3" data-i18n="card_2_title">Gobierno del dato</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_2_desc">Control DLP en tiempo real durante la navegación, previniendo pérdida de datos sensibles en aplicaciones web y cloud.</p>
+                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-3" data-i18n="card_2_title">Governança de dados</h3>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_2_desc">Controle DLP em tempo real durante a navegação, prevenindo a perda de dados sensíveis em aplicações web e cloud.</p>
                 </div>
                 <!-- 3 -->
                 <div class="bg-white p-6 rounded-netskope shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 card-hover flex flex-col">
@@ -350,7 +350,7 @@
                         <i data-lucide="bot" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-bold text-netskope-deepBlue mb-3">Data Protection (AI)</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_3_desc">Seguridad proactiva para herramientas de IA generativa, controlando qué datos se comparten y previniendo fugas de IP.</p>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_3_desc">Segurança proativa para ferramentas de IA generativa, controlando quais dados são compartilhados e prevenindo vazamentos de propriedade intelectual.</p>
                 </div>
                 <!-- 4 -->
                 <div class="bg-white p-6 rounded-netskope shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 card-hover flex flex-col">
@@ -358,7 +358,7 @@
                         <i data-lucide="alert-triangle" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-bold text-netskope-deepBlue mb-3">Threat Protection</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_4_desc">Detección avanzada de amenazas con sandboxing, machine learning y análisis en tiempo real de contenido malicioso.</p>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_4_desc">Detecção avançada de ameaças com sandboxing, machine learning e análise em tempo real de conteúdo malicioso.</p>
                 </div>
                 <!-- 5 -->
                 <div class="bg-white p-6 rounded-netskope shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 card-hover flex flex-col">
@@ -366,15 +366,15 @@
                         <i data-lucide="link" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-bold text-netskope-deepBlue mb-3">EDR Integration</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_5_desc">Correlación de eventos de red con endpoints mediante Cloud Exchange, habilitando respuesta extendida a incidentes.</p>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_5_desc">Correlação de eventos de rede com endpoints via Cloud Exchange, habilitando resposta estendida a incidentes.</p>
                 </div>
                 <!-- 6 -->
                 <div class="bg-white p-6 rounded-netskope shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 card-hover flex flex-col">
                     <div class="w-10 h-10 rounded-xl bg-netskope-orange/10 flex items-center justify-center text-netskope-orange mb-4">
                         <i data-lucide="smartphone" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-3" data-i18n="card_6_title">Dispositivos No Gestionados</h3>
-                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_6_desc">Extiende la seguridad a contratistas y BYOD sin instalar agentes, asegurando el dato.</p>
+                    <h3 class="text-lg font-bold text-netskope-deepBlue mb-3" data-i18n="card_6_title">Dispositivos Não Gerenciados</h3>
+                    <p class="text-netskope-gray text-sm leading-relaxed flex-grow" data-i18n="card_6_desc">Estende a segurança a terceirizados e BYOD sem instalar agentes, protegendo o dado.</p>
                 </div>
             </div>
 
@@ -384,14 +384,14 @@
                     <div class="flex flex-col lg:flex-row">
                         <div class="lg:w-1/2 p-12 text-white">
                             <h3 class="text-2xl font-bold mb-6">Cloud Exchange</h3>
-                            <p class="text-netskope-lightBlue mb-6 leading-relaxed" data-i18n="ce_desc">Netskope Cloud Exchange amplía las capacidades de seguridad mediante integraciones nativas con ecosistemas de seguridad líderes.</p>
+                            <p class="text-netskope-lightBlue mb-6 leading-relaxed" data-i18n="ce_desc">O Netskope Cloud Exchange amplia as capacidades de segurança por meio de integrações nativas com os principais ecossistemas de segurança.</p>
                             <ul class="space-y-3 mb-8">
-                                <li class="flex items-center gap-3"><span class="text-netskope-blue">✓</span> <span data-i18n="ce_item_1">Integración con EDR, SIEM y XSOAR</span></li>
-                                <li class="flex items-center gap-3"><span class="text-netskope-blue">✓</span> <span data-i18n="ce_item_2">Orquestación de respuestas automatizadas</span></li>
-                                <li class="flex items-center gap-3"><span class="text-netskope-blue">✓</span> <span data-i18n="ce_item_3">API-first para integraciones personalizadas</span></li>
+                                <li class="flex items-center gap-3"><span class="text-netskope-blue">✓</span> <span data-i18n="ce_item_1">Integração com EDR, SIEM e XSOAR</span></li>
+                                <li class="flex items-center gap-3"><span class="text-netskope-blue">✓</span> <span data-i18n="ce_item_2">Orquestração de respostas automatizadas</span></li>
+                                <li class="flex items-center gap-3"><span class="text-netskope-blue">✓</span> <span data-i18n="ce_item_3">API-first para integrações personalizadas</span></li>
                             </ul>
                             <a href="https://www.netskope.com/products/cloud-exchange" target="_blank" class="inline-flex items-center gap-2 bg-white text-netskope-deepBlue px-6 py-3 rounded-netskope-sm font-bold hover:bg-netskope-lightBlue transition-all">
-                                <span data-i18n="ce_button">Ver arquitectura Cloud Exchange</span>
+                                <span data-i18n="ce_button">Ver arquitetura do Cloud Exchange</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
@@ -404,15 +404,15 @@
         </div>
     </section>
 
-    <!-- Reporte de Visibilidad -->
+    <!-- Relatório de Visibilidade -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6 md:px-12">
             <div class="bg-gradient-to-r from-netskope-deepBlue to-netskope-teal rounded-netskope overflow-hidden shadow-xl">
                 <div class="flex flex-col lg:flex-row">
                     <div class="lg:w-2/3 p-12 text-white">
-                        <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-4 block" data-i18n="report_label">Visibilidad Completa</span>
-                        <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="report_title">Informe de Visibilidad de Aplicaciones</h2>
-                        <p class="text-netskope-lightBlue text-lg mb-8 leading-relaxed" data-i18n="report_subtitle">Nuestro análisis te proporciona una visión completa de dónde navegan tus usuarios y a qué riesgos se exponen.</p>
+                        <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-4 block" data-i18n="report_label">Visibilidade Completa</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="report_title">Relatório de Visibilidade de Aplicativos</h2>
+                        <p class="text-netskope-lightBlue text-lg mb-8 leading-relaxed" data-i18n="report_subtitle">Nossa análise oferece uma visão completa de onde seus usuários navegam e a quais riscos estão expostos.</p>
                         
                         <!-- Grid original de 4 elementos restaurado -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -424,7 +424,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-lg mb-1">Shadow IT</h4>
-                                    <p class="text-sm text-white/80" data-i18n="report_item_1">¿qué aplicaciones están usando tus usuarios y no están gestionadas?</p>
+                                    <p class="text-sm text-white/80" data-i18n="report_item_1">quais aplicativos seus usuários estão usando sem que sejam gerenciados?</p>
                                 </div>
                             </div>
                             
@@ -435,7 +435,7 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg mb-1" data-i18n="report_item_2_title">Análisis de Riesgo</h4>
+                                    <h4 class="font-bold text-lg mb-1" data-i18n="report_item_2_title">Análise de Risco</h4>
                                     <p class="text-sm text-white/80">Threat Protection</p>
                                 </div>
                             </div>
@@ -447,8 +447,8 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg mb-1" data-i18n="report_item_3_title">Tendencias en Tiempo Real</h4>
-                                    <p class="text-sm text-white/80" data-i18n="report_item_3_desc">Monitoreo continuo del movimiento de datos</p>
+                                    <h4 class="font-bold text-lg mb-1" data-i18n="report_item_3_title">Tendências em Tempo Real</h4>
+                                    <p class="text-sm text-white/80" data-i18n="report_item_3_desc">Monitoramento contínuo da movimentação de dados</p>
                                 </div>
                             </div>
                             
@@ -459,15 +459,15 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-lg mb-1" data-i18n="report_item_4_title">Recomendaciones</h4>
-                                    <p class="text-sm text-white/80" data-i18n="report_item_4_desc">Plan de remediación</p>
+                                    <h4 class="font-bold text-lg mb-1" data-i18n="report_item_4_title">Recomendações</h4>
+                                    <p class="text-sm text-white/80" data-i18n="report_item_4_desc">Plano de remediação</p>
                                 </div>
                             </div>
                         </div>
                         
                         <a href="reportit.php" class="inline-flex items-center gap-3 bg-white text-netskope-deepBlue px-8 py-4 rounded-netskope-sm font-bold hover:bg-netskope-lightBlue transition-all shadow-lg hover:-translate-y-1">
                             <i data-lucide="file-bar-chart" class="w-5 h-5"></i>
-                            <span data-i18n="report_button">Ver Informe de Visibilidad</span>
+                            <span data-i18n="report_button">Ver Relatório de Visibilidade</span>
                         </a>
                     </div>
                     
@@ -480,8 +480,8 @@
                                 </svg>
                             </div>
                             <div class="text-center text-white">
-                                <h3 class="text-xl font-bold mb-2" data-i18n="custom_analysis_title">Análisis Personalizado</h3>
-                                <p class="text-sm opacity-80" data-i18n="custom_analysis_desc">Informe adaptado a tu entorno específico</p>
+                                <h3 class="text-xl font-bold mb-2" data-i18n="custom_analysis_title">Análise Personalizada</h3>
+                                <p class="text-sm opacity-80" data-i18n="custom_analysis_desc">Relatório adaptado ao seu ambiente específico</p>
                             </div>
                         </div>
                     </div>
@@ -495,15 +495,15 @@
         <div class="flex flex-col md:flex-row justify-center gap-6 px-6">
             <a href="keydifferentiators.php" class="bg-netskope-blue text-white px-8 py-4 rounded-netskope-sm font-bold hover:bg-netskope-teal transition-all shadow-md flex items-center justify-center gap-3">
                 <i data-lucide="book-open" class="w-5 h-5"></i>
-                <span data-i18n="nav_who">¿Quién es Netskope?</span>
+                <span data-i18n="nav_who">Quem é a Netskope?</span>
             </a>
             <a href="index.php" class="bg-white text-netskope-deepBlue border border-netskope-blue px-8 py-4 rounded-netskope-sm font-bold hover:bg-netskope-lightBlue transition-all shadow-md flex items-center justify-center gap-3">
                 <i data-lucide="home" class="w-5 h-5"></i>
-                <span data-i18n="nav_back">Volver a la landing</span>
+                <span data-i18n="nav_back">Voltar para a landing</span>
             </a>
             <a href="demos.php" class="bg-netskope-orange text-white px-8 py-4 rounded-netskope-sm font-bold hover:opacity-90 transition-all shadow-md flex items-center justify-center gap-3">
                 <i data-lucide="play-circle" class="w-5 h-5"></i>
-                <span data-i18n="nav_demo">¿Quieres Verlo? 😉</span>
+                <span data-i18n="nav_demo">Quer Ver? 😉</span>
             </a>
         </div>
     </section>
@@ -518,52 +518,52 @@
         </div>
     </footer>
 
-    <!-- Utilidades JS compartidas (changeLanguage, modales, portapapeles) y diccionario
-         de traducciones común. Deben cargarse antes del script inline de abajo. -->
+    <!-- Utilitários JS compartilhados (changeLanguage, modais, área de transferência) e dicionário
+         de traduções comum. Devem ser carregados antes do script inline abaixo. -->
     <script src="assets/js/common.js"></script>
     <script src="assets/js/i18n-common.js"></script>
-    <!-- Script de Traducción Nativo: diccionario específico de esta página, fusionado
-         con NetskopeCommonI18n (assets/js/i18n-common.js) para los textos compartidos. -->
+    <!-- Script de Tradução Nativo: dicionário específico desta página, mesclado
+         com NetskopeCommonI18n (assets/js/i18n-common.js) para os textos compartilhados. -->
     <script>
         const translations = {
             es: {
                 ...NetskopeCommonI18n.es,
-                "secure_saas": "SaaS y Navegación Segura",
-                "hero_title_1": "La Evolución de la", "hero_title_2": "Navegación Web.",
-                "hero_subtitle": "Más del 95% del tráfico está cifrado. Más del 50% del malware viene de la nube. <br><strong class=\"text-netskope-deepBlue font-semibold\">Los proxies tradicionales están ciegos ante las amenazas actuales.</strong>",
-                "stat_shadow": "Son 'Shadow IT'", "stat_traffic": "Tráfico es SaaS", "stat_malware": "malware en SaaS",
-                "analyst_title": "Lo que dicen los analistas",
-                "quote_1": "\"Los Threat Actors aprovechan servicios legítimos de la nube y SaaS para eludir los controles de seguridad tradicionales basados en el perímetro.\"",
-                "quote_2": "\"La mayoría del tráfico empresarial está ahora encriptado, limitando la efectividad de los controles de seguridad tradicionales.\"",
-                "quote_3": "\"Más de la mitad de las aplicaciones SaaS utilizadas por los empleados no están gestionadas por TI. La falta de visibilidad sigue siendo uno de los principales desafíos.\"",
-                "strat_label": "Estrategia de Netskope", "strat_title": "Cinco pilares para la Evolución de la Navegación", "strat_subtitle": "Next-Gen Secure Web Gateway que incluye CASB, DLP y Enterprise Browser",
-                "pillar_1_desc": "Protección constante esté donde esté el usuario: oficina, casa o una cafetería.",
-                "pillar_1_item_1": "Sin backhauling al CPD, direct-to-cloud", "pillar_1_item_2": "Un solo agente, Netskope Client",
-                "pillar_2_desc": "Control granular de actividades e instancias. No bloquees la app, controla su uso y actividades.",
-                "pillar_3_title": "Visibilidad - Shadow IT", "pillar_3_desc": "Descubre el 97% de apps que el firewall no ve. Evalua riesgos automáticamente.", "pillar_3_item_2": "+80,000 Apps Clasificadas",
-                "pillar_4_desc": "Defensa avanzada contra malware en la nube y web. Sandboxing y ML en tiempo real.", "pillar_4_item_1": "50% del malware viene de la nube", "pillar_4_item_2": "Antiphishing con Machine Learning",
-                "pillar_5_title": "Enterprise Browser", "pillar_5_desc": "Navegador seguro gestionado para dispositivos no gestionados y terceros.", "pillar_5_item_1": "Acceso Zero Trust sin agentes", "pillar_5_item_2": "DLP y Protección contra amenazas nativa",
-                "use_case_label": "IMPLEMENTACIÓN PRÁCTICA", "use_case_title": "Casos de uso clave", "use_case_subtitle": "Descubre cómo Netskope transforma la seguridad de navegación en escenarios reales",
-                "context_title": "El Contexto Importa: Zero Trust Engine", "context_desc": "Las políticas basadas en \"Permitir/Bloquear Dominio\" ya no sirven. Netskope decodifica el lenguaje de la nube (API/JSON) en tiempo real.",
-                "context_who": "QUIÉN", "context_device": "DISPOSITIVO", "context_app": "APP & INSTANCIA", "context_activity": "ACTIVIDAD", "context_data": "DATO",
-                "card_1_title": "Navegación", "card_1_desc": "Protección contra amenazas web y phishing con inspección SSL completa y control de acceso granular basado en contexto.",
-                "card_2_title": "Gobierno del dato", "card_2_desc": "Control DLP en tiempo real durante la navegación, previniendo pérdida de datos sensibles en aplicaciones web y cloud.",
-                "card_3_desc": "Seguridad proactiva para herramientas de IA generativa, controlando qué datos se comparten y previniendo fugas de IP.",
-                "card_4_desc": "Detección avanzada de amenazas con sandboxing, machine learning y análisis en tiempo real de contenido malicioso.",
-                "card_5_desc": "Correlación de eventos de red con endpoints mediante Cloud Exchange, habilitando respuesta extendida a incidentes.",
-                "card_6_title": "Dispositivos No Gestionados", "card_6_desc": "Extiende la seguridad a contratistas y BYOD sin instalar agentes, asegurando el dato.",
-                "ce_desc": "Netskope Cloud Exchange amplía las capacidades de seguridad mediante integraciones nativas con ecosistemas de seguridad líderes.", "ce_item_1": "Integración con EDR, SIEM y XSOAR", "ce_item_2": "Orquestación de respuestas automatizadas", "ce_item_3": "API-first para integraciones personalizadas", "ce_button": "Ver arquitectura Cloud Exchange",
-                "report_label": "Visibilidad Completa", "report_title": "Informe de Visibilidad de Aplicaciones", "report_subtitle": "Nuestro análisis te proporciona una visión completa de dónde navegan tus usuarios y a qué riesgos se exponen.",
-                "report_item_1": "¿qué aplicaciones están usando tus usuarios y no están gestionadas?", "report_item_2_title": "Análisis de Riesgo",
-                "report_item_3_title": "Tendencias en Tiempo Real", "report_item_3_desc": "Monitoreo continuo del movimiento de datos",
-                "report_item_4_title": "Recomendaciones", "report_item_4_desc": "Plan de remediación",
-                "report_button": "Ver Informe de Visibilidad", "custom_analysis_title": "Análisis Personalizado", "custom_analysis_desc": "Informe adaptado a tu entorno específico"
-                // nav_who / nav_back / nav_demo ahora vienen de NetskopeCommonI18n
+                "secure_saas": "SaaS e Navegação Segura",
+                "hero_title_1": "A Evolução da", "hero_title_2": "Navegação Web.",
+                "hero_subtitle": "Mais de 95% do tráfego está criptografado. Mais de 50% do malware vem da nuvem. <br><strong class=\"text-netskope-deepBlue font-semibold\">Os proxies tradicionais estão cegos diante das ameaças atuais.</strong>",
+                "stat_shadow": "São 'Shadow IT'", "stat_traffic": "Do tráfego é SaaS", "stat_malware": "malware em SaaS",
+                "analyst_title": "O que dizem os analistas",
+                "quote_1": "\"Os Threat Actors aproveitam serviços legítimos de nuvem e SaaS para burlar os controles de segurança tradicionais baseados em perímetro.\"",
+                "quote_2": "\"A maior parte do tráfego corporativo agora é criptografada, limitando a eficácia dos controles de segurança tradicionais.\"",
+                "quote_3": "\"Mais da metade dos aplicativos SaaS usados pelos colaboradores não é gerenciada pela TI. A falta de visibilidade continua sendo um dos principais desafios.\"",
+                "strat_label": "Estratégia da Netskope", "strat_title": "Cinco pilares para a Evolução da Navegação", "strat_subtitle": "Next-Gen Secure Web Gateway que inclui CASB, DLP e Enterprise Browser",
+                "pillar_1_desc": "Proteção constante onde quer que o usuário esteja: escritório, casa ou uma cafeteria.",
+                "pillar_1_item_1": "Sem backhauling para o data center, direct-to-cloud", "pillar_1_item_2": "Um único agente, Netskope Client",
+                "pillar_2_desc": "Controle granular de atividades e instâncias. Não bloqueie o app, controle seu uso e suas atividades.",
+                "pillar_3_title": "Visibilidade - Shadow IT", "pillar_3_desc": "Descubra os 97% de apps que o firewall não enxerga. Avalie riscos automaticamente.", "pillar_3_item_2": "+80.000 Apps Classificadas",
+                "pillar_4_desc": "Defesa avançada contra malware na nuvem e na web. Sandboxing e ML em tempo real.", "pillar_4_item_1": "50% do malware vem da nuvem", "pillar_4_item_2": "Antiphishing com Machine Learning",
+                "pillar_5_title": "Enterprise Browser", "pillar_5_desc": "Navegador seguro gerenciado para dispositivos não gerenciados e terceiros.", "pillar_5_item_1": "Acesso Zero Trust sem agentes", "pillar_5_item_2": "DLP e Proteção contra ameaças nativa",
+                "use_case_label": "IMPLEMENTAÇÃO PRÁTICA", "use_case_title": "Casos de uso principais", "use_case_subtitle": "Descubra como a Netskope transforma a segurança de navegação em cenários reais",
+                "context_title": "O Contexto Importa: Zero Trust Engine", "context_desc": "As políticas baseadas em \"Permitir/Bloquear Domínio\" não funcionam mais. A Netskope decodifica a linguagem da nuvem (API/JSON) em tempo real.",
+                "context_who": "QUEM", "context_device": "DISPOSITIVO", "context_app": "APP & INSTÂNCIA", "context_activity": "ATIVIDADE", "context_data": "DADO",
+                "card_1_title": "Navegação", "card_1_desc": "Proteção contra ameaças web e phishing com inspeção SSL completa e controle de acesso granular baseado em contexto.",
+                "card_2_title": "Governança de dados", "card_2_desc": "Controle DLP em tempo real durante a navegação, prevenindo a perda de dados sensíveis em aplicações web e cloud.",
+                "card_3_desc": "Segurança proativa para ferramentas de IA generativa, controlando quais dados são compartilhados e prevenindo vazamentos de propriedade intelectual.",
+                "card_4_desc": "Detecção avançada de ameaças com sandboxing, machine learning e análise em tempo real de conteúdo malicioso.",
+                "card_5_desc": "Correlação de eventos de rede com endpoints via Cloud Exchange, habilitando resposta estendida a incidentes.",
+                "card_6_title": "Dispositivos Não Gerenciados", "card_6_desc": "Estende a segurança a terceirizados e BYOD sem instalar agentes, protegendo o dado.",
+                "ce_desc": "O Netskope Cloud Exchange amplia as capacidades de segurança por meio de integrações nativas com os principais ecossistemas de segurança.", "ce_item_1": "Integração com EDR, SIEM e XSOAR", "ce_item_2": "Orquestração de respostas automatizadas", "ce_item_3": "API-first para integrações personalizadas", "ce_button": "Ver arquitetura do Cloud Exchange",
+                "report_label": "Visibilidade Completa", "report_title": "Relatório de Visibilidade de Aplicativos", "report_subtitle": "Nossa análise oferece uma visão completa de onde seus usuários navegam e a quais riscos estão expostos.",
+                "report_item_1": "quais aplicativos seus usuários estão usando sem que sejam gerenciados?", "report_item_2_title": "Análise de Risco",
+                "report_item_3_title": "Tendências em Tempo Real", "report_item_3_desc": "Monitoramento contínuo da movimentação de dados",
+                "report_item_4_title": "Recomendações", "report_item_4_desc": "Plano de remediação",
+                "report_button": "Ver Relatório de Visibilidade", "custom_analysis_title": "Análise Personalizada", "custom_analysis_desc": "Relatório adaptado ao seu ambiente específico"
+                // nav_who / nav_back / nav_demo agora vêm de NetskopeCommonI18n
             }
         };
 
-        // changeLanguage(lang) es ahora la función compartida de assets/js/common.js,
-        // que opera sobre el objeto global `translations` definido arriba.
+        // changeLanguage(lang) agora é a função compartilhada de assets/js/common.js,
+        // que opera sobre o objeto global `translations` definido acima.
 
         document.addEventListener('DOMContentLoaded', () => {
             changeLanguage(localStorage.getItem('netskope-lang') || 'es');

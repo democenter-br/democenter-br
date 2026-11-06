@@ -1,20 +1,20 @@
 <?php
-// oopsyoudidit.php - Página de "coaching"/bloqueo que se muestra cuando la demo
-// simula que un usuario intentó acceder a una app o contenido restringido por
-// política. Es una página de callback dentro del flujo de demo (enlazada desde
-// escenarios de demos.php), con CTA de vuelta a demos.php.
+// oopsyoudidit.php - Página de "coaching"/bloqueio exibida quando a demo
+// simula que um usuário tentou acessar um app ou conteúdo restrito por
+// política. É uma página de callback dentro do fluxo de demo (vinculada a partir de
+// cenários de demos.php), com CTA de volta para demos.php.
 //
-// Las funciones JS comunes (changeLanguage, etc.) viven en assets/js/common.js
-// y los textos i18n compartidos entre páginas viven en assets/js/i18n-common.js.
-// El diccionario `translations` de este archivo solo contiene cadenas propias
-// de esta página.
+// As funções JS comuns (changeLanguage, etc.) ficam em assets/js/common.js
+// e os textos i18n compartilhados entre páginas ficam em assets/js/i18n-common.js.
+// O dicionário `translations` deste arquivo contém apenas strings próprias
+// desta página.
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="page.title">¡Oops! Acceso Restringido</title>
+    <title data-i18n="page.title">Ops! Acesso Restrito</title>
     <link rel="icon" type="image/png" href="favicon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,7 +78,7 @@
 <body class="flex flex-col min-h-screen text-netskope-darkGray font-sans relative overflow-hidden">
     <div class="pattern-overlay"></div>
 
-    <!-- Header fijo: logo (link a index.php), etiqueta "Portal de Demos". -->
+    <!-- Header fixo: logo (link para index.php), etiqueta "Portal de Demos". -->
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.php"><img src="assets/images/brand/netskope-logo-stacked-color.png" alt="Netskope" class="h-8 w-auto"></a>
@@ -89,8 +89,8 @@
         </div>
     </header>
 
-    <!-- Tarjeta central "Oops": ícono de alerta, mensaje de bloqueo, recuadro de
-         políticas/buenas prácticas y CTA para volver a demos.php. -->
+    <!-- Cartão central "Oops": ícone de alerta, mensagem de bloqueio, quadro de
+         políticas/boas práticas e CTA para voltar a demos.php. -->
     <main class="flex-grow flex items-center justify-center py-12 px-6 relative z-10">
         <div class="max-w-3xl w-full glass-panel rounded-[24px] p-8 md:p-12 text-center relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-netskope-orange via-netskope-blue to-netskope-green"></div>
@@ -101,94 +101,94 @@
 
             <div class="inline-flex items-center gap-2 mb-4">
                 <span class="w-2 h-2 rounded-full bg-netskope-orange"></span>
-                <span class="text-netskope-orange font-bold text-sm tracking-widest uppercase" data-i18n="hero.badge">Alerta de Seguridad</span>
+                <span class="text-netskope-orange font-bold text-sm tracking-widest uppercase" data-i18n="hero.badge">Alerta de Segurança</span>
             </div>
             
-            <h1 class="text-3xl md:text-5xl font-black text-netskope-deepBlue mb-4" data-i18n="hero.title">¡Oops! Hiciste algo que no debías... 👀</h1>
-            <p class="text-lg text-netskope-gray mb-8" data-i18n="hero.desc">Si estás viendo esta página, es probable que hayas intentado acceder a una aplicación o contenido restringido por las políticas de la organización.</p>
+            <h1 class="text-3xl md:text-5xl font-black text-netskope-deepBlue mb-4" data-i18n="hero.title">Ops! Você fez algo que não devia... 👀</h1>
+            <p class="text-lg text-netskope-gray mb-8" data-i18n="hero.desc">Se você está vendo esta página, é provável que tenha tentado acessar um aplicativo ou conteúdo restrito pelas políticas da organização.</p>
 
             <hr class="border-gray-200 mb-8">
 
             <div class="text-left bg-blue-50 border border-blue-100 rounded-xl p-6 mb-8">
                 <h2 class="text-xl font-bold text-netskope-deepBlue mb-2 flex items-center gap-2">
                     <i data-lucide="book-open-check" class="w-5 h-5 text-netskope-blue"></i>
-                    <span data-i18n="policy.title">Políticas y Cumplimiento Corporativo</span>
+                    <span data-i18n="policy.title">Políticas e Conformidade Corporativa</span>
                 </h2>
-                <p class="text-sm text-netskope-gray mb-6 leading-relaxed" data-i18n="policy.desc">Recuerda que nuestra organización está comprometida con la seguridad de la información. Seguir las normativas no solo protege a la empresa, sino también tus datos y dispositivos.</p>
+                <p class="text-sm text-netskope-gray mb-6 leading-relaxed" data-i18n="policy.desc">Lembre-se de que nossa organização está comprometida com a segurança da informação. Seguir as normas não protege apenas a empresa, mas também seus dados e dispositivos.</p>
                 
-                <h3 class="font-bold text-netskope-teal mb-3" data-i18n="practices.title">💡 Mejores Prácticas de Navegación:</h3>
+                <h3 class="font-bold text-netskope-teal mb-3" data-i18n="practices.title">💡 Melhores Práticas de Navegação:</h3>
                 <ul class="space-y-3">
                     <li class="flex items-start gap-3 text-sm text-netskope-darkGray">
                         <i data-lucide="x-circle" class="w-5 h-5 text-netskope-orange flex-shrink-0 mt-0.5"></i>
-                        <span data-i18n="prac.1">No utilices aplicaciones no autorizadas (Shadow IT) para compartir datos corporativos.</span>
+                        <span data-i18n="prac.1">Não utilize aplicativos não autorizados (Shadow IT) para compartilhar dados corporativos.</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-netskope-darkGray">
                         <i data-lucide="shield-x" class="w-5 h-5 text-netskope-orange flex-shrink-0 mt-0.5"></i>
-                        <span data-i18n="prac.2">Evita acceder a sitios de riesgo, piratería, o contenido inapropiado desde equipos de trabajo.</span>
+                        <span data-i18n="prac.2">Evite acessar sites de risco, pirataria ou conteúdo inapropriado a partir de equipamentos de trabalho.</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-netskope-darkGray">
                         <i data-lucide="check-circle-2" class="w-5 h-5 text-netskope-green flex-shrink-0 mt-0.5"></i>
-                        <span data-i18n="prac.3">Si necesitas una herramienta en la nube, solicítala a través de los canales oficiales de TI.</span>
+                        <span data-i18n="prac.3">Se precisar de uma ferramenta na nuvem, solicite-a pelos canais oficiais de TI.</span>
                     </li>
                 </ul>
             </div>
 
             <a href="demos.php" class="inline-flex items-center gap-2 bg-netskope-deepBlue text-white px-8 py-4 rounded-full font-bold hover:bg-netskope-blue transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1">
                 <i data-lucide="arrow-left" class="w-5 h-5"></i>
-                <span data-i18n="btn.back">Volver a un lugar seguro</span>
+                <span data-i18n="btn.back">Voltar para um lugar seguro</span>
             </a>
         </div>
     </main>
 
-    <!-- Footer: logo pequeño + texto de derechos reservados (hardcodeado en inglés en ambos idiomas). -->
+    <!-- Footer: logo pequeno + texto de direitos reservados (hardcoded em inglês em ambos os idiomas). -->
     <footer class="bg-white border-t border-gray-200 py-8 mt-auto">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <img src="assets/images/brand/netskope-logo-stacked-color.png" alt="Netskope" class="h-5 w-auto opacity-70">
             <p class="text-xs text-netskope-gray text-center md:text-right">
-                © <script>document.write(new Date().getFullYear())</script> Netskope. <span data-i18n="footer.rights">Todos los derechos reservados.</span>
+                © <script>document.write(new Date().getFullYear())</script> Netskope. <span data-i18n="footer.rights">Todos os direitos reservados.</span>
             </p>
         </div>
     </footer>
 
-    <!-- Utilidades JS compartidas (changeLanguage, etc.) y diccionario de
-         traducciones común. Deben cargarse antes del script inline de abajo. -->
+    <!-- Utilitários JS compartilhados (changeLanguage, etc.) e dicionário de
+         traduções comum. Devem ser carregados antes do script inline abaixo. -->
     <script src="assets/js/common.js"></script>
     <script src="assets/js/i18n-common.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             lucide.createIcons();
-            // Restaura el idioma guardado por el usuario en otras páginas (antes esta
-            // página se quedaba siempre en español al cargar, sin sincronizar con la
-            // preferencia guardada en localStorage como sí hacen el resto de páginas).
+            // Restaura o idioma salvo pelo usuário em outras páginas (antes esta
+            // página ficava sempre em espanhol ao carregar, sem sincronizar com a
+            // preferência salva em localStorage como fazem as demais páginas).
             changeLanguage(localStorage.getItem('netskope-lang') || 'es');
         });
 
-        // Diccionario específico de esta página, fusionado con NetskopeCommonI18n.
+        // Dicionário específico desta página, mesclado com NetskopeCommonI18n.
         const translations = {
             es: {
                 ...NetskopeCommonI18n.es,
-                "page.title": "¡Oops! Acceso Restringido",
+                "page.title": "Ops! Acesso Restrito",
                 "header.title": "Portal de Demos",
-                "hero.badge": "Alerta de Seguridad",
-                "hero.title": "¡Oops! Hiciste algo que no debías... 👀",
-                "hero.desc": "Si estás viendo esta página, es probable que hayas intentado acceder a una aplicación o contenido restringido por las políticas de la organización.",
-                "policy.title": "Políticas y Cumplimiento Corporativo",
-                "policy.desc": "Recuerda que nuestra organización está comprometida con la seguridad de la información. Seguir las normativas no solo protege a la empresa, sino también tus datos y dispositivos.",
-                "practices.title": "💡 Mejores Prácticas de Navegación:",
-                "prac.1": "No utilices aplicaciones no autorizadas (Shadow IT) para compartir datos corporativos.",
-                "prac.2": "Evita acceder a sitios de riesgo, piratería o contenido inapropiado desde equipos de trabajo.",
-                "prac.3": "Si necesitas una herramienta en la nube, solicítala a través de los canales oficiales de TI.",
-                "btn.back": "Volver a un lugar seguro",
-                "footer.rights": "Todos los derechos reservados."
+                "hero.badge": "Alerta de Segurança",
+                "hero.title": "Ops! Você fez algo que não devia... 👀",
+                "hero.desc": "Se você está vendo esta página, é provável que tenha tentado acessar um aplicativo ou conteúdo restrito pelas políticas da organização.",
+                "policy.title": "Políticas e Conformidade Corporativa",
+                "policy.desc": "Lembre-se de que nossa organização está comprometida com a segurança da informação. Seguir as normas não protege apenas a empresa, mas também seus dados e dispositivos.",
+                "practices.title": "💡 Melhores Práticas de Navegação:",
+                "prac.1": "Não utilize aplicativos não autorizados (Shadow IT) para compartilhar dados corporativos.",
+                "prac.2": "Evite acessar sites de risco, pirataria ou conteúdo inapropriado a partir de equipamentos de trabalho.",
+                "prac.3": "Se precisar de uma ferramenta na nuvem, solicite-a pelos canais oficiais de TI.",
+                "btn.back": "Voltar para um lugar seguro",
+                "footer.rights": "Todos os direitos reservados."
             }
         };
 
-        // changeLanguage(lang) es ahora la función compartida de assets/js/common.js.
-        // Nota: la versión local que había aquí no validaba el idioma recibido (no
-        // hacía fallback a 'es' si venía algo inválido) ni persistía la selección en
-        // localStorage, a diferencia de todas las demás páginas del sitio. La versión
-        // compartida sí lo hace, por lo que esta página ahora también recuerda el
-        // idioma elegido por el usuario al navegar de vuelta a demos.php y regresar.
+        // changeLanguage(lang) agora é a função compartilhada de assets/js/common.js.
+        // Nota: a versão local que existia aqui não validava o idioma recebido (não
+        // fazia fallback para 'es' se vinha algo inválido) nem persistia a seleção em
+        // localStorage, ao contrário de todas as demais páginas do site. A versão
+        // compartilhada faz isso, então esta página agora também lembra o
+        // idioma escolhido pelo usuário ao voltar para demos.php e retornar.
     </script>
     <!-- TEAM-HIDE:CHATBOT js <script src="/assets/js/demo-chat.js?v=4"></script> -->
 </body>
