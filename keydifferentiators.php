@@ -1,34 +1,34 @@
 <!--
-    keydifferentiators.php - Página "¿Quién es Netskope?" / diferenciadores clave.
-    Es la tarjeta principal enlazada desde index.php: explica la propuesta de
-    valor de Netskope (red NewEdge, posición en cuadrantes de analistas,
-    consola única, etc.) con varios modales de detalle (Gartner/Forrester/IDC,
-    NewEdge). Nota: a diferencia de las otras 10 páginas del sitio, este
-    archivo no usa tags <?php ?> (es HTML puro con extensión .php) y su
-    diccionario de traducciones se carga desde un catálogo externo
-    (assets/json/keydifferentiators.i18n.json) vía XHR síncrono, en vez del
-    objeto `translations` embebido que usan las demás páginas.
+    keydifferentiators.php - Página "Quem é a Netskope?" / diferenciais-chave.
+    É o card principal vinculado a partir de index.php: explica a proposta de
+    valor da Netskope (rede NewEdge, posição nos quadrantes de analistas,
+    console única, etc.) com vários modais de detalhe (Gartner/Forrester/IDC,
+    NewEdge). Nota: diferentemente das outras 10 páginas do site, este
+    arquivo não usa tags <?php ?> (é HTML puro com extensão .php) e seu
+    dicionário de traduções é carregado de um catálogo externo
+    (assets/json/keydifferentiators.i18n.json) via XHR síncrono, em vez do
+    objeto `translations` embutido que as demais páginas usam.
 
-    Las funciones JS comunes (changeLanguage, openModal/closeModal, etc.) viven
-    en assets/js/common.js y se cargan aquí también, pero esta página define
-    sus PROPIAS versiones locales de changeLanguage/openModal/closeModal (con
-    firmas y comportamiento distintos: openModal/closeModal reciben el elemento
-    del modal, no un ID, y changeLanguage integra lógica adicional específica
-    de esta página). Esas versiones locales, al declararse después en el mismo
-    scope global, sobrescriben a las de common.js sin conflicto. No se fusionó
-    NetskopeCommonI18n (assets/js/i18n-common.js) en el catálogo de esta
-    página para no interferir con su mecanismo de carga desde JSON externo;
-    si en el futuro se quiere compartir texto entre esta página y las demás,
-    conviene revisar manualmente ambos catálogos para evitar que el texto
-    diverja con el tiempo.
+    As funções JS comuns (changeLanguage, openModal/closeModal, etc.) ficam
+    em assets/js/common.js e também são carregadas aqui, mas esta página define
+    suas PRÓPRIAS versões locais de changeLanguage/openModal/closeModal (com
+    assinaturas e comportamento distintos: openModal/closeModal recebem o elemento
+    do modal, não um ID, e changeLanguage integra lógica adicional específica
+    desta página). Essas versões locais, ao serem declaradas depois no mesmo
+    escopo global, sobrescrevem as de common.js sem conflito. NetskopeCommonI18n
+    (assets/js/i18n-common.js) não foi mesclado ao catálogo desta
+    página para não interferir no seu mecanismo de carga a partir de JSON externo;
+    se no futuro for desejável compartilhar texto entre esta página e as demais,
+    convém revisar manualmente ambos os catálogos para evitar que o texto
+    divirja com o tempo.
 -->
-<html lang="es"><head>
+<html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Resumen estructurado de los diferenciadores de Netskope para reforzar mensajes comerciales consistentes.">
+    <meta name="description" content="Resumo estruturado dos diferenciais da Netskope para reforçar mensagens comerciais consistentes.">
     
     <link rel="icon" type="image/png" href="favicon.png">
-<title>Democenter Netskope | Diferenciadores Clave</title>
+<title>Democenter Netskope | Diferenciais-Chave</title>
     
     <!-- Fuentes -->
     <link href="assets/vendor/css/offline-fonts.css" rel="stylesheet">
@@ -1174,9 +1174,9 @@
             z-index: 1000; padding: 20px;
         }
         .modal-overlay.hidden {
-            /* !important necesario: .modal-overlay ya define display:flex,
-               así que la clase .hidden por sí sola (con igual especificidad)
-               no ganaría la cascada sin forzar el override. */
+            /* !important necessário: .modal-overlay já define display:flex,
+               portanto a classe .hidden por si só (com igual especificidade)
+               não venceria a cascata sem forçar o override. */
             display: none !important;
         }
         .modal-content {
@@ -1310,11 +1310,11 @@
             box-shadow: 0 4px 10px rgba(8, 26, 89, 0.28);
         }
     </style>
-<!-- CSS de Tailwind pre-compilado/inline (salida de build, minificado) más
-     metaetiquetas SEO/social duplicadas del <head>. No editar a mano: si se
-     necesitan nuevas utilidades de Tailwind, deben regenerarse con el build
-     habitual; los cambios manuales aquí se perderían en la próxima compilación. -->
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.-inset-1{inset:-0.25rem}.inset-0{inset:0px}.right-0{right:0px}.top-0{top:0px}.-right-20{right:-5rem}.bottom-20{bottom:5rem}.bottom-4{bottom:1rem}.left-0{left:0px}.left-4{left:1rem}.right-4{right:1rem}.top-4{top:1rem}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-12{margin-bottom:3rem}.mb-8{margin-bottom:2rem}.mb-0\.5{margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:0.25rem}.mt-1{margin-top:0.25rem}.mt-1\.5{margin-top:0.375rem}.mt-10{margin-top:2.5rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-auto{margin-top:auto}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-20{height:5rem}.h-8{height:2rem}.h-full{height:100%}.h-1\.5{height:0.375rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-3{height:0.75rem}.h-32{height:8rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-auto{height:auto}.min-h-screen{min-height:100vh}.min-h-\[360px\]{min-height:360px}.w-1\/2{width:50%}.w-8{width:2rem}.w-auto{width:auto}.w-1\.5{width:0.375rem}.w-10{width:2.5rem}.w-12{width:3rem}.w-20{width:5rem}.w-3{width:0.75rem}.w-32{width:8rem}.w-5{width:1.25rem}.w-full{width:100%}.w-px{width:1px}.max-w-5xl{max-width:64rem}.max-w-7xl{max-width:80rem}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.gap-1\.5{gap:0.375rem}.gap-16{gap:4rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-x-1 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.25rem * var(--tw-space-x-reverse));margin-left:calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-gray-200 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(229 231 235 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.rounded-3xl{border-radius:1.5rem}.rounded-\[28px\]{border-radius:28px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-netskope{border-radius:24px}.rounded-xl{border-radius:0.75rem}.rounded-bl-\[100px\]{border-bottom-left-radius:100px}.rounded-br-lg{border-bottom-right-radius:0.5rem}.rounded-tl-lg{border-top-left-radius:0.5rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-l-2{border-left-width:2px}.border-r-2{border-right-width:2px}.border-t{border-top-width:1px}.border-t-2{border-top-width:2px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-100\/90{border-color:rgb(243 244 246 / 0.9)}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-netskope-blue\/20{border-color:rgb(0 169 206 / 0.2)}.border-nk-blue\/15{border-color:rgb(0 169 206 / 0.15)}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.bg-netskope-green{--tw-bg-opacity:1;background-color:rgb(175 241 152 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/90{background-color:rgb(255 255 255 / 0.9)}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-netskope-blue{--tw-bg-opacity:1;background-color:rgb(0 169 206 / var(--tw-bg-opacity, 1))}.bg-netskope-lightBlue{--tw-bg-opacity:1;background-color:rgb(217 250 255 / var(--tw-bg-opacity, 1))}.bg-netskope-lightBlue\/40{background-color:rgb(217 250 255 / 0.4)}.bg-netskope-offWhite{--tw-bg-opacity:1;background-color:rgb(245 245 245 / var(--tw-bg-opacity, 1))}.bg-netskope-teal{--tw-bg-opacity:1;background-color:rgb(0 128 149 / var(--tw-bg-opacity, 1))}.bg-nk-deep-blue{--tw-bg-opacity:1;background-color:rgb(8 26 89 / var(--tw-bg-opacity, 1))}.bg-nk-light-blue{--tw-bg-opacity:1;background-color:rgb(217 250 255 / var(--tw-bg-opacity, 1))}.bg-nk-off-white{--tw-bg-opacity:1;background-color:rgb(245 245 245 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.bg-gradient-confident{background-image:linear-gradient(135deg, #081A59 0%, #00A9CE 100%)}.bg-gradient-neon{background-image:linear-gradient(135deg, #00A9CE 0%, #AFF198 100%)}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-netskope-lightBlue\/50{--tw-gradient-from:rgb(217 250 255 / 0.5) var(--tw-gradient-from-position);--tw-gradient-to:rgb(217 250 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-netskope-blue\/20{--tw-gradient-from:rgb(0 169 206 / 0.2) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 169 206 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-white{--tw-gradient-from:#fff var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.to-netskope-green\/20{--tw-gradient-to:rgb(175 241 152 / 0.2) var(--tw-gradient-to-position)}.to-nk-light-blue\/10{--tw-gradient-to:rgb(217 250 255 / 0.1) var(--tw-gradient-to-position)}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-24{padding-bottom:6rem}.pt-20{padding-top:5rem}.pb-5{padding-bottom:1.25rem}.pt-4{padding-top:1rem}.pt-5{padding-top:1.25rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-5xl{font-size:3rem;line-height:1}.text-base{font-size:1rem;line-height:1.5rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-lg{font-size:1.125rem;line-height:1.75rem}.font-bold{font-weight:700}.font-light{font-weight:300}.font-normal{font-weight:400}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.leading-6{line-height:1.5rem}.leading-none{line-height:1}.tracking-widest{letter-spacing:0.1em}.tracking-\[0\.12em\]{letter-spacing:0.12em}.tracking-\[0\.18em\]{letter-spacing:0.18em}.tracking-\[0\.22em\]{letter-spacing:0.22em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.text-netskope-blue{--tw-text-opacity:1;color:rgb(0 169 206 / var(--tw-text-opacity, 1))}.text-netskope-deepBlue{--tw-text-opacity:1;color:rgb(8 26 89 / var(--tw-text-opacity, 1))}.text-netskope-gray{--tw-text-opacity:1;color:rgb(83 86 90 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-netskope-darkGray{--tw-text-opacity:1;color:rgb(42 43 45 / var(--tw-text-opacity, 1))}.text-netskope-green{--tw-text-opacity:1;color:rgb(175 241 152 / var(--tw-text-opacity, 1))}.text-netskope-lightBlue{--tw-text-opacity:1;color:rgb(217 250 255 / var(--tw-text-opacity, 1))}.text-netskope-orange{--tw-text-opacity:1;color:rgb(255 130 0 / var(--tw-text-opacity, 1))}.text-netskope-teal{--tw-text-opacity:1;color:rgb(0 128 149 / var(--tw-text-opacity, 1))}.text-nk-blue{--tw-text-opacity:1;color:rgb(0 169 206 / var(--tw-text-opacity, 1))}.text-nk-deep-blue{--tw-text-opacity:1;color:rgb(8 26 89 / var(--tw-text-opacity, 1))}.text-nk-gray{--tw-text-opacity:1;color:rgb(83 86 90 / var(--tw-text-opacity, 1))}.text-nk-orange{--tw-text-opacity:1;color:rgb(255 130 0 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/80{color:rgb(255 255 255 / 0.8)}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-80{opacity:0.8}.opacity-10{opacity:0.1}.opacity-20{opacity:0.2}.opacity-30{opacity:0.3}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_-5px_15px_-5px_rgba\(0\2c 0\2c 0\2c 0\.05\)\]{--tw-shadow:0 -5px 15px -5px rgba(0,0,0,0.05);--tw-shadow-colored:0 -5px 15px -5px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-soft{--tw-shadow:0 10px 40px -10px rgba(8, 26, 89, 0.08);--tw-shadow-colored:0 10px 40px -10px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur{--tw-blur:blur(8px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:border-nk-light-blue:hover{--tw-border-opacity:1;border-color:rgb(217 250 255 / var(--tw-border-opacity, 1))}.hover\:text-netskope-teal:hover{--tw-text-opacity:1;color:rgb(0 128 149 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.group:hover .group-hover\:bg-nk-deep-blue{--tw-bg-opacity:1;background-color:rgb(8 26 89 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-20{opacity:0.2}@media (min-width: 640px){.sm\:block{display:block}.sm\:w-auto{width:auto}.sm\:flex-row{flex-direction:row}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}}@media (min-width: 768px){.md\:flex{display:flex}.md\:min-h-\[500px\]{min-height:500px}.md\:w-1\/3{width:33.333333%}.md\:w-2\/3{width:66.666667%}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:gap-5{gap:1.25rem}.md\:divide-x > :not([hidden]) ~ :not([hidden]){--tw-divide-x-reverse:0;border-right-width:calc(1px * var(--tw-divide-x-reverse));border-left-width:calc(1px * calc(1 - var(--tw-divide-x-reverse)))}.md\:divide-y-0 > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(0px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(0px * var(--tw-divide-y-reverse))}.md\:border-l{border-left-width:1px}.md\:border-t-0{border-top-width:0px}.md\:p-10{padding:2.5rem}.md\:p-7{padding:1.75rem}.md\:p-8{padding:2rem}.md\:px-12{padding-left:3rem;padding-right:3rem}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:py-8{padding-top:2rem;padding-bottom:2rem}.md\:pt-0{padding-top:0px}.md\:text-left{text-align:left}.md\:text-right{text-align:right}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-7xl{font-size:4.5rem;line-height:1}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1280px){.xl\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style><meta name="application-name" content="Democenter Netskope | Diferenciadores Clave"><meta name="apple-mobile-web-app-title" content="Democenter Netskope | Diferenciadores Clave"><meta name="theme-color" content="#081A59"><meta property="og:title" content="Democenter Netskope | Diferenciadores Clave"><meta property="og:description" content="Resumen estructurado de los diferenciadores de Netskope para reforzar mensajes comerciales consistentes."><meta property="og:type" content="website"><!-- URL canónica de producción del demo center (fija, no una IP/credencial); usada para SEO/og:url. --><link rel="canonical" href="https://democenter.ib-demo.com/demolatam/keydifferentiators.php">    <!-- TEAM-HIDE:CHATBOT css <link rel="stylesheet" href="/assets/css/demo-chat.css?v=4"> -->
+<!-- CSS do Tailwind pré-compilado/inline (saída de build, minificado) mais
+     metatags de SEO/social duplicadas do <head>. Não editar manualmente: se
+     novas utilidades do Tailwind forem necessárias, devem ser regeneradas com o build
+     habitual; alterações manuais aqui seriam perdidas na próxima compilação. -->
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.-inset-1{inset:-0.25rem}.inset-0{inset:0px}.right-0{right:0px}.top-0{top:0px}.-right-20{right:-5rem}.bottom-20{bottom:5rem}.bottom-4{bottom:1rem}.left-0{left:0px}.left-4{left:1rem}.right-4{right:1rem}.top-4{top:1rem}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-12{margin-bottom:3rem}.mb-8{margin-bottom:2rem}.mb-0\.5{margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:0.25rem}.mt-1{margin-top:0.25rem}.mt-1\.5{margin-top:0.375rem}.mt-10{margin-top:2.5rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-auto{margin-top:auto}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-20{height:5rem}.h-8{height:2rem}.h-full{height:100%}.h-1\.5{height:0.375rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-3{height:0.75rem}.h-32{height:8rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-auto{height:auto}.min-h-screen{min-height:100vh}.min-h-\[360px\]{min-height:360px}.w-1\/2{width:50%}.w-8{width:2rem}.w-auto{width:auto}.w-1\.5{width:0.375rem}.w-10{width:2.5rem}.w-12{width:3rem}.w-20{width:5rem}.w-3{width:0.75rem}.w-32{width:8rem}.w-5{width:1.25rem}.w-full{width:100%}.w-px{width:1px}.max-w-5xl{max-width:64rem}.max-w-7xl{max-width:80rem}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.gap-1\.5{gap:0.375rem}.gap-16{gap:4rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-x-1 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.25rem * var(--tw-space-x-reverse));margin-left:calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-gray-200 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(229 231 235 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.rounded-3xl{border-radius:1.5rem}.rounded-\[28px\]{border-radius:28px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-netskope{border-radius:24px}.rounded-xl{border-radius:0.75rem}.rounded-bl-\[100px\]{border-bottom-left-radius:100px}.rounded-br-lg{border-bottom-right-radius:0.5rem}.rounded-tl-lg{border-top-left-radius:0.5rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-l-2{border-left-width:2px}.border-r-2{border-right-width:2px}.border-t{border-top-width:1px}.border-t-2{border-top-width:2px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-100\/90{border-color:rgb(243 244 246 / 0.9)}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-netskope-blue\/20{border-color:rgb(0 169 206 / 0.2)}.border-nk-blue\/15{border-color:rgb(0 169 206 / 0.15)}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.bg-netskope-green{--tw-bg-opacity:1;background-color:rgb(175 241 152 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/90{background-color:rgb(255 255 255 / 0.9)}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-netskope-blue{--tw-bg-opacity:1;background-color:rgb(0 169 206 / var(--tw-bg-opacity, 1))}.bg-netskope-lightBlue{--tw-bg-opacity:1;background-color:rgb(217 250 255 / var(--tw-bg-opacity, 1))}.bg-netskope-lightBlue\/40{background-color:rgb(217 250 255 / 0.4)}.bg-netskope-offWhite{--tw-bg-opacity:1;background-color:rgb(245 245 245 / var(--tw-bg-opacity, 1))}.bg-netskope-teal{--tw-bg-opacity:1;background-color:rgb(0 128 149 / var(--tw-bg-opacity, 1))}.bg-nk-deep-blue{--tw-bg-opacity:1;background-color:rgb(8 26 89 / var(--tw-bg-opacity, 1))}.bg-nk-light-blue{--tw-bg-opacity:1;background-color:rgb(217 250 255 / var(--tw-bg-opacity, 1))}.bg-nk-off-white{--tw-bg-opacity:1;background-color:rgb(245 245 245 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.bg-gradient-confident{background-image:linear-gradient(135deg, #081A59 0%, #00A9CE 100%)}.bg-gradient-neon{background-image:linear-gradient(135deg, #00A9CE 0%, #AFF198 100%)}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-netskope-lightBlue\/50{--tw-gradient-from:rgb(217 250 255 / 0.5) var(--tw-gradient-from-position);--tw-gradient-to:rgb(217 250 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-netskope-blue\/20{--tw-gradient-from:rgb(0 169 206 / 0.2) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 169 206 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-white{--tw-gradient-from:#fff var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.to-netskope-green\/20{--tw-gradient-to:rgb(175 241 152 / 0.2) var(--tw-gradient-to-position)}.to-nk-light-blue\/10{--tw-gradient-to:rgb(217 250 255 / 0.1) var(--tw-gradient-to-position)}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-24{padding-bottom:6rem}.pt-20{padding-top:5rem}.pb-5{padding-bottom:1.25rem}.pt-4{padding-top:1rem}.pt-5{padding-top:1.25rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-5xl{font-size:3rem;line-height:1}.text-base{font-size:1rem;line-height:1.5rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-lg{font-size:1.125rem;line-height:1.75rem}.font-bold{font-weight:700}.font-light{font-weight:300}.font-normal{font-weight:400}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.leading-6{line-height:1.5rem}.leading-none{line-height:1}.tracking-widest{letter-spacing:0.1em}.tracking-\[0\.12em\]{letter-spacing:0.12em}.tracking-\[0\.18em\]{letter-spacing:0.18em}.tracking-\[0\.22em\]{letter-spacing:0.22em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.text-netskope-blue{--tw-text-opacity:1;color:rgb(0 169 206 / var(--tw-text-opacity, 1))}.text-netskope-deepBlue{--tw-text-opacity:1;color:rgb(8 26 89 / var(--tw-text-opacity, 1))}.text-netskope-gray{--tw-text-opacity:1;color:rgb(83 86 90 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-netskope-darkGray{--tw-text-opacity:1;color:rgb(42 43 45 / var(--tw-text-opacity, 1))}.text-netskope-green{--tw-text-opacity:1;color:rgb(175 241 152 / var(--tw-text-opacity, 1))}.text-netskope-lightBlue{--tw-text-opacity:1;color:rgb(217 250 255 / var(--tw-text-opacity, 1))}.text-netskope-orange{--tw-text-opacity:1;color:rgb(255 130 0 / var(--tw-text-opacity, 1))}.text-netskope-teal{--tw-text-opacity:1;color:rgb(0 128 149 / var(--tw-text-opacity, 1))}.text-nk-blue{--tw-text-opacity:1;color:rgb(0 169 206 / var(--tw-text-opacity, 1))}.text-nk-deep-blue{--tw-text-opacity:1;color:rgb(8 26 89 / var(--tw-text-opacity, 1))}.text-nk-gray{--tw-text-opacity:1;color:rgb(83 86 90 / var(--tw-text-opacity, 1))}.text-nk-orange{--tw-text-opacity:1;color:rgb(255 130 0 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/80{color:rgb(255 255 255 / 0.8)}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-80{opacity:0.8}.opacity-10{opacity:0.1}.opacity-20{opacity:0.2}.opacity-30{opacity:0.3}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_-5px_15px_-5px_rgba\(0\2c 0\2c 0\2c 0\.05\)\]{--tw-shadow:0 -5px 15px -5px rgba(0,0,0,0.05);--tw-shadow-colored:0 -5px 15px -5px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-soft{--tw-shadow:0 10px 40px -10px rgba(8, 26, 89, 0.08);--tw-shadow-colored:0 10px 40px -10px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur{--tw-blur:blur(8px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:border-nk-light-blue:hover{--tw-border-opacity:1;border-color:rgb(217 250 255 / var(--tw-border-opacity, 1))}.hover\:text-netskope-teal:hover{--tw-text-opacity:1;color:rgb(0 128 149 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.group:hover .group-hover\:bg-nk-deep-blue{--tw-bg-opacity:1;background-color:rgb(8 26 89 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-20{opacity:0.2}@media (min-width: 640px){.sm\:block{display:block}.sm\:w-auto{width:auto}.sm\:flex-row{flex-direction:row}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}}@media (min-width: 768px){.md\:flex{display:flex}.md\:min-h-\[500px\]{min-height:500px}.md\:w-1\/3{width:33.333333%}.md\:w-2\/3{width:66.666667%}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:gap-5{gap:1.25rem}.md\:divide-x > :not([hidden]) ~ :not([hidden]){--tw-divide-x-reverse:0;border-right-width:calc(1px * var(--tw-divide-x-reverse));border-left-width:calc(1px * calc(1 - var(--tw-divide-x-reverse)))}.md\:divide-y-0 > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(0px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(0px * var(--tw-divide-y-reverse))}.md\:border-l{border-left-width:1px}.md\:border-t-0{border-top-width:0px}.md\:p-10{padding:2.5rem}.md\:p-7{padding:1.75rem}.md\:p-8{padding:2rem}.md\:px-12{padding-left:3rem;padding-right:3rem}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:py-8{padding-top:2rem;padding-bottom:2rem}.md\:pt-0{padding-top:0px}.md\:text-left{text-align:left}.md\:text-right{text-align:right}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-7xl{font-size:4.5rem;line-height:1}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1280px){.xl\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style><meta name="application-name" content="Democenter Netskope | Diferenciais-Chave"><meta name="apple-mobile-web-app-title" content="Democenter Netskope | Diferenciais-Chave"><meta name="theme-color" content="#081A59"><meta property="og:title" content="Democenter Netskope | Diferenciais-Chave"><meta property="og:description" content="Resumo estruturado dos diferenciais da Netskope para reforçar mensagens comerciais consistentes."><meta property="og:type" content="website"><!-- URL canónica de producción del demo center (fija, no una IP/credencial); usada para SEO/og:url. --><link rel="canonical" href="https://democenter.ib-demo.com/demolatam/keydifferentiators.php">    <!-- TEAM-HIDE:CHATBOT css <link rel="stylesheet" href="/assets/css/demo-chat.css?v=4"> -->
 </head>
 <body class="flex flex-col min-h-screen antialiased text-base" data-site-shell="ready" data-page-name="keydifferentiators" data-page-kind="story">
 
@@ -1325,7 +1325,7 @@
             
             <div class="flex items-center gap-6 site-shell-toolbar">
                 <div class="hidden md:flex items-center">
-                    <span class="text-xs font-bold text-netskope-deepBlue tracking-widest uppercase opacity-80" data-i18n="who_is_netskope">¿Quién es Netskope?</span>
+                    <span class="text-xs font-bold text-netskope-deepBlue tracking-widest uppercase opacity-80" data-i18n="who_is_netskope">Quem é a Netskope?</span>
                 </div>
 
             </div>
@@ -1341,17 +1341,17 @@
             <div class="max-w-5xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 mb-8">
                     <span class="w-8 h-1 bg-netskope-green"></span>
-                    <span class="text-netskope-deepBlue font-bold text-sm tracking-widest uppercase" data-i18n="why_netskope">Por qué Netskope</span>
+                    <span class="text-netskope-deepBlue font-bold text-sm tracking-widest uppercase" data-i18n="why_netskope">Por que Netskope</span>
                 </div>
                 
                 <h1 class="text-5xl md:text-7xl font-bold text-netskope-deepBlue mb-8 leading-tight">
-                    <span data-i18n="hero_title_1">Tu seguridad</span> <br>
-                    <span class="font-lora italic font-normal text-netskope-blue" data-i18n="hero_title_2">sin límites.</span>
+                    <span data-i18n="hero_title_1">Sua segurança</span> <br>
+                    <span class="font-lora italic font-normal text-netskope-blue" data-i18n="hero_title_2">sem limites.</span>
                 </h1>
                 
                 <p class="text-xl md:text-2xl text-netskope-gray font-light leading-relaxed mb-12">
-                    <span data-i18n="hero_desc_1">La única plataforma que converge capacidades de seguridad y red líderes en el mercado en una arquitectura unificada.</span><br>
-                    <strong class="text-netskope-deepBlue font-semibold" data-i18n="hero_desc_2">Validado por los analistas. Con la confianza de nuestros clientes.</strong>
+                    <span data-i18n="hero_desc_1">A única plataforma que converge capacidades de segurança e rede líderes de mercado em uma arquitetura unificada.</span><br>
+                    <strong class="text-netskope-deepBlue font-semibold" data-i18n="hero_desc_2">Validado pelos analistas. Com a confiança dos nossos clientes.</strong>
                 </p>
 
                 <!-- Analyst Validation Bar -->
@@ -1359,13 +1359,13 @@
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
                         <div class="text-center px-4">
                             <div class="text-sm font-bold text-netskope-deepBlue uppercase mb-2">Gartner</div>
-                            <button type="button" class="analyst-trigger" data-modal-trigger="gartnerModal" aria-haspopup="dialog" aria-controls="gartnerModal"><span class="analyst-trigger-label text-2xl font-bold text-netskope-blue hover:text-netskope-teal transition-colors" id="gartnerTrigger" data-i18n="leader_sse_sase">Líder SSE y SASE</span></button>
-                            <p class="text-xs text-netskope-gray mt-1" data-i18n="gartner_sub">Cuadrante Mágico SSE &amp; Single Vendor SASE</p>
+                            <button type="button" class="analyst-trigger" data-modal-trigger="gartnerModal" aria-haspopup="dialog" aria-controls="gartnerModal"><span class="analyst-trigger-label text-2xl font-bold text-netskope-blue hover:text-netskope-teal transition-colors" id="gartnerTrigger" data-i18n="leader_sse_sase">Líder em SSE e SASE</span></button>
+                            <p class="text-xs text-netskope-gray mt-1" data-i18n="gartner_sub">Quadrante Mágico SSE &amp; Single Vendor SASE</p>
                         </div>
                         <div class="text-center px-4 pt-4 md:pt-0">
                             <div class="text-sm font-bold text-netskope-deepBlue uppercase mb-2">Forrester</div>
                             <button type="button" class="analyst-trigger" data-modal-trigger="forresterModal" aria-haspopup="dialog" aria-controls="forresterModal"><span class="analyst-trigger-label text-2xl font-bold text-netskope-blue hover:text-netskope-teal transition-colors" id="forresterTrigger" data-i18n="leader_wave">Líder Wave</span></button>
-                            <p class="text-xs text-netskope-gray mt-1" data-i18n="forrester_sub">Soluciones de Security Service Edge</p>
+                            <p class="text-xs text-netskope-gray mt-1" data-i18n="forrester_sub">Soluções de Security Service Edge</p>
                         </div>
                         <div class="text-center px-4 pt-4 md:pt-0">
                             <div class="text-sm font-bold text-netskope-deepBlue uppercase mb-2">IDC</div>
@@ -1374,9 +1374,9 @@
                         </div>
                         <div class="text-center px-4 pt-4 md:pt-0">
                             <div class="text-sm font-bold text-netskope-deepBlue uppercase mb-2" data-i18n="customers">Clientes</div>
-                            <div class="text-2xl font-bold text-netskope-blue" data-i18n="ref_count">Más de 400 referencias</div>
+                            <div class="text-2xl font-bold text-netskope-blue" data-i18n="ref_count">Mais de 400 referências</div>
                             <a href="customerreferences.php" class="block mt-2" id="customerReferencesLink">
-                                <span class="text-sm font-bold text-netskope-deepBlue underline" data-i18n="see_details">Ver Detalles</span>
+                                <span class="text-sm font-bold text-netskope-deepBlue underline" data-i18n="see_details">Ver Detalhes</span>
                             </a>
                         </div>
                     </div>
@@ -1393,18 +1393,18 @@
     <!-- Modal Gartner -->
     <div id="gartnerModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="gartnerModalTitle">
         <div class="modal-content">
-            <button class="close-modal" type="button" data-modal-close="gartnerModal" id="closeModal" aria-label="Cerrar">×</button>
-            <h3 id="gartnerModalTitle" class="text-2xl font-bold text-netskope-deepBlue mb-6 text-center" data-i18n="gartner_recognition">Reconocimientos Gartner</h3>
+            <button class="close-modal" type="button" data-modal-close="gartnerModal" id="closeModal" aria-label="Fechar">×</button>
+            <h3 id="gartnerModalTitle" class="text-2xl font-bold text-netskope-deepBlue mb-6 text-center" data-i18n="gartner_recognition">Reconhecimentos Gartner</h3>
             <div class="modal-grid">
                 <div>
                     <h4 class="text-lg font-bold text-netskope-blue mb-4">Magic Quadrant for Security Service Edge (Jul 2026)</h4>
                     <img src="assets/images/external/gartner-sse-2026.png" class="modal-image" alt="Gartner SSE Quadrant" style="height: 400px;">
-                    <p class="text-sm text-gray-600 mt-3" data-i18n="gartner_desc_sse">Netskope reconocido como Líder en el Cuadrante Mágico de SSE</p>
+                    <p class="text-sm text-gray-600 mt-3" data-i18n="gartner_desc_sse">Netskope reconhecida como Líder no Quadrante Mágico de SSE (2026)</p>
                 </div>
                 <div>
                     <h4 class="text-lg font-bold text-netskope-blue mb-4">Magic Quadrant for SASE Platforms (Jul 2026)</h4>
                     <img src="assets/images/external/gartner-sase-2026.png" class="modal-image" alt="Gartner SASE Quadrant" style="height: 400px;">
-                    <p class="text-sm text-gray-600 mt-3" data-i18n="gartner_desc_sase">Netskope reconocido como Líder en el Cuadrante Mágico de SASE Platforms</p>
+                    <p class="text-sm text-gray-600 mt-3" data-i18n="gartner_desc_sase">Netskope reconhecida como Líder no Quadrante Mágico de SASE Platforms (2026)</p>
                 </div>
             </div>
             <div class="mt-6 text-center text-sm text-gray-500">
@@ -1416,12 +1416,12 @@
     <!-- Modal Forrester -->
     <div id="forresterModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="forresterModalTitle">
         <div class="modal-content max-w-5xl">
-            <button class="close-modal" type="button" data-modal-close="forresterModal" id="closeForresterModal" aria-label="Cerrar">×</button>
-            <h3 id="forresterModalTitle" class="text-2xl font-bold text-netskope-deepBlue mb-6 text-center" data-i18n="forrester_recognition">Reconocimiento Forrester</h3>
+            <button class="close-modal" type="button" data-modal-close="forresterModal" id="closeForresterModal" aria-label="Fechar">×</button>
+            <h3 id="forresterModalTitle" class="text-2xl font-bold text-netskope-deepBlue mb-6 text-center" data-i18n="forrester_recognition">Reconhecimento Forrester</h3>
             <div class="max-w-4xl mx-auto">
                 <h4 class="text-lg font-bold text-netskope-blue mb-4 text-center">Forrester Wave: Security Service Edge Solutions (Q3 2025)</h4>
                 <img src="assets/images/external/forrester-wave-sse-2025.png" class="modal-image" alt="Forrester Wave for Security Service Edge Solutions" style="width: 75%; max-height: 75vh; border-radius: 0; margin: 0 auto;">
-                <p class="text-sm text-gray-600 mt-3 text-center" data-i18n="forrester_desc">Netskope reconocido como Wave Leader en Security Service Edge Solutions.</p>
+                <p class="text-sm text-gray-600 mt-3 text-center" data-i18n="forrester_desc">Netskope reconhecida como Wave Leader em Security Service Edge Solutions.</p>
             </div>
             <div class="mt-6 text-center text-sm text-gray-500">
                 <p>Forrester Wave for Security Service Edge Solutions | Q3 2025</p>
@@ -1432,12 +1432,12 @@
     <!-- Modal IDC -->
     <div id="idcModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="idcModalTitle">
         <div class="modal-content max-w-3xl">
-            <button class="close-modal" type="button" data-modal-close="idcModal" aria-label="Cerrar">×</button>
-            <h3 id="idcModalTitle" class="text-2xl font-bold text-netskope-deepBlue mb-6 text-center" data-i18n="idc_recognition">Reconocimiento IDC MarketScape</h3>
+            <button class="close-modal" type="button" data-modal-close="idcModal" aria-label="Fechar">×</button>
+            <h3 id="idcModalTitle" class="text-2xl font-bold text-netskope-deepBlue mb-6 text-center" data-i18n="idc_recognition">Reconhecimento IDC MarketScape</h3>
             <div class="max-w-xl mx-auto">
                 <h4 class="text-lg font-bold text-netskope-blue mb-4 text-center">IDC MarketScape: worldwide DLP</h4>
                 <img src="assets/images/analyst/idc-worldwide-dlp-marketscape.png" class="modal-image w-full" alt="IDC MarketScape worldwide DLP" style="max-height: 70vh;">
-                <p class="text-sm text-gray-600 mt-3 text-center" data-i18n="idc_desc">Netskope reconocido como Líder en IDC MarketScape para worldwide DLP.</p>
+                <p class="text-sm text-gray-600 mt-3 text-center" data-i18n="idc_desc">Netskope reconhecida como Líder no IDC MarketScape para worldwide DLP.</p>
             </div>
         </div>
     </div>
@@ -1453,36 +1453,36 @@
                 <!-- Left: Narrative -->
                 <div>
                     <span class="text-netskope-green font-bold text-xs uppercase tracking-widest mb-2 block" data-i18n="converged_platform">Plataforma Convergente</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="simplify_ops">Simplifica tus Operaciones.</h2>
-                    <p class="text-lg text-netskope-lightBlue font-light leading-relaxed mb-8" data-i18n="improve_sec">Mejora la Seguridad mientras reduces la complejidad, los costos y la carga operativa con una plataforma cloud nativa.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="simplify_ops">Simplifique suas Operações.</h2>
+                    <p class="text-lg text-netskope-lightBlue font-light leading-relaxed mb-8" data-i18n="improve_sec">Melhore a Segurança enquanto reduz a complexidade, os custos e a carga operacional com uma plataforma cloud nativa.</p>
                     
                     <ul class="space-y-6">
                         <li class="flex items-start gap-4">
                             <div class="w-10 h-10 rounded-full bg-netskope-green flex items-center justify-center text-netskope-deepBlue shrink-0 font-bold text-lg">1</div>
                             <div>
-                                <h4 class="text-xl font-bold mb-1" data-i18n="single_console">Una Sola Consola</h4>
-                                <p class="text-sm text-white/80" data-i18n="single_console_desc">Gestión unificada de políticas, incidentes y análisis para SWG, CASB, ZTNA, DSPM y SD-WAN. Visibilidad completa en un solo dashboard.</p>
+                                <h4 class="text-xl font-bold mb-1" data-i18n="single_console">Uma Única Console</h4>
+                                <p class="text-sm text-white/80" data-i18n="single_console_desc">Gestão unificada de políticas, incidentes e análises para SWG, CASB, ZTNA, DSPM e SD-WAN. Visibilidade completa em um único dashboard.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
                             <div class="w-10 h-10 rounded-full bg-netskope-blue flex items-center justify-center text-white shrink-0 font-bold text-lg">1</div>
                             <div>
-                                <h4 class="text-xl font-bold mb-1" data-i18n="single_client">Un Solo Cliente</h4>
-                                <p class="text-sm text-white/80" data-i18n="single_client_desc">Un agente ligero que dirige tráfico web, cloud y privado, aplicando protección del dato sin afectar el rendimiento.</p>
+                                <h4 class="text-xl font-bold mb-1" data-i18n="single_client">Um Único Cliente</h4>
+                                <p class="text-sm text-white/80" data-i18n="single_client_desc">Um agente leve que direciona tráfego web, cloud e privado, aplicando proteção de dados sem afetar o desempenho.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
                             <div class="w-10 h-10 rounded-full bg-netskope-teal flex items-center justify-center text-white shrink-0 font-bold text-lg">1</div>
                             <div>
-                                <h4 class="text-xl font-bold mb-1" data-i18n="single_engine">Un Solo Motor</h4>
-                                <p class="text-sm text-white/80" data-i18n="single_engine_desc">El <strong>Zero Trust Engine</strong> decodifica el tráfico una sola vez y aplica todas las políticas de seguridad simultáneamente en Single Pass.</p>
+                                <h4 class="text-xl font-bold mb-1" data-i18n="single_engine">Um Único Motor</h4>
+                                <p class="text-sm text-white/80" data-i18n="single_engine_desc">O <strong>Zero Trust Engine</strong> decodifica o tráfego uma única vez e aplica todas as políticas de segurança simultaneamente em Single Pass.</p>
                             </div>
                         </li>
                     </ul>
                     
                     <div class="mt-10 p-6 bg-white/10 rounded-lg border border-white/20">
                         <p class="text-lg text-white font-medium">
-                            <strong class="text-netskope-green" data-i18n="objective">El objetivo:</strong> <span data-i18n="objective_desc">Proteger al usuario esté donde esté sin empeorar la experiencia del usuario.</span>
+                            <strong class="text-netskope-green" data-i18n="objective">O objetivo:</strong> <span data-i18n="objective_desc">Proteger o usuário esteja onde estiver, sem piorar a experiência do usuário.</span>
                         </p>
                     </div>
                 </div>
@@ -1494,27 +1494,27 @@
                         <div class="relative bg-white text-netskope-darkGray p-8 rounded-netskope shadow-2xl h-full">
                             <div class="text-center mb-8">
                                 <h3 class="text-3xl font-bold text-netskope-deepBlue mb-2">NewEdge</h3>
-                                <p class="text-lg text-netskope-gray" data-i18n="newedge_slogan">La red de seguridad más conectada del mundo</p>
+                                <p class="text-lg text-netskope-gray" data-i18n="newedge_slogan">A rede de segurança mais conectada do mundo</p>
                             </div>
                             
                             <div class="space-y-6 mb-8">
                                 <div class="flex items-start gap-3">
                                     <span class="w-3 h-3 rounded-full bg-netskope-green mt-1.5"></span>
-                                    <div><span class="text-lg font-medium" data-i18n="newedge_stat_1">+120 data centers | +75 Regiones</span></div>
+                                    <div><span class="text-lg font-medium" data-i18n="newedge_stat_1">+120 data centers | +75 Regiões</span></div>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <span class="w-3 h-3 rounded-full bg-netskope-green mt-1.5"></span>
-                                    <div><span id="newedge-stat-2" class="text-lg font-medium" data-i18n="newedge_stat_2">13 nodos activos en Latinoamérica</span></div>
+                                    <div><span id="newedge-stat-2" class="text-lg font-medium" data-i18n="newedge_stat_2">13 nós ativos na América Latina</span></div>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <span class="w-3 h-3 rounded-full bg-netskope-green mt-1.5"></span>
-                                    <div><span class="text-lg font-medium" data-i18n="newedge_stat_3">Compute Completo y peering directo a AWS, GCP y Azure</span></div>
+                                    <div><span class="text-lg font-medium" data-i18n="newedge_stat_3">Compute Completo e peering direto com AWS, GCP e Azure</span></div>
                                 </div>
                             </div>
                             
                             <div class="text-center mb-8">
                                 <img src="assets/images/external/newedge-coverage.svg" alt="NewEdge Network Coverage" class="w-full h-auto rounded-lg border border-gray-200 cursor-pointer hover:shadow-lg transition-shadow" id="newedgeImage">
-                                <p class="text-sm text-netskope-gray mt-2" data-i18n="click_zoom">Haz clic para ampliar</p>
+                                <p class="text-sm text-netskope-gray mt-2" data-i18n="click_zoom">Clique para ampliar</p>
                             </div>
                         </div>
                     </div>
@@ -1526,12 +1526,12 @@
     <!-- Modal NewEdge Image -->
     <div id="newedgeModal" class="modal-overlay hidden">
         <div class="modal-content max-w-6xl">
-            <button class="close-modal" type="button" id="closeNewedgeModal" aria-label="Cerrar">×</button>
+            <button class="close-modal" type="button" id="closeNewedgeModal" aria-label="Fechar">×</button>
             <h3 class="text-2xl font-bold text-netskope-deepBlue mb-6 text-center" data-i18n="newedge_global_coverage">Cobertura Global NewEdge</h3>
             <img src="assets/images/external/newedge-coverage.svg" alt="NewEdge Network Coverage" class="modal-image-full">
             <div class="mt-6 text-center">
-                <p class="text-lg font-bold text-netskope-deepBlue" data-i18n="newedge_slogan">La red de seguridad más conectada del mundo</p>
-                <p class="text-sm text-gray-600 mt-2" data-i18n="newedge_modal_sub">+120 data centers | +75 Regiones | Compute Completo en cada nodo</p>
+                <p class="text-lg font-bold text-netskope-deepBlue" data-i18n="newedge_slogan">A rede de segurança mais conectada do mundo</p>
+                <p class="text-sm text-gray-600 mt-2" data-i18n="newedge_modal_sub">+120 data centers | +75 Regiões | Compute Completo em cada nó</p>
             </div>
         </div>
     </div>
@@ -1541,9 +1541,9 @@
         <div class="container mx-auto px-6 md:px-12">
 
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-4" data-i18n="use_cases_title">Casos de Uso de Netskope</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-netskope-deepBlue mb-4" data-i18n="use_cases_title">Casos de Uso da Netskope</h2>
                 <div class="w-20 h-1.5 bg-gradient-neon mx-auto rounded-full"></div>
-                <p class="text-netskope-gray mt-6 max-w-2xl mx-auto" data-i18n="use_cases_sub">Soluciones específicas para los desafíos de seguridad más críticos del mercado</p>
+                <p class="text-netskope-gray mt-6 max-w-2xl mx-auto" data-i18n="use_cases_sub">Soluções específicas para os desafios de segurança mais críticos do mercado</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1558,7 +1558,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="network" aria-hidden="true" class="lucide lucide-network leading-none"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 relative z-10">NewEdge</h3>
-                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_newedge_desc">Nuestra infraestructura está en puntos neutros de IX, no depende de nubes públicas. NewEdge es la red de seguridad más conectada del mundo.</p>
+                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_newedge_desc">Nossa infraestrutura está em pontos neutros de IX e não depende de nuvens públicas. A NewEdge é a rede de segurança mais conectada do mundo.</p>
                     <div class="pt-4 border-t border-gray-100 space-y-2 mt-auto relative z-10">
                          <div class="flex items-center gap-2 text-xs text-netskope-gray">
                             <span class="w-1.5 h-1.5 rounded-full bg-netskope-green"></span>
@@ -1566,11 +1566,11 @@
                         </div>
                         <div class="flex items-center gap-2 text-xs text-netskope-gray">
                             <span class="w-1.5 h-1.5 rounded-full bg-netskope-green"></span>
-                            <span data-i18n="stat_regions">+75 Regiones</span>
+                            <span data-i18n="stat_regions">+75 Regiões</span>
                         </div>
                         <div class="flex items-center gap-2 text-xs text-netskope-gray">
                             <span class="w-1.5 h-1.5 rounded-full bg-netskope-green"></span>
-                            <span data-i18n="stat_compute">Compute Completo (Sin Hairpinning)</span>
+                            <span data-i18n="stat_compute">Compute Completo (Sem Hairpinning)</span>
                         </div>
                     </div>
                 </div>
@@ -1584,14 +1584,14 @@
                     <div class="nk-diff-icon w-12 h-12 bg-netskope-lightBlue rounded-xl flex items-center justify-center text-netskope-blue mb-6 relative z-10">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" aria-hidden="true" class="lucide lucide-eye leading-none"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 relative z-10" data-i18n="diff_visibility_title">Visibilidad y Control Profundo</h3>
-                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_visibility_desc">Vamos más allá de permitir o bloquear dominios. Entendemos el lenguaje de la nube (JSON, API) para aplicar controles granulares basados en el contexto.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 relative z-10" data-i18n="diff_visibility_title">Visibilidade e Controle Profundo</h3>
+                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_visibility_desc">Vamos além de permitir ou bloquear domínios. Entendemos a linguagem da nuvem (JSON, API) para aplicar controles granulares baseados no contexto.</p>
                     <div class="pt-4 border-t border-gray-100 mt-auto relative z-10 flex items-center">
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-netskope-lightBlue/40 text-netskope-teal text-[10px] font-bold uppercase tracking-wider">
                             <span class="nk-diff-chip-icon inline-flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="code-2" aria-hidden="true" class="lucide lucide-code-2 leading-none"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
                             </span>
-                            <span data-i18n="tag_cloud_decode">Decodificación Cloud</span>
+                            <span data-i18n="tag_cloud_decode">Decodificação Cloud</span>
                         </span>
                     </div>
                 </div>
@@ -1605,14 +1605,14 @@
                     <div class="nk-diff-icon nk-diff-icon--lock w-12 h-12 bg-netskope-lightBlue rounded-xl flex items-center justify-center text-netskope-blue mb-6 relative z-10">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" aria-hidden="true" class="lucide lucide-lock leading-none"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 relative z-10" data-i18n="diff_dlp_title">DLP Avanzado con IA</h3>
-                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_dlp_desc">Protección de datos de nivel Enterprise. Clasificación por ML para imágenes (pasaportes, capturas) y documentos, no solo expresiones regulares o diccionarios.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 relative z-10" data-i18n="diff_dlp_title">DLP Avançado com IA</h3>
+                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_dlp_desc">Proteção de dados de nível Enterprise. Classificação por ML para imagens (passaportes, capturas de tela) e documentos, não apenas expressões regulares ou dicionários.</p>
                     <div class="pt-4 border-t border-gray-100 mt-auto relative z-10 flex items-center">
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-netskope-lightBlue/40 text-netskope-teal text-[10px] font-bold uppercase tracking-wider">
                             <span class="nk-diff-chip-icon inline-flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" class="lucide lucide-target leading-none"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
                             </span>
-                            <span data-i18n="tag_precision">Precisión Extrema</span>
+                            <span data-i18n="tag_precision">Precisão Extrema</span>
                         </span>
                     </div>
                 </div>
@@ -1626,8 +1626,8 @@
                     <div class="nk-diff-icon w-12 h-12 bg-netskope-lightBlue rounded-xl flex items-center justify-center text-netskope-blue mb-6 relative z-10">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bot" aria-hidden="true" class="lucide lucide-bot leading-none"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 relative z-10" data-i18n="diff_ai_title">Líderes en Seguridad de IA</h3>
-                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_ai_desc">Habilita el uso seguro de la IA generativa. Netskope ofrece la visibilidad y el control más completos del mercado para aplicaciones como ChatGPT y Copilot.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 relative z-10" data-i18n="diff_ai_title">Líderes em Segurança de IA</h3>
+                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_ai_desc">Habilite o uso seguro da IA Generativa. A Netskope oferece a visibilidade e o controle mais completos do mercado para aplicações como ChatGPT e Copilot.</p>
                     <div class="pt-4 border-t border-gray-100 mt-auto relative z-10 flex items-center">
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-netskope-lightBlue/40 text-netskope-teal text-[10px] font-bold uppercase tracking-wider">
                             <span class="nk-diff-chip-icon inline-flex items-center justify-center">
@@ -1647,14 +1647,14 @@
                     <div class="nk-diff-icon w-12 h-12 bg-netskope-lightBlue rounded-xl flex items-center justify-center text-netskope-blue mb-6 relative z-10">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="gauge" aria-hidden="true" class="lucide lucide-gauge leading-none"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 relative z-10" data-i18n="diff_dem_title">Experiencia de Usuario (DEM)</h3>
-                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_dem_desc">La seguridad no debe empeorar la experiencia del usuario. Monitorea y optimiza su experiencia de extremo a extremo con visibilidad hop-by-hop.</p>
+                    <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 relative z-10" data-i18n="diff_dem_title">Experiência do Usuário (DEM)</h3>
+                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_dem_desc">A segurança não deve piorar a experiência do usuário. Monitore e otimize a experiência de ponta a ponta com visibilidade hop-by-hop.</p>
                     <div class="pt-4 border-t border-gray-100 mt-auto relative z-10 flex items-center">
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-netskope-lightBlue/40 text-netskope-teal text-[10px] font-bold uppercase tracking-wider">
                             <span class="nk-diff-chip-icon inline-flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="zap" aria-hidden="true" class="lucide lucide-zap leading-none"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
                             </span>
-                            <span data-i18n="tag_proactive">Proactividad</span>
+                            <span data-i18n="tag_proactive">Proatividade</span>
                         </span>
                     </div>
                 </div>
@@ -1669,13 +1669,13 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cloud-upload" aria-hidden="true" class="lucide lucide-cloud-upload leading-none"><path d="M12 13v8"></path><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="m8 17 4-4 4 4"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold text-netskope-deepBlue mb-3 relative z-10">Single Vendor SASE</h3>
-                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_sase_desc">La única solución SASE completa de un único proveedor. Integración nativa de redes y seguridad en una arquitectura unificada que elimina la complejidad.</p>
+                    <p class="text-sm text-netskope-gray mb-6 flex-grow relative z-10" data-i18n="diff_sase_desc">A única solução SASE completa de um único fornecedor. Integração nativa de redes e segurança em uma arquitetura unificada que elimina a complexidade.</p>
                     <div class="pt-4 border-t border-gray-100 mt-auto relative z-10 flex items-center">
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-netskope-lightBlue/40 text-netskope-teal text-[10px] font-bold uppercase tracking-wider">
                             <span class="nk-diff-chip-icon inline-flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layers-3" aria-hidden="true" class="lucide lucide-layers-3 leading-none"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>
                             </span>
-                            <span data-i18n="tag_unified">Arquitectura Unificada</span>
+                            <span data-i18n="tag_unified">Arquitetura Unificada</span>
                         </span>
                     </div>
                 </div>
@@ -1685,15 +1685,15 @@
     </section>
 
     <!-- INFRAESTRUCTURA IBERIA SECTION -->
-    <!-- Visible por defecto (español / LATAM); se oculta en otros idiomas y se
-         reemplaza por #infra-glance-shell más abajo. Ver updateLanguageSpecificContent(). -->
+    <!-- Visível por padrão (espanhol / LATAM); é ocultado em outros idiomas e é
+         substituído por #infra-glance-shell mais abaixo. Ver updateLanguageSpecificContent(). -->
     <section id="netskope-infra-section" class="w-full px-4 py-6 md:py-8 flex justify-center items-center bg-transparent">
         <div id="infra-iberia-shell" class="nk-infra-shell w-full max-w-6xl mx-auto rounded-3xl overflow-hidden flex flex-col" aria-hidden="false">
             
             <div class="nk-infra-header p-7 md:p-10 pb-5 text-center border-b border-gray-100/90">
                 <h2 class="nk-infra-kicker text-xs font-bold uppercase mb-2">NewEdge Network</h2>
-                <h1 class="text-3xl md:text-5xl font-bold text-nk-deep-blue leading-tight" data-i18n="infra_title">Infraestructura en Latinoamérica</h1>
-                <p class="text-gray-500 mt-3 text-sm md:text-base" data-i18n="infra_subtitle">Topología de red de alta disponibilidad</p>
+                <h1 class="text-3xl md:text-5xl font-bold text-nk-deep-blue leading-tight" data-i18n="infra_title">Infraestrutura na América Latina</h1>
+                <p class="text-gray-500 mt-3 text-sm md:text-base" data-i18n="infra_subtitle">Topologia de rede de alta disponibilidade</p>
             </div>
 
             <div class="flex flex-col md:flex-row flex-grow">
@@ -1702,8 +1702,8 @@
                     <div class="absolute inset-0 nk-vignette pointer-events-none"></div>
 
                     <div class="nk-newedge-stage z-10 p-6 md:p-8">
-                        <p class="nk-stage-kicker" data-i18n="infra_stage_kicker">NewEdge en Latinoamérica</p>
-                        <h3 class="text-2xl md:text-3xl font-bold text-nk-deep-blue leading-tight mb-6" data-i18n="infra_stage_title">Infraestructura propia, conectada donde realmente pasa Internet.</h3>
+                        <p class="nk-stage-kicker" data-i18n="infra_stage_kicker">NewEdge na América Latina</p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-nk-deep-blue leading-tight mb-6" data-i18n="infra_stage_title">Infraestrutura própria, conectada onde a Internet realmente passa.</h3>
 
                         <div class="nk-latam-atlas">
                             <article class="nk-latam-city nk-latam-city--primary">
@@ -1766,7 +1766,7 @@
                                 <div class="nk-latam-city-head">
                                     <div>
                                         <h4 class="nk-latam-city-name">Lima</h4>
-                                        <p class="nk-latam-city-country" data-i18n="country_peru">Perú</p>
+                                        <p class="nk-latam-city-country" data-i18n="country_peru">Peru</p>
                                     </div>
                                     <span class="nk-latam-count">1</span>
                                 </div>
@@ -1823,16 +1823,16 @@
                 <!-- INFO PANNEL -->
                 <div class="nk-info-panel w-full md:w-1/3 p-6 md:p-8 border-t md:border-t-0 md:border-l border-gray-100 flex flex-col justify-center space-y-4">
                     
-                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-[0.12em] mb-2" data-i18n="node_status">Estado de los Nodos</h3>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-[0.12em] mb-2" data-i18n="node_status">Status dos Nós</h3>
 
                     <div class="nk-latam-summary-grid">
                         <div class="nk-latam-summary-card">
                             <span class="nk-latam-summary-number">13</span>
-                            <span class="nk-latam-summary-label" data-i18n="latam_nodes_label">Nodos</span>
+                            <span class="nk-latam-summary-label" data-i18n="latam_nodes_label">Nós</span>
                         </div>
                         <div class="nk-latam-summary-card">
                             <span class="nk-latam-summary-number">8</span>
-                            <span class="nk-latam-summary-label" data-i18n="latam_cities_label">Ciudades</span>
+                            <span class="nk-latam-summary-label" data-i18n="latam_cities_label">Cidades</span>
                         </div>
                         <div class="nk-latam-summary-card">
                             <span class="nk-latam-summary-number">6</span>
@@ -1841,23 +1841,23 @@
                     </div>
 
                     <div class="nk-latam-region-list">
-                        <div class="nk-latam-region"><span data-i18n="country_brazil">Brasil</span><span data-i18n="latam_brazil_nodes">6 nodos</span></div>
-                        <div class="nk-latam-region"><span data-i18n="country_chile">Chile</span><span data-i18n="latam_chile_nodes">2 nodos</span></div>
-                        <div class="nk-latam-region"><span data-i18n="country_colombia">Colombia</span><span data-i18n="latam_colombia_nodes">2 nodos</span></div>
-                        <div class="nk-latam-region"><span data-i18n="country_argentina">Argentina</span><span data-i18n="latam_argentina_nodes">1 nodo</span></div>
-                        <div class="nk-latam-region"><span data-i18n="country_mexico">México</span><span data-i18n="latam_mexico_nodes">1 nodo</span></div>
-                        <div class="nk-latam-region"><span data-i18n="country_peru">Perú</span><span data-i18n="latam_peru_nodes">1 nodo</span></div>
+                        <div class="nk-latam-region"><span data-i18n="country_brazil">Brasil</span><span data-i18n="latam_brazil_nodes">6 nós</span></div>
+                        <div class="nk-latam-region"><span data-i18n="country_chile">Chile</span><span data-i18n="latam_chile_nodes">2 nós</span></div>
+                        <div class="nk-latam-region"><span data-i18n="country_colombia">Colombia</span><span data-i18n="latam_colombia_nodes">2 nós</span></div>
+                        <div class="nk-latam-region"><span data-i18n="country_argentina">Argentina</span><span data-i18n="latam_argentina_nodes">1 nó</span></div>
+                        <div class="nk-latam-region"><span data-i18n="country_mexico">México</span><span data-i18n="latam_mexico_nodes">1 nó</span></div>
+                        <div class="nk-latam-region"><span data-i18n="country_peru">Peru</span><span data-i18n="latam_peru_nodes">1 nó</span></div>
                     </div>
 
                     <!-- SLA SECTION -->
                     <div class="mt-6 pt-5 border-t border-gray-100">
-                        <h4 class="text-sm font-bold text-nk-deep-blue uppercase tracking-wide mb-3" data-i18n="latam_architecture_title">Arquitectura NewEdge</h4>
+                        <h4 class="text-sm font-bold text-nk-deep-blue uppercase tracking-wide mb-3" data-i18n="latam_architecture_title">Arquitetura NewEdge</h4>
                         
                         <div class="space-y-3">
                             <div class="nk-sla-item flex items-center justify-between">
                                 <div class="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="server" aria-hidden="true" class="lucide lucide-server text-nk-blue text-xs w-5 text-center"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect><rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></svg>
-                                    <span class="text-xs text-nk-gray font-medium ml-1" data-i18n="latam_full_compute">Compute completo por nodo</span>
+                                    <span class="text-xs text-nk-gray font-medium ml-1" data-i18n="latam_full_compute">Compute completo por nó</span>
                                 </div>
                                 <span class="text-sm font-bold text-nk-deep-blue font-mono">13/13</span>
                             </div>
@@ -1865,7 +1865,7 @@
                             <div class="nk-sla-item flex items-center justify-between">
                                 <div class="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="map-pin" aria-hidden="true" class="lucide lucide-map-pin text-nk-orange text-xs w-5 text-center"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                    <span class="text-xs text-nk-gray font-medium ml-1" data-i18n="latam_local_access">Acceso regional cercano</span>
+                                    <span class="text-xs text-nk-gray font-medium ml-1" data-i18n="latam_local_access">Acesso regional próximo</span>
                                 </div>
                                 <span class="text-sm font-bold text-nk-deep-blue font-mono">LATAM</span>
                             </div>
@@ -1875,7 +1875,7 @@
                 </div>
             </div>
 
-            <!-- Footer: Certificación y Clientes -->
+            <!-- Footer: Certificação e Clientes -->
             <div class="nk-footer-panel p-6 md:p-7 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6 z-10 relative shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.05)]">
                 
                 <div class="flex items-center space-x-3 group w-full sm:w-auto justify-center sm:justify-start">
@@ -1885,9 +1885,9 @@
                     <div class="text-left">
                         <div class="flex items-baseline space-x-1">
                             <span class="text-xl font-bold text-nk-deep-blue">13</span>
-                            <span class="text-xs font-semibold text-nk-blue uppercase tracking-wider" data-i18n="latam_active_nodes">nodos activos</span>
+                            <span class="text-xs font-semibold text-nk-blue uppercase tracking-wider" data-i18n="latam_active_nodes">nós ativos</span>
                         </div>
-                        <p class="text-xs text-gray-500" data-i18n="latam_footer_coverage">Cobertura NewEdge en Latinoamérica</p>
+                        <p class="text-xs text-gray-500" data-i18n="latam_footer_coverage">Cobertura NewEdge na América Latina</p>
                     </div>
                 </div>
 
@@ -1909,15 +1909,15 @@
             
         </div>
 
-        <!-- Contraparte de #infra-iberia-shell para idiomas no ibéricos (p. ej. 'en'):
-             resumen genérico "Netskope de un vistazo" en lugar del detalle de LATAM.
-             Oculto por defecto ('hidden'); alternado por updateLanguageSpecificContent(). -->
+        <!-- Contraparte de #infra-iberia-shell para idiomas não ibéricos (p. ex. 'en'):
+             resumo genérico "Netskope em resumo" em vez do detalhe da LATAM.
+             Oculto por padrão ('hidden'); alternado por updateLanguageSpecificContent(). -->
         <div id="infra-glance-shell" class="nk-infra-shell w-full max-w-6xl mx-auto rounded-3xl overflow-hidden hidden" aria-hidden="true">
             <div class="nk-infra-header border-b border-gray-100/90 px-6 py-6 md:px-8 md:py-8">
                 <div class="mx-auto max-w-4xl text-center">
-                    <p class="nk-infra-kicker text-[11px] font-bold uppercase tracking-[0.22em] text-center" data-i18n="glance_kicker">Resumen Netskope</p>
-                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-nk-deep-blue leading-tight text-center" data-i18n="glance_title">Netskope de un vistazo</h2>
-                    <p class="text-gray-500 mt-2 text-sm md:text-base text-center" data-i18n="glance_subtitle">Un resumen breve para conversaciones internacionales.</p>
+                    <p class="nk-infra-kicker text-[11px] font-bold uppercase tracking-[0.22em] text-center" data-i18n="glance_kicker">Resumo Netskope</p>
+                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-nk-deep-blue leading-tight text-center" data-i18n="glance_title">Netskope em resumo</h2>
+                    <p class="text-gray-500 mt-2 text-sm md:text-base text-center" data-i18n="glance_subtitle">Um resumo breve para conversas internacionais.</p>
                 </div>
             </div>
 
@@ -1925,38 +1925,38 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
                     <article class="rounded-[28px] border border-gray-100 bg-white px-5 py-5 shadow-sm">
                         <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-nk-deep-blue" data-i18n="glance_card_1_kicker">Cultura de</p>
-                        <h3 class="font-lora text-2xl md:text-3xl leading-none text-nk-blue mt-2" data-i18n="glance_card_1_title">Innovación</h3>
-                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_1_desc">Más de 300 patentes concedidas y en trámite, incluidas más de 50 en IA/ML, respaldadas por más de 1.000 ingenieros y científicos.</p>
+                        <h3 class="font-lora text-2xl md:text-3xl leading-none text-nk-blue mt-2" data-i18n="glance_card_1_title">Inovação</h3>
+                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_1_desc">Mais de 300 patentes concedidas e em tramitação, incluindo mais de 50 em IA/ML, respaldadas por mais de 1.000 engenheiros e cientistas.</p>
                     </article>
 
                     <article class="rounded-[28px] border border-gray-100 bg-white px-5 py-5 shadow-sm">
-                        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-nk-deep-blue" data-i18n="glance_card_2_kicker">Trayectoria consolidada</p>
+                        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-nk-deep-blue" data-i18n="glance_card_2_kicker">Trajetória consolidada</p>
                         <h3 class="font-lora text-2xl md:text-3xl leading-none text-nk-blue mt-2" data-i18n="glance_card_2_title">Líder de mercado</h3>
-                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_2_desc">Líder en el Cuadrante Mágico de Gartner durante 9 años consecutivos y parte de Forbes Cloud 100 durante 9 años seguidos.</p>
+                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_2_desc">Líder no Quadrante Mágico do Gartner por 9 anos consecutivos e parte da Forbes Cloud 100 por 9 anos seguidos.</p>
                     </article>
 
                     <article class="rounded-[28px] border border-gray-100 bg-white px-5 py-5 shadow-sm">
-                        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-nk-deep-blue" data-i18n="glance_card_3_kicker">Alto rendimiento</p>
-                        <h3 class="font-lora text-2xl md:text-3xl leading-none text-nk-blue mt-2" data-i18n="glance_card_3_title">Nube privada</h3>
-                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_3_desc">NewEdge ofrece una experiencia de usuario fluida y localizada en más de 75 regiones y más de 220 países y territorios.</p>
+                        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-nk-deep-blue" data-i18n="glance_card_3_kicker">Alto desempenho</p>
+                        <h3 class="font-lora text-2xl md:text-3xl leading-none text-nk-blue mt-2" data-i18n="glance_card_3_title">Nuvem privada</h3>
+                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_3_desc">A NewEdge oferece uma experiência de usuário fluida e localizada em mais de 75 regiões e mais de 220 países e territórios.</p>
                     </article>
 
                     <article class="rounded-[28px] border border-gray-100 bg-white px-5 py-5 shadow-sm">
-                        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-nk-deep-blue" data-i18n="glance_card_4_kicker">Empresa pública</p>
+                        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-nk-deep-blue" data-i18n="glance_card_4_kicker">Empresa de capital aberto</p>
                         <h3 class="font-lora text-2xl md:text-3xl leading-none text-nk-blue mt-2" data-i18n="glance_card_4_title">NASDAQ: NTSK</h3>
-                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_4_desc">Más de US$700 millones en ARR y más de 2.900 empleados apoyando a clientes a escala global.</p>
+                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_4_desc">Mais de US$ 700 milhões em ARR e mais de 2.900 funcionários apoiando clientes em escala global.</p>
                     </article>
 
                     <article class="rounded-[28px] border border-gray-100 bg-white px-5 py-5 shadow-sm">
-                        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-nk-deep-blue" data-i18n="glance_card_5_kicker">Procesador a gran escala de</p>
-                        <h3 class="font-lora text-2xl md:text-3xl leading-none text-nk-blue mt-2" data-i18n="glance_card_5_title">Tráfico cloud inline</h3>
-                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_5_desc">La arquitectura proxy inline descifra e inspecciona tráfico para cientos de millones de usuarios en todo el mundo.</p>
+                        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-nk-deep-blue" data-i18n="glance_card_5_kicker">Processador em grande escala de</p>
+                        <h3 class="font-lora text-2xl md:text-3xl leading-none text-nk-blue mt-2" data-i18n="glance_card_5_title">Tráfego cloud inline</h3>
+                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_5_desc">A arquitetura proxy inline descriptografa e inspeciona o tráfego de centenas de milhões de usuários em todo o mundo.</p>
                     </article>
 
                     <article class="rounded-[28px] border border-gray-100 bg-white px-5 py-5 shadow-sm">
                         <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-nk-deep-blue" data-i18n="glance_card_6_kicker">Motor Zero Trust</p>
-                        <h3 class="font-lora text-2xl md:text-3xl leading-none text-nk-blue mt-2" data-i18n="glance_card_6_title">Cumplimiento</h3>
-                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_6_desc">Los principios de zero trust se aplican a cada interacción con datos sensibles y ayudan a cumplir requisitos de privacidad y residencia.</p>
+                        <h3 class="font-lora text-2xl md:text-3xl leading-none text-nk-blue mt-2" data-i18n="glance_card_6_title">Conformidade</h3>
+                        <p class="mt-3 text-sm leading-6 text-nk-gray" data-i18n="glance_card_6_desc">Os princípios de zero trust são aplicados a cada interação com dados sensíveis e ajudam a cumprir requisitos de privacidade e residência.</p>
                     </article>
                 </div>
 
@@ -1967,11 +1967,11 @@
                     </div>
                     <div class="rounded-[28px] border border-nk-blue/15 bg-gradient-to-br from-white to-nk-light-blue/10 px-5 py-4 text-center md:text-left">
                         <p class="font-lora text-3xl md:text-4xl leading-none text-nk-blue">&gt;30</p>
-                        <p class="mt-1 text-lg md:text-xl font-bold text-nk-deep-blue" data-i18n="glance_stat_2_label">del Fortune 100</p>
+                        <p class="mt-1 text-lg md:text-xl font-bold text-nk-deep-blue" data-i18n="glance_stat_2_label">da Fortune 100</p>
                     </div>
                     <div class="rounded-[28px] border border-nk-blue/15 bg-gradient-to-br from-white to-nk-light-blue/10 px-5 py-4 text-center md:text-left">
                         <p class="font-lora text-3xl md:text-4xl leading-none text-nk-blue">+200</p>
-                        <p class="mt-1 text-lg md:text-xl font-bold text-nk-deep-blue" data-i18n="glance_stat_3_label">Zonas de localización</p>
+                        <p class="mt-1 text-lg md:text-xl font-bold text-nk-deep-blue" data-i18n="glance_stat_3_label">Zonas de localização</p>
                     </div>
                 </div>
             </div>
@@ -1994,23 +1994,23 @@
         </div>
     </footer>
 
-    <!-- Utilidades JS compartidas. Esta página define sus propias versiones de
-         changeLanguage/openModal/closeModal más abajo (ver comentario al inicio
-         del archivo), que sobrescriben a las de aquí sin conflicto. Se cargan
-         igualmente por consistencia con el resto de páginas del sitio. -->
+    <!-- Utilitários JS compartilhados. Esta página define suas próprias versões de
+         changeLanguage/openModal/closeModal mais abaixo (ver comentário no início
+         do arquivo), que sobrescrevem as daqui sem conflito. São carregados
+         igualmente por consistência com o restante das páginas do site. -->
     <script src="assets/js/common.js"></script>
     <script src="assets/js/i18n-common.js"></script>
-    <!-- JavaScript para los modales y traducción -->
+    <!-- JavaScript para os modais e a tradução -->
     <script>
-        // --- LOGICA DE TRADUCCION CON PROTECCION PARA CONSOLA ---
-        // Diccionario "de rescate": esta página carga su catálogo real desde
-        // assets/json/keydifferentiators.i18n.json (ver loadTranslations() más abajo);
-        // estas 2 claves son un respaldo/corrección que sobrevive a la fusión con el
-        // JSON externo (ver Object.assign en loadTranslations).
+        // --- LÓGICA DE TRADUÇÃO COM PROTEÇÃO PARA CONSOLE ---
+        // Dicionário "de resgate": esta página carrega seu catálogo real de
+        // assets/json/keydifferentiators.i18n.json (ver loadTranslations() mais abaixo);
+        // estas 2 chaves são um backup/correção que sobrevive à mesclagem com o
+        // JSON externo (ver Object.assign em loadTranslations).
         let translations = {
             es: {
-                "single_console": "Una Sola Consola",
-                "single_console_desc": "Gestión unificada de políticas, incidentes y análisis para SWG, CASB, ZTNA, DSPM y SD-WAN. Visibilidad completa en un solo dashboard."
+                "single_console": "Uma Única Console",
+                "single_console_desc": "Gestão unificada de políticas, incidentes e análises para SWG, CASB, ZTNA, DSPM e SD-WAN. Visibilidade completa em um único dashboard."
             }
         };
 
@@ -2024,25 +2024,25 @@
                                         ? window.NetskopeSecurityUtils.loadJsonCatalogFromText(xhr.responseText) 
                                         : JSON.parse(xhr.responseText);
                     
-                    // Fusionar datos, preservando nuestra correccion de "Consola"
+                    // Mesclar dados, preservando nossa correção de "Console"
                     if(externalData.es) translations.es = Object.assign({}, externalData.es, translations.es);
                 }
             } catch (error) {
-                console.error('Usando traduccion interna de rescate', error);
+                console.error('Usando tradução interna de resgate', error);
             }
         })();
 
         /**
          * updateLanguageSpecificContent(lang)
-         * Muestra/oculta bloques cuyo contenido solo tiene sentido para ciertos
-         * idiomas: la sección "Infraestructura en Latinoamérica" (#infra-iberia-shell)
-         * se muestra en español (audiencia LATAM), mientras que el resumen
-         * genérico "Netskope de un vistazo" (#infra-glance-shell) se muestra para
-         * cualquier otro idioma residual; ambos bloques son mutuamente excluyentes.
-         * También reemplaza el texto de #newedge-stat-2 por una versión "global"
-         * (zonas de localización) cuando no se está en idioma ibérico. No retorna
-         * ningún valor; solo muta el DOM. Llamada al final de changeLanguage().
-         * @param {string} lang - Código de idioma actual (partner edition: 'es').
+         * Mostra/oculta blocos cujo conteúdo só faz sentido para certos
+         * idiomas: a seção "Infraestrutura na América Latina" (#infra-iberia-shell)
+         * é exibida em espanhol (público LATAM), enquanto o resumo
+         * genérico "Netskope em resumo" (#infra-glance-shell) é exibido para
+         * qualquer outro idioma residual; ambos os blocos são mutuamente exclusivos.
+         * Também substitui o texto de #newedge-stat-2 por uma versão "global"
+         * (zonas de localização) quando não se está em idioma ibérico. Não retorna
+         * nenhum valor; apenas altera o DOM. Chamada ao final de changeLanguage().
+         * @param {string} lang - Código do idioma atual (partner edition: 'es').
          */
         function updateLanguageSpecificContent(lang) {
             const isIberianLanguage = lang === 'es';
@@ -2062,21 +2062,21 @@
 
             if (newedgeStat2 && !isIberianLanguage) {
                 const localizedZones = (translations[lang] && translations[lang].newedge_stat_2_global)
-                    || '+200 zonas de localización';
+                    || '+200 zonas de localização';
                 newedgeStat2.textContent = localizedZones;
             }
         }
 
         /**
          * changeLanguage(lang)
-         * Versión LOCAL de esta página (intencionalmente distinta de la función
-         * genérica en assets/js/common.js): además de traducir el DOM, sincroniza
-         * la visibilidad de bloques específicos de idioma ibérico/global
-         * (updateLanguageSpecificContent) y contempla 'en' como idioma soportado
-         * transitorio. Se mantiene local a propósito; no se debe eliminar.
-         * Los chequeos a window.NetskopeSecurityUtils / window.NetskopeSiteLanguageUtils
-         * son "hooks" defensivos para utilidades que nunca se implementaron en este
-         * proyecto (código muerto); si algún día existen, se usarían automáticamente.
+         * Versão LOCAL desta página (intencionalmente distinta da função
+         * genérica em assets/js/common.js): além de traduzir o DOM, sincroniza
+         * a visibilidade de blocos específicos de idioma ibérico/global
+         * (updateLanguageSpecificContent) e contempla 'en' como idioma suportado
+         * transitório. É mantida local de propósito; não deve ser removida.
+         * As verificações de window.NetskopeSecurityUtils / window.NetskopeSiteLanguageUtils
+         * são "hooks" defensivos para utilitários que nunca foram implementados neste
+         * projeto (código morto); se algum dia existirem, serão usados automaticamente.
          */
         function changeLanguage(lang) {
             const supportedLangs = ['es'];
@@ -2123,9 +2123,9 @@
             changeLanguage(langToUse);
         })();
 
-        // --- LOGICA EXISTENTE MODALES ---
-        // Modales de citas de analistas (Gartner/Forrester/IDC) y de la imagen NewEdge,
-        // controlados por atributos data-modal-trigger / data-modal-close.
+        // --- LÓGICA EXISTENTE DOS MODAIS ---
+        // Modais de citações de analistas (Gartner/Forrester/IDC) e da imagem NewEdge,
+        // controlados pelos atributos data-modal-trigger / data-modal-close.
         const gartnerModal = document.getElementById('gartnerModal');
         const forresterModal = document.getElementById('forresterModal');
         const idcModal = document.getElementById('idcModal');
@@ -2134,12 +2134,12 @@
 
         /**
          * openModal(modal) / closeModal(modal)
-         * Versiones LOCALES de esta página, intencionalmente distintas de las
-         * genéricas en assets/js/common.js: aquí reciben el ELEMENTO del modal
-         * (no un string con el ID) y usan classList('hidden') en vez de
-         * style.display, porque estos modales ya parten de la clase `hidden` de
-         * Tailwind. Se mantienen locales a propósito (no se deben unificar con
-         * las de common.js sin también adaptar todas las llamadas de abajo).
+         * Versões LOCAIS desta página, intencionalmente distintas das
+         * genéricas em assets/js/common.js: aqui recebem o ELEMENTO do modal
+         * (não uma string com o ID) e usam classList('hidden') em vez de
+         * style.display, porque estes modais já partem da classe `hidden` do
+         * Tailwind. São mantidas locais de propósito (não devem ser unificadas com
+         * as de common.js sem também adaptar todas as chamadas abaixo).
          */
         function openModal(modal) {
             if (!modal) return;
