@@ -1,16 +1,16 @@
 # Demo Center — Partner Edition
-# Copiar a /etc/nginx/sites-available/democenter y ajustar server_name + root.
-# Socket PHP-FPM: en Ubuntu 24.04 suele ser /run/php/php8.3-fpm.sock
+# Copiar para /etc/nginx/sites-available/democenter e ajustar server_name + root.
+# Socket PHP-FPM: no Ubuntu 24.04 costuma ser /run/php/php8.3-fpm.sock
 
 server {
     listen 80;
     listen [::]:80;
-    server_name TU_DOMINIO;
+    server_name SEU_DOMINIO;
 
     root /var/www/democenter;
     index index.php;
 
-    # No servir backups ni secretos si alguien los deja en el docroot
+    # Não servir backups nem segredos caso alguém os deixe no docroot
     location ~* \.(bak|tgz|old|orig|env)$ {
         deny all;
         return 404;

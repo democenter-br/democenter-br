@@ -1,41 +1,41 @@
 /**
  * assets/js/demo-chat.js
  * ---------------------------------------------------------------------------
- * Widget flotante "Borderbot" (burbuja de chat) que se inyecta por JS en las
- * páginas del Demo Center. Construye su propio DOM (botón flotante, panel de
- * chat y modal de aviso legal/uso), queda en español (partner edition),
- * aplica un límite de 3 consultas por día por navegador (via localStorage,
- * solo como UX -- el límite real y autoritativo se aplica server-side en
- * api/demo-chat.php) y llama a ese endpoint para obtener las respuestas.
- * Se auto-ejecuta como IIFE para no ensuciar el scope global; si el widget ya
- * existe en la página (id="demo-chat-root") no hace nada (evita duplicados).
+ * Widget flutuante "Borderbot" (balão de chat) injetado via JS nas
+ * páginas do Demo Center. Constrói seu próprio DOM (botão flutuante, painel de
+ * chat e modal de aviso legal/uso), permanece em espanhol (partner edition),
+ * aplica um limite de 3 consultas por dia por navegador (via localStorage,
+ * apenas como UX -- o limite real e autoritativo é aplicado no servidor em
+ * api/demo-chat.php) e chama esse endpoint para obter as respostas.
+ * Auto-executa como IIFE para não poluir o escopo global; se o widget já
+ * existir na página (id="demo-chat-root") não faz nada (evita duplicatas).
  * ---------------------------------------------------------------------------
  */
 (function () {
-  if (document.getElementById('demo-chat-root')) return; // Evita inyectar el widget dos veces si el script se carga más de una vez.
+  if (document.getElementById('demo-chat-root')) return; // Evita injetar o widget duas vezes se o script for carregado mais de uma vez.
 
-  // Textos del widget en español (independientes del sistema i18n de las
-  // páginas, porque este widget se inyecta por JS).
+  // Textos do widget (independentes do sistema i18n das
+  // páginas, porque este widget é injetado via JS).
   var ES = {
     title: 'Borderbot',
-    sub: 'Solo consultas del Demo Center · 3 por dia',
-    ph: 'Ej.: donde esta el ZTNA?',
+    sub: 'Somente consultas do Demo Center · 3 por dia',
+    ph: 'Ex.: onde fica o ZTNA?',
     send: 'Enviar',
-    hi: 'Hola, soy Borderbot. Solo respondo preguntas de este Demo Center.',
+    hi: 'Olá, eu sou o Borderbot. Só respondo perguntas sobre este Demo Center.',
     alertTitle: 'Borderbot',
-    alertBody: 'Usalo solo para consultas del Demo Center (paginas, demos, IPs y como navegar este portal).<br><br>No es un asistente general.<br><br>Limite: 3 interacciones por persona, por dia.',
-    ok: 'Entendido',
-    quota: 'Ya usaste las 3 interacciones de hoy. Vuelve manana.'
+    alertBody: 'Use-o somente para consultas sobre o Demo Center (páginas, demos, IPs e como navegar neste portal).<br><br>Não é um assistente geral.<br><br>Limite: 3 interações por pessoa, por dia.',
+    ok: 'Entendi',
+    quota: 'Você já usou as 3 interações de hoje. Volte amanhã.'
   };
-  /** Partner edition: el widget queda solo en español. */
+  /** Partner edition: o widget permanece somente em espanhol. */
   function copy() { return ES; }
-  /** Código de idioma que se envía al backend. */
+  /** Código de idioma enviado ao backend. */
   function lang() { return 'es'; }
 
   /**
-   * Obtiene (o genera y persiste en localStorage) un identificador de usuario
-   * anónimo por navegador. Se envía al backend para llevar la cuota "por
-   * usuario" (además de la cuota global) en api/demo-chat.php.
+   * Obtém (ou gera e persiste no localStorage) um identificador de usuário
+   * anônimo por navegador. É enviado ao backend para controlar a cota "por
+   * usuário" (além da cota global) em api/demo-chat.php.
    */
   function uid() {
     var k = 'borderbot_uid';
@@ -46,11 +46,11 @@
     }
     return v;
   }
-  /** Fecha actual en formato YYYY-MM-DD (UTC), usada como clave de cuota diaria. */
+  /** Data atual no formato YYYY-MM-DD (UTC), usada como chave da cota diária. */
   function today() { return new Date().toISOString().slice(0, 10); }
   /**
-   * Cantidad de mensajes ya usados hoy según localStorage (solo para UX local,
-   * no es la fuente de verdad: el servidor vuelve a validar la cuota real).
+   * Quantidade de mensagens já usadas hoje segundo o localStorage (apenas para UX local,
+   * não é a fonte da verdade: o servidor valida novamente a cota real).
    */
   function used() {
     try {
@@ -58,13 +58,13 @@
       return o.d === today() ? (o.n || 0) : 0;
     } catch (e) { return 0; }
   }
-  /** Incrementa en 1 el contador local de mensajes usados hoy. */
+  /** Incrementa em 1 o contador local de mensagens usadas hoje. */
   function bump() {
     localStorage.setItem('borderbot_quota', JSON.stringify({ d: today(), n: used() + 1 }));
   }
 
-  var avatar = '/assets/images/borderbot.png'; // Avatar del bot, reutilizado en el botón, el header del panel y el modal de aviso.
-  // Construye el botón flotante + panel de chat y los inserta en el <body>.
+  var avatar = '/assets/images/borderbot.png'; // Avatar do bot, reutilizado no botão, no header do painel e no modal de aviso.
+  // Constrói o botão flutuante + painel de chat e os insere no <body>.
   var root = document.createElement('div');
   root.id = 'demo-chat-root';
   root.innerHTML =
@@ -79,8 +79,8 @@
     '<button id="demo-chat-toggle" type="button" aria-label="Borderbot"><img src="' + avatar + '" alt="Borderbot"></button>';
   document.body.appendChild(root);
 
-  // Construye el modal ("mask") de aviso de uso que se muestra la primera vez
-  // que el usuario abre el chat en la sesión, antes de dejarlo escribir.
+  // Constrói o modal ("mask") de aviso de uso exibido na primeira vez
+  // que o usuário abre o chat na sessão, antes de permitir que ele escreva.
   var mask = document.createElement('div');
   mask.id = 'demo-chat-mask';
   mask.innerHTML =
@@ -97,7 +97,7 @@
   var send = document.getElementById('demo-chat-send');
   var greeted = false;
 
-  /** Aplica el diccionario de idioma actual a todos los textos estáticos del widget. */
+  /** Aplica o dicionário de idioma atual a todos os textos estáticos do widget. */
   function applyUi() {
     var c = copy();
     document.getElementById('bb-title').textContent = c.title;
@@ -108,7 +108,7 @@
     document.getElementById('bb-alert-body').innerHTML = c.alertBody;
     document.getElementById('demo-chat-alert-ok').textContent = c.ok;
   }
-  /** Agrega un mensaje al historial del chat con la clase CSS dada ('user'/'bot'/'err'). */
+  /** Adiciona uma mensagem ao histórico do chat com a classe CSS indicada ('user'/'bot'/'err'). */
   function add(text, cls) {
     var d = document.createElement('div');
     d.className = 'demo-chat-msg ' + cls;
@@ -117,13 +117,13 @@
     log.scrollTop = log.scrollHeight;
   }
   applyUi();
-  add(copy().hi, 'bot'); // Saludo inicial del bot, mostrado apenas se carga la página.
+  add(copy().hi, 'bot'); // Saudação inicial do bot, exibida assim que a página é carregada.
   greeted = true;
 
   /**
-   * Si ya se alcanzó la cuota local de 3 mensajes/día, deshabilita el input y
-   * el botón de enviar y muestra el mensaje de "cuota agotada". Devuelve true
-   * si quedó bloqueado (para que el llamador no siga con el flujo normal).
+   * Se a cota local de 3 mensagens/dia já foi atingida, desabilita o input e
+   * o botão de enviar e exibe a mensagem de "cota esgotada". Devolve true
+   * se ficou bloqueado (para que o chamador não siga com o fluxo normal).
    */
   function lockIfQuota() {
     if (used() < 3) return false;
@@ -134,7 +134,7 @@
   }
   lockIfQuota();
 
-  // Abre/cierra el panel de chat al hacer clic en el botón flotante.
+  // Abre/fecha o painel de chat ao clicar no botão flutuante.
   document.getElementById('demo-chat-toggle').addEventListener('click', function () {
     if (root.classList.contains('open')) {
       root.classList.remove('open');
@@ -143,14 +143,14 @@
     applyUi();
     mask.classList.add('show');
   });
-  // Cierra el modal de aviso y abre el panel de chat cuando el usuario confirma que entendió.
+  // Fecha o modal de aviso e abre o painel de chat quando o usuário confirma que entendeu.
   document.getElementById('demo-chat-alert-ok').addEventListener('click', function () {
     mask.classList.remove('show');
     root.classList.add('open');
     if (!lockIfQuota()) input.focus();
   });
-  // Envío del formulario: valida cuota local, muestra el mensaje del usuario,
-  // llama al backend (api/demo-chat.php) y muestra la respuesta o el error.
+  // Envio do formulário: valida a cota local, exibe a mensagem do usuário,
+  // chama o backend (api/demo-chat.php) e exibe a resposta ou o erro.
   document.getElementById('demo-chat-form').addEventListener('submit', function (ev) {
     ev.preventDefault();
     if (used() >= 3) { lockIfQuota(); return; }
@@ -171,12 +171,12 @@
           add(res.j.a, 'bot');
           lockIfQuota();
         } else {
-          add((res.j && res.j.error) || 'No hubo respuesta', 'err');
+          add((res.j && res.j.error) || 'Não houve resposta', 'err');
         }
       })
       .catch(function () {
         send.disabled = false;
-        add('Error de red al llamar a Borderbot', 'err');
+        add('Erro de rede ao chamar o Borderbot', 'err');
       });
   });
 })();

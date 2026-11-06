@@ -2,26 +2,26 @@
 /**
  * api/demo-chat.php
  *
- * Proxy hacia el chatbot "Borderbot" (Python + AWS Bedrock) usado en el Demo Center.
- * Aplica un limite de cuota diario (por usuario y global) antes de invocar el script
- * Python (/usr/local/lib/demo-chat/ask.py) que realmente habla con Bedrock.
+ * Proxy para o chatbot "Borderbot" (Python + AWS Bedrock) usado no Demo Center.
+ * Aplica um limite de cota diária (por usuário e global) antes de invocar o script
+ * Python (/usr/local/lib/demo-chat/ask.py) que de fato conversa com o Bedrock.
  *
- * Correcciones aplicadas (2026-08-31), sin tocar credenciales/rutas operativas:
- *  1) Ya no se devuelve al cliente el stderr del proceso Python -- se registra en el
- *     log de errores de PHP (ver logBorderbotError()) para no filtrar trazas internas
- *     (rutas, modulos, posible region/cuenta de AWS) a quien visite el sitio.
- *  2) El conteo de cuota (por usuario y global) ahora usa flock() para incrementar de
- *     forma atomica (ver incrementQuotaCounter()). Antes, un simple
- *     file_get_contents()+file_put_contents() sin lock permitia que, bajo trafico
- *     simultaneo, el limite real se sobrepasara ligeramente (condicion de carrera).
+ * Correções aplicadas (2026-08-31), sem alterar credenciais/caminhos operacionais:
+ *  1) O stderr do processo Python não é mais devolvido ao cliente -- ele é registrado no
+ *     log de erros do PHP (ver logBorderbotError()) para não vazar rastros internos
+ *     (caminhos, módulos, possível região/conta da AWS) a quem visitar o site.
+ *  2) A contagem de cota (por usuário e global) agora usa flock() para incrementar de
+ *     forma atômica (ver incrementQuotaCounter()). Antes, um simples
+ *     file_get_contents()+file_put_contents() sem lock permitia que, sob tráfego
+ *     simultâneo, o limite real fosse ligeiramente ultrapassado (condição de corrida).
  */
 
-// TEAM-HIDE:CHATBOT — Borderbot/Bedrock deshabilitado intencionalmente en la variante
-// team/partner (el widget de chat ya viene oculto en el HTML de cada pagina, ver los
-// bloques "TEAM-HIDE:CHATBOT" en <head>/<body>; este switch es la defensa del lado del
-// servidor para que el endpoint tampoco responda si alguien lo llama directamente).
-// No borrar este archivo ni el resto del codigo de abajo: si el negocio decide volver
-// a habilitar el chatbot para partners, basta con quitar estas dos lineas.
+// TEAM-HIDE:CHATBOT — Borderbot/Bedrock desabilitado intencionalmente na variante
+// team/partner (o widget de chat já vem oculto no HTML de cada página, veja os
+// blocos "TEAM-HIDE:CHATBOT" em <head>/<body>; este switch é a defesa do lado do
+// servidor para que o endpoint também não responda se alguém o chamar diretamente).
+// Não apague este arquivo nem o restante do código abaixo: se o negócio decidir voltar
+// a habilitar o chatbot para parceiros, basta remover estas duas linhas.
 http_response_code(404);
 exit;
 
@@ -37,14 +37,14 @@ $raw = file_get_contents('php://input');
 $req = json_decode($raw, true);
 if (!is_array($req)) {
     http_response_code(400);
-    echo json_encode(['error' => 'JSON invalido']);
+    echo json_encode(['error' => 'JSON inválido']);
     exit;
 }
 
 $q = trim((string) ($req['q'] ?? ''));
 if ($q === '' || strlen($q) > 800) {
     http_response_code(400);
-    echo json_encode(['error' => 'Pregunta vacia o demasiado larga']);
+    echo json_encode(['error' => 'Pergunta vazia ou longa demais']);
     exit;
 }
 
@@ -59,7 +59,7 @@ $day = gmdate('Y-m-d');
 $quotaDir = '/var/lib/demo-chat/quota/' . $day;
 if (!is_dir($quotaDir) && !@mkdir($quotaDir, 0770, true)) {
     http_response_code(500);
-    echo json_encode(['error' => 'No se pudo crear cuota']);
+    echo json_encode(['error' => 'Não foi possível criar a cota']);
     exit;
 }
 
@@ -67,8 +67,8 @@ $userFile = $quotaDir . '/' . $uid;
 $totalFile = $quotaDir . '/_total';
 
 /**
- * Lee el valor entero actual de un archivo contador de cuota.
- * Usa flock(LOCK_SH) para no leer un archivo a medio escribir bajo concurrencia.
+ * Lê o valor inteiro atual de um arquivo contador de cota.
+ * Usa flock(LOCK_SH) para não ler um arquivo escrito pela metade sob concorrência.
  */
 function readQuotaCounter(string $file): int
 {
@@ -89,15 +89,15 @@ function readQuotaCounter(string $file): int
 }
 
 /**
- * Incrementa atomicamente en 1 un archivo contador de cuota usando flock(LOCK_EX),
- * para que peticiones concurrentes no se pisen entre si. Devuelve el nuevo valor.
+ * Incrementa atomicamente em 1 um arquivo contador de cota usando flock(LOCK_EX),
+ * para que requisições concorrentes não se sobreponham. Devolve o novo valor.
  */
 function incrementQuotaCounter(string $file): int
 {
     $fh = fopen($file, 'c+');
     if (!$fh) {
-        // Si no se puede abrir/crear el archivo de cuota, fallamos "seguro":
-        // devolvemos un numero alto para no permitir mas peticiones sin control.
+        // Se não for possível abrir/criar o arquivo de cota, falhamos de forma "segura":
+        // devolvemos um número alto para não permitir mais requisições sem controle.
         return PHP_INT_MAX;
     }
     flock($fh, LOCK_EX);
@@ -113,9 +113,9 @@ function incrementQuotaCounter(string $file): int
 }
 
 /**
- * Registra un error interno de Borderbot en el log de errores de PHP en vez de
- * devolverlo al cliente (antes se mandaban hasta 300 caracteres del stderr de
- * Python tal cual en la respuesta JSON).
+ * Registra um erro interno do Borderbot no log de erros do PHP em vez de
+ * devolvê-lo ao cliente (antes eram enviados até 300 caracteres do stderr do
+ * Python como estavam na resposta JSON).
  */
 function logBorderbotError(string $err): void
 {
@@ -129,16 +129,16 @@ $totalN = readQuotaCounter($totalFile);
 
 if ($userN >= $perUser) {
     http_response_code(429);
-    echo json_encode(['error' => 'Ya usaste las 3 interacciones de Borderbot por hoy. Vuelve manana.']);
+    echo json_encode(['error' => 'Você já usou as 3 interações do Borderbot por hoje. Volte amanhã.']);
     exit;
 }
 if ($totalN >= $globalMax) {
     http_response_code(429);
-    echo json_encode(['error' => 'Borderbot llego al tope diario del Demo Center. Intenta manana.']);
+    echo json_encode(['error' => 'O Borderbot atingiu o limite diário do Demo Center. Tente novamente amanhã.']);
     exit;
 }
 
-// Ruta del script Python que realmente habla con Bedrock -- operativa, no se modifica.
+// Caminho do script Python que de fato conversa com o Bedrock -- operacional, não deve ser modificado.
 $ask = '/usr/local/lib/demo-chat/ask.py';
 $proc = proc_open(
     ['python3', $ask],
@@ -153,7 +153,7 @@ $proc = proc_open(
 );
 if (!is_resource($proc)) {
     http_response_code(500);
-    echo json_encode(['error' => 'No se pudo iniciar Borderbot']);
+    echo json_encode(['error' => 'Não foi possível iniciar o Borderbot']);
     exit;
 }
 fwrite($pipes[0], $raw);
@@ -164,11 +164,11 @@ fclose($pipes[1]);
 fclose($pipes[2]);
 proc_close($proc);
 if (!$out) {
-    // Antes: se devolvia substr($err, 0, 300) al cliente (fuga de info interna).
-    // Ahora: se loguea server-side y al cliente solo se le da un mensaje generico.
+    // Antes: era devolvido substr($err, 0, 300) ao cliente (vazamento de info interna).
+    // Agora: é registrado no servidor e ao cliente só se dá uma mensagem genérica.
     logBorderbotError($err);
     http_response_code(500);
-    echo json_encode(['error' => 'Sin respuesta de Bedrock']);
+    echo json_encode(['error' => 'Sem resposta do Bedrock']);
     exit;
 }
 $decoded = json_decode($out, true);

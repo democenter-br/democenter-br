@@ -1,56 +1,56 @@
 /**
  * assets/js/common.js
  * ---------------------------------------------------------------------------
- * Funciones JS compartidas por las páginas de demo del Democenter Netskope.
+ * Funções JS compartilhadas pelas páginas de demo do Democenter Netskope.
  *
- * Contexto: cada una de las 11 páginas "simples" del sitio (index.php,
+ * Contexto: cada uma das 11 páginas "simples" do site (index.php,
  * keydifferentiators.php, navigationevolution.php, customerreferences.php,
  * vpnevolution.php, aicontrol.php, oopsyoudidit.php, agenticai.php,
  * networktransformation.php, reportai.php, dataprotection.php, reportit.php)
- * tenía su propia copia, prácticamente idéntica, de las funciones de cambio de
- * idioma y (en algunas) de apertura/cierre de modal. Este archivo centraliza
- * esas funciones para evitar tener que editar hasta 11 archivos cada vez que
- * se corrige un bug o se ajusta el comportamiento.
+ * tinha sua própria cópia, praticamente idêntica, das funções de troca de
+ * idioma e (em algumas) de abertura/fechamento de modal. Este arquivo centraliza
+ * essas funções para evitar ter que editar até 11 arquivos a cada vez que
+ * um bug é corrigido ou o comportamento é ajustado.
  *
- * demos.php (la página de demos interactivas, ~2500 líneas) NO fue migrada a
- * este archivo en esta pasada por su tamaño/complejidad; queda para una pasada
- * aparte. Sin embargo, las funciones de portapapeles de abajo (copyPlainText,
- * fallbackCopyText, showCopyFeedback) se escribieron para ser compatibles con
- * la forma en que demos.php ya las usa, de modo que ese archivo pueda migrar a
- * este común más adelante sin cambios de comportamiento.
+ * demos.php (a página de demos interativas, ~2500 linhas) NÃO foi migrada para
+ * este arquivo nesta rodada por seu tamanho/complexidade; fica para uma rodada
+ * à parte. No entanto, as funções de área de transferência abaixo (copyPlainText,
+ * fallbackCopyText, showCopyFeedback) foram escritas para serem compatíveis com
+ * a forma como demos.php já as usa, de modo que esse arquivo possa migrar para
+ * este comum mais adiante sem mudanças de comportamento.
  *
- * Cómo se usa en cada página:
+ * Como é usado em cada página:
  *   <script src="assets/js/common.js"></script>
  *   <script src="assets/js/i18n-common.js"></script>
- *   <script> ... script inline propio de la página (con su const translations = {...}) ... </script>
+ *   <script> ... script inline próprio da página (com seu const translations = {...}) ... </script>
  *
- * Los <script> de arriba deben cargarse ANTES del script inline de cada
- * página, porque este último normalmente llama a changeLanguage(...) en su
- * DOMContentLoaded / IIFE de inicialización.
+ * Os <script> acima devem ser carregados ANTES do script inline de cada
+ * página, porque este último normalmente chama changeLanguage(...) em seu
+ * DOMContentLoaded / IIFE de inicialização.
  * ---------------------------------------------------------------------------
  */
 
 /**
- * Namespace con utilidades de idioma. Se expone como objeto (en vez de sólo
- * funciones sueltas) para que páginas con lógica adicional de changeLanguage
- * (p. ej. reportai.php / reportit.php, que también deben refrescar gráficas
- * Chart.js al cambiar de idioma) puedan reusar el "trabajo pesado" de aplicar
- * el diccionario al DOM sin duplicar ese código en su propia función
+ * Namespace com utilitários de idioma. É exposto como objeto (em vez de apenas
+ * funções soltas) para que páginas com lógica adicional de changeLanguage
+ * (p. ex. reportai.php / reportit.php, que também precisam atualizar gráficos
+ * Chart.js ao trocar de idioma) possam reutilizar o "trabalho pesado" de aplicar
+ * o dicionário ao DOM sem duplicar esse código em sua própria função
  * changeLanguage local.
  */
 const NetskopeCommon = {
     /**
-     * Aplica el idioma al documento. Partner edition: solo español. Cualquier
-     * valor distinto de 'es' (incluido un 'pt' viejo en localStorage) se
-     * normaliza a 'es'. Reemplaza el innerHTML de todos los elementos
-     * [data-i18n] usando el diccionario, fija <html lang="es">, y persiste
-     * la preferencia en localStorage bajo la clave 'netskope-lang'.
+     * Aplica o idioma ao documento. Partner edition: somente espanhol. Qualquer
+     * valor diferente de 'es' (incluindo um 'pt' antigo no localStorage) é
+     * normalizado para 'es'. Substitui o innerHTML de todos os elementos
+     * [data-i18n] usando o dicionário, define <html lang="es"> e persiste
+     * a preferência no localStorage sob a chave 'netskope-lang'.
      *
-     * @param {string} lang - se ignora si no es 'es'
-     * @param {Object} dictionaries - objeto con la forma { es: {...} } (normalmente la
-     *                                variable `translations` que cada página define en su script inline)
-     * @returns {string} el idioma efectivamente aplicado, ya normalizado (útil para que quien
-     *                    llama pueda usarlo después, p. ej. para refrescar gráficas)
+     * @param {string} lang - é ignorado se não for 'es'
+     * @param {Object} dictionaries - objeto no formato { es: {...} } (normalmente a
+     *                                variável `translations` que cada página define em seu script inline)
+     * @returns {string} o idioma efetivamente aplicado, já normalizado (útil para que quem
+     *                    chama possa usá-lo depois, p. ex. para atualizar gráficos)
      */
     applyLanguage(lang, dictionaries) {
         if (lang !== 'es') lang = 'es';
@@ -64,9 +64,9 @@ const NetskopeCommon = {
         document.querySelectorAll('[data-i18n]').forEach((el) => {
             const key = el.getAttribute('data-i18n');
             if (dict[key] === undefined) return;
-            // Igual que en la versión más completa que existía en demos.php: si el
-            // elemento es un <pre>, se usa textContent (para no interpretar HTML
-            // dentro de bloques de código); en cualquier otro caso, innerHTML.
+            // Igual à versão mais completa que existia em demos.php: se o
+            // elemento for um <pre>, usa-se textContent (para não interpretar HTML
+            // dentro de blocos de código); em qualquer outro caso, innerHTML.
             if (el.tagName === 'PRE') {
                 el.textContent = dict[key];
             } else {
@@ -84,20 +84,20 @@ const NetskopeCommon = {
 /**
  * changeLanguage(lang)
  * ---------------------------------------------------------------------------
- * Función global de compatibilidad para las páginas que NO tienen lógica
- * adicional propia (sin gráficas, sin secciones que cambian de visibilidad
- * según el idioma, etc.). Estas páginas simplemente definen su propio
- * `const translations = { es: {...} }` en su script inline y dejan
- * que esta función (cargada antes, desde este archivo) se encargue de todo.
+ * Função global de compatibilidade para as páginas que NÃO têm lógica
+ * adicional própria (sem gráficos, sem seções que mudam de visibilidade
+ * conforme o idioma, etc.). Essas páginas simplesmente definem seu próprio
+ * `const translations = { es: {...} }` em seu script inline e deixam
+ * que esta função (carregada antes, a partir deste arquivo) cuide de tudo.
  *
- * Páginas con necesidades especiales (reportai.php, reportit.php, que refrescan
- * gráficas Chart.js; keydifferentiators.php, que tiene lógica adicional de
- * idioma ibérico y carga su catálogo desde un JSON externo) definen su PROPIA
- * función changeLanguage en su script inline. Como las declaraciones de
- * función posteriores sobrescriben a las anteriores en el mismo scope global,
- * esas páginas simplemente "ganan" sobre esta versión sin ningún conflicto.
+ * Páginas com necessidades especiais (reportai.php, reportit.php, que atualizam
+ * gráficos Chart.js; keydifferentiators.php, que tem lógica adicional de
+ * idioma ibérico e carrega seu catálogo de um JSON externo) definem sua PRÓPRIA
+ * função changeLanguage em seu script inline. Como as declarações de
+ * função posteriores sobrescrevem as anteriores no mesmo escopo global,
+ * essas páginas simplesmente "ganham" sobre esta versão sem nenhum conflito.
  *
- * @param {string} lang - solo 'es' en partner edition
+ * @param {string} lang - somente 'es' na partner edition
  */
 function changeLanguage(lang) {
     if (typeof translations === 'undefined') return;
@@ -107,27 +107,27 @@ function changeLanguage(lang) {
 /**
  * openModal(modalId) / closeModal(modalId)
  * ---------------------------------------------------------------------------
- * Abre/cierra un modal simple identificado por su ID de elemento, mostrando u
- * ocultando el contenedor con style.display y bloqueando/restaurando el
- * scroll del body. Esta es la implementación que compartían aicontrol.php y
- * dataprotection.php de forma prácticamente idéntica (y que
- * networktransformation.php replicaba bajo el nombre openImageModal/closeModal).
+ * Abre/fecha um modal simples identificado pelo ID do elemento, exibindo ou
+ * ocultando o contêiner com style.display e bloqueando/restaurando o
+ * scroll do body. Esta é a implementação que aicontrol.php e
+ * dataprotection.php compartilhavam de forma praticamente idêntica (e que
+ * networktransformation.php replicava com o nome openImageModal/closeModal).
  *
- * Nota de discrepancia encontrada al consolidar: la copia de closeModal() que
- * tenía dataprotection.php contenía un bug de copy/paste:
+ * Nota de discrepância encontrada ao consolidar: a cópia de closeModal() que
+ * dataprotection.php tinha continha um bug de copiar/colar:
  *     document.getElementById(modalAddress = modalId)
- * (una asignación accidental a una variable global no declarada `modalAddress`
- * en vez de pasar simplemente `modalId`). No cambiaba el resultado visible
- * porque la expresión de asignación igual evalúa al valor de modalId, pero es
- * código confuso/con fuga de variable global. Esta versión consolidada no lo
- * reproduce.
+ * (uma atribuição acidental a uma variável global não declarada `modalAddress`
+ * em vez de simplesmente passar `modalId`). Não alterava o resultado visível
+ * porque a expressão de atribuição avalia para o valor de modalId do mesmo jeito, mas é
+ * um código confuso e com vazamento de variável global. Esta versão consolidada não o
+ * reproduz.
  *
- * keydifferentiators.php define sus PROPIAS versiones de openModal/closeModal
- * con una firma distinta (reciben el elemento del modal, no un ID) y lógica
- * distinta (classList en vez de style.display); esas se mantienen locales en
- * ese archivo a propósito y sobrescriben a estas sin conflicto.
+ * keydifferentiators.php define suas PRÓPRIAS versões de openModal/closeModal
+ * com uma assinatura diferente (recebem o elemento do modal, não um ID) e lógica
+ * diferente (classList em vez de style.display); elas são mantidas locais nesse
+ * arquivo de propósito e sobrescrevem estas sem conflito.
  *
- * @param {string} modalId - id del elemento contenedor del modal
+ * @param {string} modalId - id do elemento contêiner do modal
  */
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
@@ -146,29 +146,29 @@ function closeModal(modalId) {
 }
 
 /**
- * Funciones de portapapeles ("Copiar" en bloques de código / comandos de las
- * demos). Ninguna de las 11 páginas "simples" las usa hoy (solo demos.php),
- * pero se incluyen aquí ya generalizadas -y documentadas- para que una futura
- * consolidación de demos.php pueda apuntar a esta única implementación en vez
- * de mantener su propia copia.
+ * Funções de área de transferência ("Copiar" em blocos de código / comandos das
+ * demos). Nenhuma das 11 páginas "simples" as usa hoje (somente demos.php),
+ * mas elas são incluídas aqui já generalizadas -e documentadas- para que uma futura
+ * consolidação de demos.php possa apontar para esta única implementação em vez
+ * de manter sua própria cópia.
  *
- * La versión original en demos.php dependía de una función local `t(key, fallback)`
- * para obtener el texto "¡Copiado!" traducido; aquí se generalizó recibiendo
- * ese texto como parámetro opcional (copiedLabel), con 'Copiado!' como default,
- * para no acoplar este archivo común a la función de traducción interna de demos.php.
+ * A versão original em demos.php dependia de uma função local `t(key, fallback)`
+ * para obter o texto "Copiado!" traduzido; aqui ela foi generalizada recebendo
+ * esse texto como parâmetro opcional (copiedLabel), com 'Copiado!' como padrão,
+ * para não acoplar este arquivo comum à função de tradução interna de demos.php.
  */
 
 /**
  * copyPlainText(codeText, feedbackEl, copiedLabel)
- * Copia texto plano al portapapeles probando, en orden: (1) el método
- * "fallback" basado en un <textarea> oculto + document.execCommand('copy')
- * (más confiable en iframes/contextos restringidos), (2) la Clipboard API
- * moderna (navigator.clipboard.writeText), y (3) como último recurso, un
- * window.prompt() para que el usuario copie manualmente.
+ * Copia texto simples para a área de transferência tentando, em ordem: (1) o método
+ * "fallback" baseado em um <textarea> oculto + document.execCommand('copy')
+ * (mais confiável em iframes/contextos restritos), (2) a Clipboard API
+ * moderna (navigator.clipboard.writeText) e (3) como último recurso, um
+ * window.prompt() para que o usuário copie manualmente.
  *
  * @param {string} codeText - texto a copiar
- * @param {HTMLElement} [feedbackEl] - elemento donde mostrar el feedback "¡Copiado!" (ver showCopyFeedback)
- * @param {string} [copiedLabel] - texto de feedback a mostrar (default: 'Copiado!')
+ * @param {HTMLElement} [feedbackEl] - elemento onde exibir o feedback "Copiado!" (ver showCopyFeedback)
+ * @param {string} [copiedLabel] - texto de feedback a exibir (padrão: 'Copiado!')
  */
 function copyPlainText(codeText, feedbackEl, copiedLabel) {
     if (codeText == null) return;
@@ -187,25 +187,25 @@ function copyPlainText(codeText, feedbackEl, copiedLabel) {
         navigator.clipboard.writeText(str).then(function () {
             showCopyFeedback(feedbackEl, copiedLabel);
         }).catch(function () {
-            window.prompt('Copia el texto (Ctrl/Cmd+C) y pulsa Aceptar:', str);
+            window.prompt('Copie o texto (Ctrl/Cmd+C) e clique em OK:', str);
         });
         return;
     }
-    window.prompt('Copia el texto (Ctrl/Cmd+C) y pulsa Aceptar:', str);
+    window.prompt('Copie o texto (Ctrl/Cmd+C) e clique em OK:', str);
 }
 
 /**
  * fallbackCopyText(codeText, feedbackEl, silent, copiedLabel)
- * Método de copia "clásico": crea un <textarea> invisible fuera de pantalla,
- * selecciona su contenido y ejecuta document.execCommand('copy'). Se usa como
- * primer intento porque funciona en más contextos (incluyendo iframes) que la
+ * Método de cópia "clássico": cria um <textarea> invisível fora da tela,
+ * seleciona seu conteúdo e executa document.execCommand('copy'). É usado como
+ * primeira tentativa porque funciona em mais contextos (inclusive iframes) do que a
  * Clipboard API moderna.
  *
  * @param {string} codeText - texto a copiar
- * @param {HTMLElement} [feedbackEl] - elemento de feedback (solo se usa si silent es false)
- * @param {boolean} [silent] - si true, no muestra el feedback aquí (lo hace el llamador, p. ej. copyPlainText)
- * @param {string} [copiedLabel] - texto de feedback a mostrar
- * @returns {boolean} true si el navegador reportó la copia como exitosa
+ * @param {HTMLElement} [feedbackEl] - elemento de feedback (só é usado se silent for false)
+ * @param {boolean} [silent] - se true, não exibe o feedback aqui (o chamador faz isso, p. ex. copyPlainText)
+ * @param {string} [copiedLabel] - texto de feedback a exibir
+ * @returns {boolean} true se o navegador reportou a cópia como bem-sucedida
  */
 function fallbackCopyText(codeText, feedbackEl, silent, copiedLabel) {
     const textArea = document.createElement('textarea');
@@ -239,11 +239,11 @@ function fallbackCopyText(codeText, feedbackEl, silent, copiedLabel) {
 
 /**
  * showCopyFeedback(feedbackEl, copiedLabel)
- * Muestra brevemente (2s) un texto de confirmación ("¡Copiado!" por defecto)
- * en el elemento indicado, y luego restaura su texto original.
+ * Exibe brevemente (2s) um texto de confirmação ("Copiado!" por padrão)
+ * no elemento indicado e, depois, restaura o texto original.
  *
- * @param {HTMLElement} [feedbackEl] - elemento a actualizar; si no se indica, se usa #copyText
- * @param {string} [copiedLabel] - texto a mostrar temporalmente (default: 'Copiado!')
+ * @param {HTMLElement} [feedbackEl] - elemento a atualizar; se não for informado, usa #copyText
+ * @param {string} [copiedLabel] - texto a exibir temporariamente (padrão: 'Copiado!')
  */
 function showCopyFeedback(feedbackEl, copiedLabel) {
     const btnText = feedbackEl || document.getElementById('copyText');

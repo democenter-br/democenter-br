@@ -1,23 +1,23 @@
-/* TEAM: oculto, no eliminado */
+/* TEAM: oculto, não removido */
 
-/* NOTA (demolatam-team-optimized): este archivo quedo SUPERADO / SIN USO.
- * En la copia original demolatam-team/ nunca se enlazaba con un <link> desde
- * ninguna pagina (bug confirmado), asi que estas reglas jamas se aplicaban en
- * el navegador -- incluida la que intentaba ocultar el link a agenticai.php
- * en el home, que por eso seguia visible para el socio.
+/* NOTA (demolatam-team-optimized): este arquivo ficou SUPERADO / SEM USO.
+ * Na cópia original demolatam-team/ ele nunca era vinculado com um <link> a
+ * nenhuma página (bug confirmado), então estas regras jamais eram aplicadas no
+ * navegador -- inclusive a que tentava ocultar o link para agenticai.php
+ * na home, que por isso continuava visível para o parceiro.
  *
- * En esta variante optimizada se estandarizo en un unico mecanismo de
- * ocultamiento: comentarios HTML "TEAM-HIDE:..." directamente en cada .php
- * (ya usados de forma consistente para PT-BR, el chatbot Borderbot, la demo
- * Agentic/MCP y los modales de DLP). Ese es el mecanismo que SI funciona y
- * que ya se probaba en el resto del sitio, asi que se prefirio unificar ahi
- * en vez de terminar de cablear este CSS con un <link> nuevo en las 14
- * paginas. El link a agenticai.php en index.php ahora esta envuelto en un
- * bloque TEAM-HIDE (ver demolatam-team-optimized/index.php).
+ * Nesta variante otimizada padronizou-se um único mecanismo de
+ * ocultação: comentários HTML "TEAM-HIDE:..." diretamente em cada .php
+ * (já usados de forma consistente para PT-BR, o chatbot Borderbot, a demo
+ * Agentic/MCP e os modais de DLP). Esse é o mecanismo que FUNCIONA e
+ * que já era testado no restante do site, então preferiu-se unificar nele
+ * em vez de terminar de ligar este CSS com um <link> novo nas 14
+ * páginas. O link para agenticai.php em index.php agora está envolvido em um
+ * bloco TEAM-HIDE (ver demolatam-team-optimized/index.php).
  *
- * Se deja este archivo sin borrar (no se permite eliminar archivos) solo
- * como referencia historica de la intencion original. No se enlaza desde
- * ninguna pagina a proposito.
+ * Este arquivo é mantido sem apagar (não é permitido excluir arquivos) apenas
+ * como referência histórica da intenção original. Ele não é vinculado a
+ * nenhuma página de propósito.
  */
 .language-switcher, #btn-pt, #mcpDemoSection,
 #demo-chat-root, #demo-chat-mask, #demo-chat-toggle,
