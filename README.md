@@ -1,61 +1,63 @@
 # Demo Center Netskope — Partner Edition
 
-Portal web de demos de Netskope (LATAM), en **español**. Es HTML/PHP estático: no hay base de datos, Composer ni Node en runtime.
+> **Edição em português (pt-BR).** Esta é a tradução para português do Brasil do portal (branch `claude/changes`). A edição original em espanhol continua na branch `main`; o código, as chaves de i18n, as rotas e as URLs são idênticos.
 
-La interfaz es **responsiva**: se adapta a laptop, tablet y móvil. Para demos con cliente se recomienda laptop en 1920×1080; el portal sigue siendo usable en pantallas más chicas.
+Portal web de demos da Netskope (LATAM), em **português do Brasil** nesta edição. É HTML/PHP estático: não há banco de dados, Composer nem Node em runtime.
 
-Esta edición de partner:
+A interface é **responsiva**: se adapta a laptop, tablet e celular. Para demos com clientes recomenda-se laptop em 1920×1080; o portal continua utilizável em telas menores.
 
-- Solo idioma español (sin selector PT-BR).
-- Borderbot / AWS Bedrock **deshabilitado** (`api/demo-chat.php` responde 404).
-- Sección Agentic / MCP **oculta** en el HTML.
-- No incluye credenciales de AWS ni el archivo `/etc/demo-chat.env`.
+Esta edição de partner:
 
-Uso previsto: copiar este árbol al document root de un servidor web y servir `index.php`.
+- Somente um idioma (sem seletor de idioma).
+- Borderbot / AWS Bedrock **desabilitado** (`api/demo-chat.php` responde 404).
+- Seção Agentic / MCP **oculta** no HTML.
+- Não inclui credenciais da AWS nem o arquivo `/etc/demo-chat.env`.
+
+Uso previsto: copiar esta árvore para o document root de um servidor web e servir `index.php`.
 
 ---
 
 ## 1. Requisitos de hardware
 
-El sitio pesa poco (~8 MB). Los mínimos de abajo dejan holgura para el SO, logs, actualizaciones y demos en paralelo.
+O site é leve (~8 MB). Os mínimos abaixo deixam folga para o SO, logs, atualizações e demos em paralelo.
 
 | Recurso | Mínimo | Ideal |
 |---|---|---|
 | CPU | 1 vCPU | 2 vCPU |
 | RAM | 2 GB | 4 GB |
 | Disco | 40 GB | 120 GB |
-| Red | 100 Mbps | 1 Gbps |
-| Resolución de demo | 1366×768 | 1920×1080 (laptop del SE; el sitio es responsivo) |
+| Rede | 100 Mbps | 1 Gbps |
+| Resolução da demo | 1366×768 | 1920×1080 (laptop do SE; o site é responsivo) |
 
-No hace falta GPU, ni cola de workers, ni disco SSD de alto IOPS.
+Não é necessário GPU, fila de workers nem disco SSD de alto IOPS.
 
-**Lab RDP / sillas Cursor (opcional, no viene en este repo).** El portal original consulta un host Windows interno (`10.1.10.203:18080`) y enlaces RDP en `10.1.10.x`. Eso es infraestructura del lab LATAM, no se instala con este código. Si el partner no tiene ese lab, el tablero de sillas muestra error controlado y el resto del sitio funciona.
+**Lab RDP / cadeiras Cursor (opcional, não vem neste repositório).** O portal original consulta um host Windows interno (`10.1.10.203:18080`) e links RDP em `10.1.10.x`. Isso é infraestrutura do lab LATAM e não é instalado com este código. Se o partner não tiver esse lab, o quadro de cadeiras mostra um erro controlado e o restante do site funciona.
 
 ---
 
 ## 2. Requisitos de software (sistema)
 
-Probado con PHP 8.x. El código usa tipos escalares (`string`, `int`, `void`) → **PHP 7.4 o superior**. Recomendado **PHP 8.1+**.
+Testado com PHP 8.x. O código usa tipos escalares (`string`, `int`, `void`) → **PHP 7.4 ou superior**. Recomendado **PHP 8.1+**.
 
-| Pieza | Versión | Para qué |
+| Componente | Versão | Para quê |
 |---|---|---|
-| Sistema operativo | Ubuntu 22.04 / 24.04 LTS (o equivalente RHEL 9) | Servidor web |
-| nginx | 1.18+ | HTTP(S). Apache 2.4 también sirve |
-| PHP-FPM | 8.1+ | Ejecutar `*.php` |
-| Git | 2.x | Clonar este repositorio |
-| Certificado TLS | Let's Encrypt u otro | HTTPS en demos con cliente |
-| Navegador | Chrome / Edge recientes | Conducir la demo |
+| Sistema operacional | Ubuntu 22.04 / 24.04 LTS (ou equivalente RHEL 9) | Servidor web |
+| nginx | 1.18+ | HTTP(S). Apache 2.4 também serve |
+| PHP-FPM | 8.1+ | Executar `*.php` |
+| Git | 2.x | Clonar este repositório |
+| Certificado TLS | Let's Encrypt ou outro | HTTPS em demos com cliente |
+| Navegador | Chrome / Edge recentes | Conduzir a demo |
 
-**No se necesita:** MySQL/PostgreSQL, Redis, Node.js, Python, Composer, npm, Docker, AWS CLI, Bedrock, ni Java.
+**Não é necessário:** MySQL/PostgreSQL, Redis, Node.js, Python, Composer, npm, Docker, AWS CLI, Bedrock nem Java.
 
-### Paquetes a instalar (Ubuntu / Debian)
+### Pacotes a instalar (Ubuntu / Debian)
 
 ```bash
 sudo apt update
 sudo apt install -y nginx php-fpm php-cli git curl unzip
 ```
 
-En Ubuntu 24.04 eso suele traer PHP 8.3. Comprueba:
+No Ubuntu 24.04 isso costuma trazer o PHP 8.3. Confira:
 
 ```bash
 php -v
@@ -63,40 +65,40 @@ php-fpm -v
 nginx -v
 ```
 
-Extensiones PHP usadas (vienen en el paquete por defecto):
+Extensões PHP usadas (vêm no pacote padrão):
 
 - `json`
-- `fileinfo` (imágenes)
-- wrapper HTTP de `file_get_contents` (`allow_url_fopen = On` en `php.ini`, valor por defecto)
+- `fileinfo` (imagens)
+- wrapper HTTP do `file_get_contents` (`allow_url_fopen = On` no `php.ini`, valor padrão)
 
-Opcional, solo si quieren HTTPS con Let's Encrypt:
+Opcional, somente se quiserem HTTPS com Let's Encrypt:
 
 ```bash
 sudo apt install -y certbot python3-certbot-nginx
 ```
 
-### Red y firewall
+### Rede e firewall
 
-| Puerto | Dirección | Uso |
+| Porta | Direção | Uso |
 |---|---|---|
-| 80 / 443 | Entrada | Sitio público |
+| 80 / 443 | Entrada | Site público |
 | 22 | Entrada (admin) | SSH |
-| Salida 443 | Hacia Internet | CDNs (ver abajo) |
+| Saída 443 | Para a Internet | CDNs (veja abaixo) |
 
-Varias páginas cargan CSS/JS desde Internet. El servidor **y** la laptop de la demo necesitan salida HTTPS a:
+Várias páginas carregam CSS/JS da Internet. O servidor **e** o laptop da demo precisam de saída HTTPS para:
 
 - `cdn.tailwindcss.com`
 - `unpkg.com`
-- `cdn.jsdelivr.net` (Chart.js en reportes)
+- `cdn.jsdelivr.net` (Chart.js nos relatórios)
 - `fonts.googleapis.com` / `fonts.gstatic.com`
 
-Si el partner bloquea CDNs, esas páginas se verán sin estilos o sin gráficas. `index.php`, `demos.php` y `keydifferentiators.php` también referencian `assets/vendor/` (copia local de Tailwind/Lucide/fuentes) que **no está en este árbol**; el CSS crítico va inline, así que la portada igual se ve, pero pueden faltar algunos íconos.
+Se o partner bloquear CDNs, essas páginas aparecerão sem estilos ou sem gráficos. `index.php`, `demos.php` e `keydifferentiators.php` também referenciam `assets/vendor/` (cópia local de Tailwind/Lucide/fontes) que **não está nesta árvore**; o CSS crítico fica inline, então a página inicial continua com boa aparência, mas alguns ícones podem faltar.
 
 ---
 
-## 3. Instalación
+## 3. Instalação
 
-Sustituye `TU_DOMINIO` y la ruta si usas otra.
+Substitua `SEU_DOMINIO` e o caminho se usar outro.
 
 ```bash
 sudo mkdir -p /var/www/democenter
@@ -105,47 +107,47 @@ sudo git clone https://github.com/lmatus-nsk/democenter-partner-edition.git /var
 sudo chown -R www-data:www-data /var/www/democenter
 ```
 
-Copia el ejemplo de nginx:
+Copie o exemplo de nginx:
 
 ```bash
 sudo cp /var/www/democenter/deploy/nginx.conf.example /etc/nginx/sites-available/democenter
-sudo nano /etc/nginx/sites-available/democenter   # cambia server_name y root
+sudo nano /etc/nginx/sites-available/democenter   # altere server_name e root
 sudo ln -s /etc/nginx/sites-available/democenter /etc/nginx/sites-enabled/democenter
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
-Ajusta el socket de PHP-FPM si tu distro no usa `/run/php/php-fpm.sock` (por ejemplo `/run/php/php8.3-fpm.sock`).
+Ajuste o socket do PHP-FPM se sua distro não usar `/run/php/php-fpm.sock` (por exemplo `/run/php/php8.3-fpm.sock`).
 
 HTTPS:
 
 ```bash
-sudo certbot --nginx -d TU_DOMINIO
+sudo certbot --nginx -d SEU_DOMINIO
 ```
 
-### Comprobar
+### Verificar
 
-1. Abre `https://TU_DOMINIO/` → landing en español, **sin** botones ES/PT-BR.
-2. Entra a **¿Quieres verlo en directo?** → `demos.php`.
-3. Recorre las tarjetas (navegación, dato, VPN, IA, red).
-4. `https://TU_DOMINIO/api/demo-chat.php` debe devolver **404** (Borderbot apagado a propósito).
-5. `https://TU_DOMINIO/api/seats.php` puede devolver 502 si no hay lab Windows; es esperado.
+1. Abra `https://SEU_DOMINIO/` → página inicial em português, **sem** seletor de idioma.
+2. Entre em **Quer ver ao vivo?** → `demos.php`.
+3. Percorra os cartões (navegação, dados, VPN, IA, rede).
+4. `https://SEU_DOMINIO/api/demo-chat.php` deve retornar **404** (Borderbot desligado de propósito).
+5. `https://SEU_DOMINIO/api/seats.php` pode retornar 502 se não houver lab Windows; é esperado.
 
-Prueba rápida en el propio servidor:
+Teste rápido no próprio servidor:
 
 ```bash
 cd /var/www/democenter
 php -S 127.0.0.1:8003
-# luego: curl -I http://127.0.0.1:8003/index.php
+# depois: curl -I http://127.0.0.1:8003/index.php
 ```
 
 ---
 
-## 4. Qué hay en el árbol
+## 4. O que há na árvore
 
 ```
-index.php                 Landing
+index.php                 Página inicial (landing)
 demos.php                 Portal de demos (hub)
-keydifferentiators.php    ¿Quién es Netskope?
+keydifferentiators.php    Quem é a Netskope?
 navigationevolution.php
 dataprotection.php
 vpnevolution.php
@@ -153,41 +155,41 @@ aicontrol.php
 networktransformation.php
 customerreferences.php
 reportai.php / reportit.php
-oopsyoudidit.php          Página de coaching / bloqueo
-api/seats.php             Proxy opcional al lab Windows
-api/demo-chat.php         Deshabilitado (404)
-assets/                   CSS, JS, JSON, imágenes
+oopsyoudidit.php          Página de coaching / bloqueio
+api/seats.php             Proxy opcional para o lab Windows
+api/demo-chat.php         Desabilitado (404)
+assets/                   CSS, JS, JSON, imagens
 deploy/nginx.conf.example
 ```
 
-No hay `.env`, no hay base de datos que crear, no hay migraciones.
+Não há `.env`, não há banco de dados para criar, não há migrações.
 
 ---
 
-## 5. Personalización del servicio
+## 5. Personalização do serviço
 
-Se recomienda **editar y adaptar esta edición con ayuda de IA**, para acortar el tiempo de personalización (textos, logos, tarjetas de demo, ocultar/mostrar secciones, i18n, estilos).
+Recomenda-se **editar e adaptar esta edição com ajuda de IA**, para encurtar o tempo de personalização (textos, logos, cartões de demo, ocultar/mostrar seções, i18n, estilos).
 
-Herramientas recomendadas:
+Ferramentas recomendadas:
 
-- **[Cursor](https://cursor.com)** — editor con agente sobre el repo: pide el cambio en lenguaje natural, revisa el diff y prueba en el navegador.
-- **[Claude](https://claude.ai)** (Anthropic) — para redactar copy, armar el plan de cambios y revisar HTML/PHP/JS antes de aplicarlos.
+- **[Cursor](https://cursor.com)** — editor com agente sobre o repositório: peça a alteração em linguagem natural, revise o diff e teste no navegador.
+- **[Claude](https://claude.ai)** (Anthropic) — para redigir textos, montar o plano de alterações e revisar HTML/PHP/JS antes de aplicá-los.
 
-Flujo sugerido: abre este repositorio en Cursor, describe el cambio (por ejemplo “cambia las referencias LATAM por los clientes del partner” o “oculta la tarjeta de VPN”), deja que el agente proponga el parche, verifica en local (`php -S` o el nginx del partner) y recién entonces despliega.
+Fluxo sugerido: abra este repositório no Cursor, descreva a alteração (por exemplo “troque as referências LATAM pelos clientes do partner” ou “oculte o cartão de VPN”), deixe o agente propor o patch, verifique localmente (`php -S` ou o nginx do partner) e só então publique.
 
-No hace falta un stack de frontend aparte: las páginas son PHP/HTML autocontenidas. Un cambio de copy o de una tarjeta suele ser un solo archivo.
-
----
-
-## 6. Seguridad al publicar
-
-- No subir `/etc/demo-chat.env` ni keys de AWS (esta edición no las usa).
-- No dejar `*.bak`, `.tgz` ni backups dentro del document root.
-- nginx del ejemplo ya deniega `*.bak`, `*.tgz`, `*.env`.
-- El sitio no tiene autenticación: trátalo como portal de demo, no como intranet con secretos.
+Não é necessário um stack de frontend separado: as páginas são PHP/HTML autocontidas. Uma mudança de texto ou de um cartão costuma ser em um único arquivo.
 
 ---
 
-## 7. Licencia
+## 6. Segurança ao publicar
 
-Código propietario de Netskope. Uso limitado al partner autorizado. No redistribuir ni publicar como open source.
+- Não subir `/etc/demo-chat.env` nem chaves da AWS (esta edição não as usa).
+- Não deixar `*.bak`, `.tgz` nem backups dentro do document root.
+- O nginx do exemplo já bloqueia `*.bak`, `*.tgz`, `*.env`.
+- O site não tem autenticação: trate-o como portal de demo, não como intranet com segredos.
+
+---
+
+## 7. Licença
+
+Código proprietário da Netskope. Uso limitado ao partner autorizado. Não redistribuir nem publicar como open source.
